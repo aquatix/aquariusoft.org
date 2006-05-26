@@ -6,6 +6,8 @@ body
 /*	background: white url("background.png") no-repeat top right;*/
 /*	background: white url("lines_repeating.png");*/
 	background: #d9dde3;
+	background: #7f97b2;
+	background: #7f97b2 url("lines_repeating.png");
 	color: #333333;
 	/*
 	background-image: url("background.png");
@@ -46,14 +48,15 @@ a
 {
 	text-decoration: none;
 	color: #3f5671;
-	color: #3f5671;
+	color: #7f97b2;
 }
 
 a:hover
 {
 	text-decoration: underline;
 	color: #3f5671;
-	color: #3f5671;
+	color: #9dbadb;
+	color: #7f97b2;
 }
 
 th
@@ -65,7 +68,9 @@ th
 p
 {
 	padding-left: 1em;
+	padding-left: .5em;
 	padding-right: .5em;
+	text-align: justify;
 }
 
 .wrapperbox
@@ -75,7 +80,8 @@ p
 
 .page
 {
-	background: white url("lines_repeating.png");
+/*	background: white url("lines_repeating.png");*/
+	background: transparent url("alpha.png");
 	width: 80%;
 	padding: .5em;
 	margin: 0 auto 0 auto;
@@ -106,7 +112,8 @@ p
 	background-color: #1288d0;
 	background-color: #65788d;
 	padding: .3em;
-	padding-left: 0.2em;
+	padding-left: .2em;
+	padding-left: .4em;
 	color: #FFF;
 	font-weight: bold;
 	font-size: .9em;
@@ -180,6 +187,7 @@ p
 	/*background-color: #3f5671;*/
 	background-color: #FFF;
 	margin: 0;
+	margin-bottom: 1em;
 /*	padding: .3em;
 	color: #FFF;*/
 	border: 1px solid #3f5671;
@@ -324,6 +332,7 @@ p
 */
 		padding: .3em;
 		padding-left: .5em;
+		padding-right: .5em;
 		margin-bottom: 0;
 /*		margin-left: .8em;*/
 /*

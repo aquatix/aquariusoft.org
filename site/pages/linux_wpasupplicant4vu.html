@@ -1,0 +1,31 @@
+<!-- created @ 2006-02-28 10:18:00 -->
+
+<div class="updatedat">updated @ 2006-02-28</div>
+
+<p>As I study <a href="http://www.cs.vu.nl/">Computer Science on the Vrije Universiteit</a> in Amsterdam, I wanted to use my <a href="http://www.debian.org/">GNU/Linux</a> laptop with their wireless network. As they are using some neat encryption schemes, involving rotating wep keys, eap-ttls, pap and such, for which you need the Aegis client on windows [or the Intel Pro/wireless program as I use with my <a href="http://ipw2200.sourceforge.net/">ipw2200 chip</a> on my Centrino based laptop]. <a href="page/linux/xsupplicant4vu/">I had to configure xsupplicant</a> accordingly, but now <a href="">wpasupplicant</a> suits my needs better. You can find my configuration for this program on this page. See for more information <a href="page/linux/xsupplicant4vu/">the page with information for setting up xsupplicant</a>.</p>
+
+<p>Make sure your /etc/wpa_supplicant.conf looks like this:</p>
+<pre>
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+
+eapol_version=1
+ap_scan=1
+fast_reauth=1
+
+network={
+	ssid="VU-Campusnet"
+	mode=0
+	scan_ssid=1
+	key_mgmt=IEEE8021X
+	eap=TTLS
+	anonymous_identity="anonymous@vu.nl"
+	phase2="auth=PAP"
+	identity="vunetID@vu.nl"
+	password="password"
+	ca_cert="/etc/1x_wpasupplicant/CA-VU.cer"
+}
+</pre>
+
+<p>/etc/default/wpasupplicant may have to be modified too [set ENABLED=1 for example, and you may have to change your DRIVER; wext works fine for my Centrino based laptop with an IPW2200 chip.</p>
+
