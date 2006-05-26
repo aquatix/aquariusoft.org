@@ -1,0 +1,66 @@
+<!-- created @ 2005-05-02 15:49:00 -->
+<div class="updatedat">last edited @ 2005-06-13 14:15:45</div>
+<h2>overload <acronym title="Really Simple Syndication">RSS</acronym> reader</h2>
+
+<p>I'm currently developing a webbased, Open Source [GPLed] news feed reader, which you can use <a href="/overload/">on this server</a>, or download and install on your own webserver, needing only <a href="http://www.php.org/">PHP</a> and a <a href="http://www.mysql.com/">MySQL</a> database.</p>
+
+<p>overload is based on <a href="http://magpierss.sourceforge.net/">the magpierss parser</a> [currently version 0.71.1] and is written in pure <a href="http://www.php.org/">PHP</a> using only this parser and a <a href="http://www.mysql.com/">MySQL</a> database.</p>
+
+<p>Relatively stable snapshots will be used to power <a href="/overload/">the reader on this server</a> [log in for a demonstration with the user/password combo demo/demo] and the source will become available when it's usable for third parties, but expect a tarball soon.</p>
+
+<p>You can also use <a href="https://aquariusoft.org/overload/">overload through secured http [https, SSL]</a>, which is secured by a self-signed security certificate, which you'll get a warning about. This is OK in this case, as you're not using it to identify us, but for securing your information over the internet. Be wary of those warnings in other cases, though!</p>
+
+
+<h3>Download</h3>
+
+<p><a href="/download/html/overload/20050613_snapshot.tar.bz2">Snapshot 2005-06-13 [version 0.0.24]</a> [including <acronym title="eXtensible User-interface Language">XUL</acronym> version and experimental inter-item-relations functionality -- <a href="/~mbscholt/index.php?rantid=287">See also this posting</a></p>
+
+
+<h3>Roadmap</h3>
+
+<p>Version 0.1 [due June] -- publicly usable version with basic but powerful featureset</p>
+
+<ul>
+	<li>underlying engine</li>
+	<li>subscribing as new user</li>
+	<li>add feeds</li>
+
+	<li>manage [modify, delete] feeds</li>
+	<li>manage [modify, delete] groups</li>
+	<li>flag interesting postings [so you can find them easily later on]</li>
+	<li>pda access through usercode</li>
+	<li><acronym title="eXtensible User-interface Language">XUL</acronym> rich client</li>
+
+	<li>related items [look for related postings based on shared links]</li>
+</ul>
+
+
+<p>Version 0.2 [July, August?] -- extended features and user interface</p>
+
+<ul>
+	<li>foldable groups</li>
+	<li>count of unread items per group [maybe for folded groups only]</li>
+	<li>spreaded downloading of feeds, not all in one large sequence once an hour</li>
+
+	<li>exporting OPML files</li>
+	<li>importing OPML files</li>
+	<li>user defined filters [based on keywords, date etc. Please contact me for more ideas!]</li>
+	<li>tagging support for postings</li>
+	<li>tagging support for feeds [replacing groups?]</li>
+	<li>user choosable stylesheets</li>
+
+</ul>
+
+
+<p>Future versions</p>
+<ul>
+	<li>favicons for the feeds [through generated stylesheet file containing the uri's of the pictures]</li>
+	<li>resyndication of feeds [<a href="http://www.planetplanet.org/">Planet</a>-like behaviour]</li>
+	<li>firefox plugin for fast access of your feeds [and adding of new feeds]</li>
+
+	<li>XML based API for using with standalone tools</li>
+	<li>other ideas from <a href="http://radio.weblogs.com/0001011/2005/05/28.html#a10235">this interesting post</a> [read the comments too]</li>
+	<li>"e-mail this" feature</li>
+	<li>sort of scripting support? Figure out a good way [maybe query-like, and integrate it with the user defined filters]</li>
+</ul>
+

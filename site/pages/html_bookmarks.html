@@ -1,0 +1,57 @@
+<div class="updatedat">last edited @ 2004-12-02 23:07:30</div>
+
+<p>DISCONTINUED in favour of the awesome <a href="http://www.sitebar.org/">sitebar</a>.</p>
+
+<p>On this page I will release the source of a webbased bookmarks utility. It will be multi user and have support for unlimited categories, even nested. More information will follow.</p>
+
+<h3>Some thoughts:</h3>
+
+<pre>
+----------------------------------------------------------------
+ Bookmarks  http://aquariusoft.org/?section=html&page=bookmarks
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+ 2004-05-18
+----------------------------------------------------------------
+
+bookmark
+- ID
+- categoryID
+- userID
+- description
+- url
+
+category
+- ID
+- userID
+- parent        // 0 if root node, otherwise another categoryID
+- name
+- description   // description of the category? should have self explaining name. maybe "note"? 
+
+user
+- ID
+- username
+- password      // hashed
+- stylesheetID
+
+
+stylesheet
+- ID
+- filename
+- description   // used for stylesheet picker for user
+
+
+frontpagelink   // used for building a landing page, sort of personal portal
+- ID
+- userID
+- bookmarkID    // link is a normal link, so it will be updated if original is updated 
+- fpcatID       // id of frontpagecategory, so custom categories can be used instead of the bookmark.categoryID
+
+frontpagecategory
+- ID
+- userID
+- name
+- note
+</pre>
+

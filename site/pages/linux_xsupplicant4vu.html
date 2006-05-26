@@ -1,0 +1,87 @@
+<!-- created @ 2005-05-02 15:32:00 -->
+
+<div class="updatedat">last edited @ 2006-01-10 23:37:30</div>
+<h2>Configure your laptop to work with the wireless network of the VU</h2>
+
+<p>As I study <a href="http://www.cs.vu.nl/">Computer Science on the Vrije Universiteit</a> in Amsterdam, I wanted to use my <a href="http://www.debian.org/">GNU/Linux</a> laptop with their wireless network. As they are using some neat encryption schemes, involving rotating wep keys, eap-ttls, pap and such, for which you need the Aegis client on windows [or the Intel Pro/wireless program as I use with my <a href="http://ipw2200.sourceforge.net/">ipw2200 chip</a> on my Centrino based laptop]. I had to configure <a href="http://www.open1x.org/">xsupplicant</a> accordingly. You can find my configuration for <a href="http://www.open1x.org/">xsupplicant</a> 1.x on this page.</p>
+
+<p>These settings will most likely work with other highly secured networks too, so I hope this page will help others too.</p>
+
+
+<p>My /etc/xsupplicant/xsupplicant.conf [note that my wifi connection is on eth1. you may want to change that to wlan0 or something]:</p>
+<pre>
+network_list = default, VU-Campusnet
+
+allow_interfaces = eth1
+deny_interfaces = eth0, lo
+
+logfile = /var/log/xsupplicant.log
+
+VU-Campusnet
+{
+        type = wireless
+        wireless_control = yes
+        allow_types = eap-ttls
+        identity = &lt;BEGIN_ID&gt;YOUR_VUNET_ID@vu.nl&lt;END_ID&gt;
+
+        eap-ttls
+        {
+                root_cert = NONE
+                phase2_type = pap
+                pap
+                {
+                        username = &lt;BEGIN_UNAME&gt;YOUR_VUNET_ID@vu.nl&lt;END_UNAME&gt;
+
+                        password = &lt;BEGIN_PASS&gt;YOUR_PASSWORD&lt;END_PASS&gt;
+                }
+        }
+}
+</pre>
+
+<p><em>Note</em> that no dhclient's should be running and the wep key configured for the wireless interface should be all zero's before running the following script. [You can check this with iwconfig]</p>
+
+<p>I got feedback that in xsupplicant 1.2 some things aren't supported anymore and the syntax has changed a bit. This should work:</p>
+
+<pre>
+network_list = default, VU-Campusnet
+
+logfile = /var/log/xsupplicant.log
+
+default
+{
+}
+
+VU-Campusnet
+{
+        type = wireless
+        wireless_control = yes
+        allow_types = eap-ttls
+        identity = YOUR_VUNET_ID@vu.nl
+
+        eap-ttls
+        {
+                root_cert = NONE
+                phase2_type = pap
+                pap
+                {
+                        username = YOUR_VUNET_ID@vu.nl
+                        password = YOUR_PASSWORD
+                }
+        }
+}
+</pre>
+
+<p>My wifi_vu enable script [save as executable script and execute when you want to use the network]:</p>
+
+<pre>
+#!/bin/bash
+iwconfig eth1 mode Managed
+iwconfig eth1 enc open
+iwconfig eth1 essid VU-Campusnet
+ifconfig eth1 up
+
+dhclient eth1
+ntpdate ntp.cs.uu.nl
+</pre>
+
+<p>The last line is for synchronizing the clock through <acronym title="Network Time Protocol">NTP</acronym>, which I do per default, as it's such an easy way to keep them all in sync. You can remove it, or substitute an <acronym title="Network Time Protocol">NTP</acronym> server near you to make it work [better]</p>

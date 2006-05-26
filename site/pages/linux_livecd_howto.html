@@ -1,0 +1,83 @@
+<div class="updatedat">last edited @ 2005-10-20 21:36:30</div>
+<h2>Introduction</h2>
+
+<p>Fast intro to building your own <a href="http://www.morphix.org/">Morphix</a> based <a href="http://en.wikipedia.org/wiki/Livecd">livecd</a> using the mmaker toolkit</p>
+
+<h2>The steps</h2>
+
+<h3>Foreplay</h3>
+
+<ul>
+	<li>Use a Debian based Linux distro [preferably Debian sid, aka unstable, but every recent one should do]</li>
+
+	<li>Get a morphix based .iso [or just a base .iso, preferably a stable one atm, like 0.5-pre5]</li>
+	<li>Open a root terminal [su -, you get the point]</li>
+	<li>mount -t iso9660 -o loop nameoftheisoyoudownloaded.iso /mnt/whatever</li>
+	<li>cp -a /mnt/whatever/* /path/to/the/extracted/stuff [like /scratch/iso]</li>
+</ul>
+
+<h3>Setting up the build environment</h3>
+
+<ul>
+	<li>Add "deb http://www.morphix.org/debian ./" to your /etc/apt/source.list</li>
+	<li>apt-get update</li>
+	<li>apt-get install morphix-mmaker morphix-make-iso</li>
+</ul>
+
+<h3>Creating your own mainmod[ule]</h3>
+
+<ul>
+	<li>See <a href="http://www.morphix.org/manual/how_tos/docbook_html/ar01s05.html#AutoBuilding">this manual about mmaker</a> for building an .xml file describing your mainmodule, which will basically be your system</li>
+
+	<li>If you're done with the .xml file [e.g., mymainmod.xml], type "mmaker mymainmod.xml myprograms.mod" or whatever you like to name them</li>
+</ul>
+
+<h3>Building an .iso out of it</h3>
+
+<ul>
+	<li>Now, remove the files in /scratch/iso/mainmod</li>
+	<li>Copy/move your myprograms.mod into /scratch/iso/mainmod</li>
+	<li>make-iso /scratch/iso myfirstlivecd.iso</li>
+
+	<li>Done. Burn to cd with your favorite burn program or run with "qemu -cdrom myfirstlivecd.iso" in the qemu emulator, for example</li>
+</ul>
+
+
+<h2>More advanced stuff</h2>
+
+<p>If you manually modify some stuff in /tmp/libmorphix-<randomsequence> [e.g., /tmp/libmorphix-9oVKWq] , you have to use the following command to recompress the mainmod:
+"module-builder /tmp/libmorphix-9oVKWq aquamorph_20051120a.mod" [or whatever you want to call the mainmodule].</p>
+
+<p>When you want to be able to resize windows ntfs partitions from the livecd, add  package ntfsprogs to your .xml and use the program ntfsresize when booted</p>
+
+<p>Example of a mainmod .xml:</p>
+
+<pre>
+
+&lt;comps&gt;
+&lt;groups&gt;
+&lt;version&gt;0.5&lt;/version&gt;
+&lt;id&gt;lightgui&lt;/id&gt;
+
+&lt;name&gt;Morphix LightGUI&lt;/name&gt;
+&lt;repositorylist&gt;
+&lt;repository type="debian"&gt;ftp://ftp.debian.org/debian&lt;/repository&gt;
+&lt;repository type="plain"&gt;http://www.morphix.org/debian&lt;/repository&gt;
+&lt;/repositorylist&gt;
+&lt;description&gt;Morphix LightGUI mainmodule. Includes XFCE4, Firefox,
+Abiword and a host of other goodies&lt;/description&gt;
+
+&lt;type&gt;mainmod&lt;/type&gt;
+&lt;suite&gt;sid&lt;/suite&gt;
+&lt;packagelist&gt;
+&lt;packagereq&gt;abiword&lt;/packagereq&gt;
+&lt;packagereq&gt;xfce4&lt;/packagereq&gt;
+
+&lt;packagereq&gt;mozilla-firefox&lt;/packagereq&gt;
+&lt;!-- ... other goodies here ... --&gt;
+&lt;/packagelist&gt;
+&lt;/group&gt;
+&lt;/comps&gt;
+
+</pre>
+

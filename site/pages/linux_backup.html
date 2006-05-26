@@ -1,0 +1,172 @@
+<div class="updatedat">last edited @ 2005-06-02 23:04:45</div>
+<h2>bash backup script for your homedirs etc</h2>
+
+<p>It's a good idea to backup your data once in a while. As I'm lazy, I've automatized this task, and turned it in a cronjob</p>
+
+<p>NB: please adjust to your own settings [and clean up a bit] when using this script yourself! Try to understand what's been done here, as that's kinda important when you're operating on your important data ;)</p>
+
+<p>Here is my own [slightly censored] backup script. Save as backup or something and run as "backup daily", "backup weekly" and/or "backup monthly" in your crontab file [see below]</p>
+
+<pre>
+#!/bin/sh
+#
+# Makes an incremental daily or weekly backup of the homedirs and of the mail dir
+#   or makes a complete backup of them, depending on the parameters passed to this script
+#
+# Usage:
+#   backup &lt;kindofbackup&gt;
+#
+#   kindofbackup: daily
+#                 weekly
+#                 monthly
+#
+# Version 0.1.06 :: 2005-04-10
+#
+# Copyleft 2002-2005 Michiel Scholten [ mbscholt@aquariusoft.org ]
+#
+
+FILEPREFIX=`date +%Y%m%d_%H%M`
+TARFLAGS="--no-recursion -X /root/cron_thingees/backup_exclude"
+#BACKUPDIR="/storage/system/backup"
+#MIRROR_1="/storage/backup"
+BACKUPDIR="/storage/backup"
+MIRROR_1="/storage/system/backup"
+MIRROR_2="/storage/ish/backup"
+
+if [ "$1" = "weekly" ]
+then
+  DAYS=7
+  KINDOFBACKUP="weekly"
+elif [ "$1" = "daily" ]
+then
+  DAYS=1
+  KINDOFBACKUP="daily"
+else
+  # default behaviour is a complete backup
+  KINDOFBACKUP="monthly"
+fi
+
+# Mount the backup partition
+mount "$BACKUPDIR"
+
+mkdir $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX
+cd /
+
+echo "== Backup = Kind: $KINDOFBACKUP ======"
+
+echo "== Users ======"
+
+if [ "$KINDOFBACKUP" = "monthly" ]
+then
+
+  for USER
+    in aquatix user_2 user_3
+  do
+    tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/$USER.tar.bz2 -X /root/cron_thingees/backup_exclude home/$USER/ > /dev/null
+    echo "> [`date +%H:%M:%S`] Homedir of $USER has been backed up"
+  done
+
+  # Backup root's homedir
+  tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/su.tar.bz2 -X /root/cron_thingees/backup_exclude root/ > /dev/null
+  echo "> [`date +%H:%M:%S`] Homedir of root has been backed up"
+
+else
+  for USER
+    in aquatix user_2 user_3
+  do
+    find /home/$USER/ -mtime -$DAYS -print | tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/$USER.tar.bz2 $TARFLAGS -T - > /dev/null
+    if [ -e $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/$USER.tar.bz2 ]; then
+      echo "> [`date +%H:%M:%S`] Homedir of $USER has been backed up"
+    fi
+  done
+fi
+
+if [ "$KINDOFBACKUP" != "daily" ]
+then
+  echo "== System ======"
+
+  # Backup the complete mail dir [e.g. not incremental]
+  tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/mailboxes.tar.bz2 var/mail/ > /dev/null
+  echo "> [`date +%H:%M:%S`] Mailboxes have been backed up"
+
+  # Backup the /var/lib/mysql dir [all databases]
+  #tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/mysql.tar.bz2 var/lib/mysql/ > /dev/null
+  #echo "> [`date +%H:%M:%S`] MySQL databases have been backed up"
+
+  if [ "$KINDOFBACKUP" = "monthly" ]
+  then
+    ymd=(date +20%y.%m.%d)
+
+    tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/etc.$FILEPREFIX.tar.bz2 /etc > /dev/null
+    echo "> [`date +%H:%M:%S`] /etc has been backed up"
+  elif [ "$KINDOFBACKUP" = "weekly" ]
+  then
+    days=7
+    ymd=(date +20%y.%m.%d)
+
+    find /etc -mtime -$days -print | tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/etc.$FILEPREFIX.${days}.tar.bz2 -T - > /dev/null
+    echo "> [`date +%H:%M:%S`] /etc changes of last week have been backed up"
+  fi
+  # Backup /var/spool/cron/crontabs [crontabs of the various users]:
+  cd /
+  tar -cjf $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/crontabs.$FILEPREFIX.tar.bz2 var/spool/cron/crontabs > /dev/null
+  echo "> [`date +%H:%M:%S`] crontabs have been backed up"
+fi
+
+echo "== Mirroring backups ======"
+#mount "$MIRROR_1"
+cp -a $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX $MIRROR_1/$KINDOFBACKUP/
+#umount "$MIRROR_1"
+#echo "> [`date +%H:%M:%S`] Mounted mirror done"
+echo "> [`date +%H:%M:%S`] Mirror 1 done"
+#cp -a $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX $MIRROR_2/$KINDOFBACKUP/
+echo "> [`date +%H:%M:%S`] Mirror 2 done [disabled yet]"
+
+umount "$BACKUPDIR"
+echo "> [`date +%H:%M:%S`] Unmounted backup partition"
+
+echo "== Done ======"
+</pre>
+
+<p>Your backup_exclude file can look like this:</p>
+
+<pre>
+.mozilla/*
+tmp/*
+</pre>
+
+<p>Or on your workstation:</p>
+
+<pre>
+News/*
+.thumbnails/*
+.xMule/*
+*Cache/*
+*cache/*
+*tmp/*
+.java/*
+.openoffice/*
+*Cache.Trash/*
+*/XUL.mfasl
+.pan/news*
+.pan/messages/*
+.Azureus/downloads/*
+.pan/newszilla/*
+.pan/demon/*
+bin/azureus/*
+</pre>
+
+
+<p>Your crontab can look like this, if you use a backup script for databases too:</p>
+
+<pre>
+
+# First day of month at 3:00am == Monthly full backup of homedirs and e-mail
+00 3   1 * *  /storage/system/backup/backup monthly
+45 2   1 * *  /storage/system/backup/backup_db monthly
+#
+# Sat at 3:30am == Weekly cummulative backup of homedirs and e-mail
+30 3   * * 6  /storage/system/backup/backup weekly
+45 3   * * 6  /storage/system/backup/backup_db weekly
+</pre>
+

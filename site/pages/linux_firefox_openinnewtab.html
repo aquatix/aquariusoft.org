@@ -1,0 +1,16 @@
+<!-- created @ 2004-07-20 22:31:00 -->
+
+<div class="updatedat">last edited @ 2006-01-19</div>
+<h2>Update</h2>
+<p>The latest version[s] of Firefox do this by default [at least 1.5 does this].</p>
+
+<h2>Small script for opening a url in a new tab in Mozilla Firefox</h2>
+
+<pre>
+#!/bin/sh
+mozilla-firefox -a firefox -remote 'openURL('$1', new-tab)' || mozilla-firefox $1 &
+</pre>
+
+<p>Save this for example in ~/bin/firefox-remote and let your system point to that file as default browser.</p>
+
+

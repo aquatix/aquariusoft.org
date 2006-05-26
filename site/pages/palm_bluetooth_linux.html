@@ -1,0 +1,89 @@
+<!-- created @ 2004-07-05 17:07:00 -->
+<div class="updatedat">last edited @ 2004-07-05 17:43:00</div>
+<h2>Bluetooth for Linux and Palm device</h2>
+<p>2004-07-05</p>
+
+<p>Installing bluetooth on <a href="http://www.debian.org/">Debian GNU/Linux</a> for use with bluetooth enable Palm device [Sony Clie TH55 European version]. Most of the information on this page is based on <a href="http://www-jcsu.jesus.cam.ac.uk/~ned21/tech/tungsten_linux.html">this tutorial</a>, from which I've copied some parts, updating it to fit the current situation in <a href="http://www.debian.org/releases/">Debian sid</a>.</p>
+
+<h3>Installing bluetooth on GNU/Linux</h3>
+
+<p>I assume you are using Debian GNU/Linux unstable [sid], but this will work for a lot of other distributions too. For some distro's you may have to install bluez-{pan,utils,sdp} instead of only bluez-utils.</p>
+<p>Be sure you have the latest packages list by doing a <tt>apt-get update</tt>, then install bluez-utils:</p>
+
+<pre>apt-get install bluez-utils</pre>
+
+<p>Check with hciconfig whether it works. The output will look something like this:</p>
+<pre>
+# hciconfig
+hci0:   Type: USB
+        BD Address: 00:10:DC:AF:BB:E5 ACL MTU: 192:8  SCO MTU: 64:8
+        UP RUNNING PSCAN ISCAN
+        RX bytes:778010 acl:9154 sco:0 events:5193 errors:0
+        TX bytes:182357 acl:5245 sco:0 commands:21 errors:0
+</pre>
+
+<p>This might also be a good time to set the PIN in <tt>/etc/bluetooth/pin</tt> and check that your PC can find your palm using <tt>hcitool</tt> e.g.</p>
+
+<pre>
+$ hcitool scan
+Scanning ...
+        00:07:E0:0C:A1:5A       My Palm
+</pre>
+
+<p>Next you need to start the hcid and sdpd if they are not already running. If you are using a Debian system, then the easiest way to do this (if they are not already running) is to use the scripts in <tt>/etc/init.d/</tt> although if you are not running Debian, they don't need any parameters to be passed.</p>
+
+<h3>Sharing the network connection</h3>
+
+<p>The dund daemon will listen for incoming PPP connections and hand them off to pppd. To do this, create a file <tt>/etc/ppp/peers/dun</tt> containing (and customised to your setup of course): </p>
+
+<pre>
+debug
+57600
+noipdefault
+proxyarp
+# IP address of PC : IP address to be assigned to Palm
+172.31.64.12:172.31.130.67
+# My DNS server
+ms-dns 172.31.129.1
+ktune
+noauth
+local
+nodefaultroute
+noipx</pre>
+
+<p>Now invoke dund with the options:</p>
+<pre>dund --listen --persist --msdun call dun</pre> 
+<p>On a Debian system, you can do this at startup by adding the line:</p>
+<pre>DUND_OPTIONS="--listen --persist --msdun call dun"</pre>
+<p>to <tt>/etc/default/bluez-utils</tt> [formerly <tt>/etc/default/bluez-pan</tt>]. To enable this service at boottime, switch <tt>DUND_ENABLED=0</tt> to <tt>DUND_ENABLED=1</tt> in the same file.</p>
+
+<h3>Handheld Setup</h3>
+
+<ol>
+	<li>Goto the Preferences->Bluetooth->Trusted Devices [Preferences->Communications->Bluetooth->Trusted Devices for Tungsten] screen and add the computer. My device is called galadriel(0). It should be something like your hostname.</li>
+	<li>Now goto the Connection screen [underneath "Bluetooth" on the Communications preferences panel] and add a new connection to your computer. "Connect to PC", Via "Bluetooth", "Device galadriel(0)" [or whatever you called it in the previous step].</li>
+	<li>Next goto the Network screen and add a new service. The username and password are irrelevant unless you setup your PPP connection to require authentication, but set the "Connection" to the connection you created in the previous step and check that the Details screen has Connection type set to PPP, the idle timeout is at least 3 minutes, Query DNS is ticked and IP address is automatic. "Script" should just say "End:".</li>
+	<li>OK, now you're all set. Go back to the Preferences->Network screen, select your new connection and hit "connect". If all goes to plan, you should now have a PPP link between your Palm and the computer -- if not, take a look in your /var/log directory for log files that might contain helpful info [a ppp log and/or syslog are good places to start].</li>
+
+</ol>
+
+<h2>Wireless hotsync: infrared &amp; bluetooth</h2>
+<h3>Infrared</h3>
+<p>David A. Desrosiers has written an excellent <a href="http://howto.pilot-link.org/irdasync/">HOWTO</a>.</p>
+
+<h3>Bluetooth</h3>
+
+<p>At the moment, it's not possible to do a "bluetooth sync" under Linux as pilot-link doesn't support this yet, but since it does support network syncing, once we have a working PPP connection, we can achieve the same effect. This section assumes you have a working PPP setup, as described in the previous section.</p>
+
+<h4>Handheld Setup</h4>
+<ol>
+	<li>Load the hotsync application, and goto the "Modem Sync Prefs" menu and select "Network".</li>
+	<li>On the LanSync prefs menu, choose "Local HotSync".</li>
+	<li>Now goto the "Primary PC Setup" menu and enter the details of the PC you want to HotSync with. Since theoretically the hostname and IP address contain redundent information if you have working DNS, it's not clear that both are necessary, but to save time on a DNS lookup, I entered the IP address. The Subnet Mask is optional - it defaults to 255.255.255.0.</li>
+	<li>Finally, on the main HotSync screen, select "Modem" and then choose the network connection to your PC. To perform the hotsync, setup the PC as detailed below and then tap the button in the centre of the screen.</li>
+</ol>
+
+<h4>PC Setup</h4>
+<p>This part is easy - simply tell pilot-link [or jpilot; do this in the "Serial Port" field in Preferences] to use "net:any" as the port to use to connect to the Palm. e.g. <code>pilot-xfer -p net:any -l</code>. If using <a href="http://www.jpilot.org/">jpilot</a>, don't forget to install pilot-link too:</p>
+<pre>apt-get install jpilot pilot-link</pre>
+

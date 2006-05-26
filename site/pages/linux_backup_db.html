@@ -1,0 +1,96 @@
+<div class="updatedat">last edited @ 2005-06-02 22:57:15</div>
+<h2>bash backup script for your MySQL databases</h2>
+
+<p>It's a good idea to backup your databases once in a while. As I'm lazy, I've automatized this task, and turned it in a cronjob</p>
+
+<p>NB: please adjust to your own settings [and clean up a bit] when using this script yourself! Try to understand what's been done here, as that's kinda important when you're operating on your important data ;)</p>
+
+<p>Here is my own [slightly censored] backup script. Save as backup_db or something and run as "backup_db weekly" and/or "backup_db monthly" in your crontab file [see below]</p>
+
+<pre>
+!/bin/sh
+#
+# Makes an incremental daily or weekly backup of the homedirs and of the mail dir and mysql dir
+#   or makes a complete backup of them, depending on the parameters passed to this script
+#
+# Usage:
+#   backup_db &lt;kindofbackup&gt;
+#
+#   kindofbackup: daily
+#                 weekly
+#                 monthly
+#
+# Version 0.1.01 :: 2005-03-10
+#   2005-04-10   :: Initial version, based on the backup script
+#
+# Copyleft 2005 Michiel Scholten
+#
+
+FILEPREFIX=`date +%Y%m%d_%H%M`
+# user to be used to login to your db [can be root too]:
+DBUSER="backup"
+DBPASS="password"
+
+BACKUPPARTITION="/storage/backup"
+BACKUPDIR="/storage/backup/db"
+MIRROR_1="/storage/system/backup/db"
+
+if [ "$1" = "weekly" ]
+then
+  DAYS=7
+  KINDOFBACKUP="weekly"
+elif [ "$1" = "daily" ]
+then
+  DAYS=1
+  KINDOFBACKUP="daily"
+else
+  # default behaviour is a complete backup
+  KINDOFBACKUP="monthly"
+fi
+
+# Mount the backup partition
+mount "$BACKUPPARTITION"
+
+mkdir $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX
+cd /
+
+echo "== Backup Databases = Kind: $KINDOFBACKUP ======"
+
+echo "== Database ======"
+
+for DATABASE
+  in dbname_1 dbname_2 dbname_3
+do
+  mysqldump -u$DBUSER -p$DBPASS $DATABASE > $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/$DATABASE.sql
+  bzip2 -9 $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX/$DATABASE.sql
+  echo "> [`date +%H:%M:%S`] Database $DATABASE has been backed up"
+done
+
+echo "== Mirroring backups ======"
+#mount "$MIRROR_1"
+cp -a $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX $MIRROR_1/$KINDOFBACKUP/
+echo "cp -a $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX $MIRROR_1/$KINDOFBACKUP/"
+#umount "$MIRROR_1"
+#echo "> [`date +%H:%M:%S`] Mounted mirror done"
+echo "> [`date +%H:%M:%S`] Mirror 1 done"
+#cp -a $BACKUPDIR/$KINDOFBACKUP/$FILEPREFIX $MIRROR_2/$KINDOFBACKUP/
+
+umount "$BACKUPPARTITION"
+echo "> [`date +%H:%M:%S`] Unmounted backup partition"
+
+echo "== Done ======"
+</pre>
+
+
+<p>Your crontab can look like this, if you use a backup script for homedirs etc too:</p>
+
+<pre>
+# First day of month at 3:00am == Monthly full backup of homedirs and e-mail
+00 3   1 * *  /storage/system/backup/backup monthly
+45 2   1 * *  /storage/system/backup/backup_db monthly
+#
+# Sat at 3:30am == Weekly cummulative backup of homedirs and e-mail
+30 3   * * 6  /storage/system/backup/backup weekly
+45 3   * * 6  /storage/system/backup/backup_db weekly
+</pre>
+

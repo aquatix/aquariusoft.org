@@ -1,0 +1,10 @@
+# Describes the sections on the site
+main=Home and news
+linux=All things Linux
+html=HTML projects
+palm=Palm source
+security=Security
+windows=Windows progs
+#gallery=Gallery
+#links=Links
+contact=Contact

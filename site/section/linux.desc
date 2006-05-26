@@ -1,0 +1,12 @@
+aquamorph=aquamorph livecd
+# if value is empty, it will not show up in the sub navigation
+aquamorph_news=
+aquamorph_todo=
+backup=backup script
+backup_db=backup script for DBs
+livecd_howto=livecd HOWTO
+morphest2005=Morphest 2005
+mp4plugin=mp4plugin
+firefox_openinnewtab=open url in new tab script
+xsupplicant4vu=xsupplicant for VU
+
