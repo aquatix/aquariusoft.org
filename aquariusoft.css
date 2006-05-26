@@ -1,0 +1,20 @@
+/*
+ * aquariusoft.org modifications
+ */
+
+.logo
+{
+	float: left;
+}
+
+.portalnav
+{
+	float: right;
+	text-align: right;
+}
+
+.navbar
+{
+	clear: both;
+}
+
