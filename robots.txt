@@ -1,0 +1,6 @@
+# /robots.txt file for http://aquariusoft.org/
+# mail webmaster at aquariusoft.org for constructive criticism
+
+User-agent: *
+Disallow: /r00t
+
