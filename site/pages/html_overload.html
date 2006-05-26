@@ -1,16 +1,16 @@
 <!-- created @ 2005-05-02 15:49:00 -->
-<div class="updatedat">updated @ 2006-05-01</div>
-<!--<h2>overload <acronym title="Really Simple Syndication">RSS</acronym> reader</h2>-->
+<div class="updatedat">updated @ 2006-05-26</div>
+
+<h2>The overload information manager</h2>
 
 <p><em>2006-05-01</em>: 'overload feedreader' will be rewritten into a more generic information manager, 'overload manager', which will not only serve your feeds, but also remembers your bookmarks, notes and more; all fully taggable and searchable. Also, this won't be written in PHP anymore, but instead use the fine <a href="http://www.djangoproject.com/">Django framework</a> based on <a href="http://www.python.org/">Python</a>. This enables me to focus my efforts and thoughts on the features. Don't worry for feature creap though, overload will stay a clean tool!</p>
+
+
+<h2>The current stable overload feedreader</h2>
 
 <p>I'm currently developing a webbased, Open Source [<a href="http://www.gnu.org/copyleft/gpl.html">GPL</a>'ed] news feed reader, which you can use <a href="https://overload.aquariusoft.org/">on it's own address</a>, or download and install on your own webserver, needing only <a href="http://www.php.org/">PHP</a> and a <a href="http://www.mysql.com/">MySQL</a> database.</p>
 
 <p>overload is based on <a href="http://magpierss.sourceforge.net/">the magpierss parser</a> [currently version 0.71.1 with some small patches] and is written in pure <a href="http://www.php.org/">PHP</a> using only the magpierss parser and a <a href="http://www.mysql.com/">MySQL</a> database.</p>
-
-<!--
-<p>Relatively stable snapshots will be used to power <a href="/overload/">the reader on this server</a> [log in for a demonstration with the user/password combo demo/demo] and the source will become available when it's usable for third parties, but expect a tarball soon.</p>
--->
 
 <p>Currently, the version online is the "development" version. You may experience some minor breakage now and then, but nothing serious as it's intended to be used. If larger changes are made, an other address will be used to ensure the usability of the reader.</p>
 
@@ -19,45 +19,40 @@
 
 <h2>Download</h2>
 
-<p class="download"><a href="files/html/overload/20060122_snapshot.tar.bz2">@@@icon=archive@@@ Snapshot 2006-01-22</a> [including <acronym title="eXtensible User-interface Language">XUL</acronym> version and lots of improvements]</p>
-<p class="download"><a href="files/html/overload/20050613_snapshot.tar.bz2">@@@icon=archive@@@ Snapshot 2005-06-13 [version 0.0.24]</a> [including <acronym title="eXtensible User-interface Language">XUL</acronym> version and experimental inter-item-relations functionality -- <a href="http://aquariusoft.org/~mbscholt/index.php?rantid=287">See also this posting</a></p>
-
-<p><em>NB</em>: a new version will be online before 2006-01-31, which will feature quite a lot of enhancements, like support for enclosures, improved management of your collection of feeds and more.</p>
+<p class="download"><a href="files/html/overload/20060526_snapshot.tar.bz2">@@@icon=archive@@@ Snapshot 2006-05-26</a> [latest PHP version, including <acronym title="eXtensible User-interface Language">XUL</acronym> version, enclosure support and lots of improvements]</p>
 
 
 <h2>Roadmap</h2>
 
-<p><em>UPDATE</em>: this roadmap [written early 2005] is outdated. A new one will be online soon.</p>
-
-<p>Version 0.1 [due June 2005] -- publicly usable version with basic but powerful featureset</p>
+<p>Version 0.1 [due July 2006] -- publicly usable version with basic but powerful featureset</p>
 
 <ul>
 	<li>underlying engine</li>
 	<li>subscribing as new user</li>
 	<li>add feeds</li>
 
-	<li>manage [modify, delete] feeds</li>
-	<li>manage [modify, delete] groups</li>
-	<li>flag interesting postings [so you can find them easily later on]</li>
-	<li>pda access through usercode</li>
-	<li><acronym title="eXtensible User-interface Language">XUL</acronym> rich client</li>
+	<li>exporting OPML files</li>
+	<li>importing OPML files</li>
 
-	<li>related items [look for related postings based on shared links]</li>
+	<li>manage [modify, delete] feeds</li>
+	<li>manage [add, modify, delete] tags</li>
+	<li>flag interesting postings [so you can find them easily later on]</li>
+	<li>tag postings, feeds, bookmarks, notes</li>
 </ul>
 
 
-<p>Version 0.2 [July, August?] -- extended features and user interface</p>
+<p>Version 0.2 [August, September 2006] -- extended features and user interface</p>
 
 <ul>
-	<li>foldable groups</li>
-	<li>count of unread items per group [maybe for folded groups only]</li>
+<!--	<li>pda access through usercode</li>-->
+
+<!--	<li>related items [look for related postings based on shared links]</li>-->
+	<li>count of unread items per tag</li>
+	<li>user defined filters [based on keywords, date etc. Please contact me for more ideas!]</li>
 	<li>spreaded downloading of feeds, not all in one large sequence once an hour</li>
 
-	<li>exporting OPML files</li>
-	<li>importing OPML files</li>
-	<li>user defined filters [based on keywords, date etc. Please contact me for more ideas!]</li>
-	<li>tagging support for postings</li>
-	<li>tagging support for feeds [replacing groups?]</li>
+	<li><acronym title="eXtensible User-interface Language">XUL</acronym> rich client</li>
+
 	<li>user choosable stylesheets</li>
 
 </ul>

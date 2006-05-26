@@ -3,17 +3,11 @@ body
 	font-family: verdana, tahoma, helvetica, sans;
 	font-size: .8em;
 	margin: 0;
-/*	background: white url("background.png") no-repeat top right;*/
-/*	background: white url("lines_repeating.png");*/
 	background: #d9dde3;
 	background: #7f97b2;
-	background: #7f97b2 url("lines_repeating.png");
+/*	background: #7f97b2 url("lines_repeating.png");*/
+	background-color: #EEE;
 	color: #333333;
-	/*
-	background-image: url("background.png");
-	background-position: top right;
-	background-repeat: no-repeat;
-	*/
 }
 
 h1
@@ -81,10 +75,13 @@ p
 .page
 {
 /*	background: white url("lines_repeating.png");*/
-	background: transparent url("alpha.png");
+/*	background: transparent url("alpha.png");*/
+	background-color: #FEFEFE;
+	border: 1px solid #DDD;
 	width: 80%;
 	padding: .5em;
-	margin: 0 auto 0 auto;
+	/*margin: 0 auto 0 auto;*/
+	margin: 1em auto 1em auto;
 	text-align: left;
 }
 

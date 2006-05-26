@@ -1,7 +1,6 @@
 <!-- created @ 2005-05-02 15:32:00 -->
-<!--<div class="updatedat">last edited @ 2006-01-10 23:37:30</div>-->
 
-<div class="updatedat">updated @ 2006-01-22</div>
+<div class="updatedat">updated @ 2006-05-26</div>
 
 <p>As I study <a href="http://www.cs.vu.nl/">Computer Science on the Vrije Universiteit</a> in Amsterdam, I wanted to use my <a href="http://www.debian.org/">GNU/Linux</a> laptop with their wireless network. As they are using some neat encryption schemes, involving rotating wep keys, eap-ttls, pap and such, for which you need the Aegis client on windows [or the Intel Pro/wireless program as I use with my <a href="http://ipw2200.sourceforge.net/">ipw2200 chip</a> on my Centrino based laptop]. I had to configure <a href="http://www.open1x.org/">xsupplicant</a> accordingly. You can find my configuration for <a href="http://www.open1x.org/">xsupplicant</a> 1.x on this page.</p>
 
@@ -71,6 +70,8 @@ VU-Campusnet
         }
 }
 </pre>
+
+<p><em>NB:</em> in even newer versions, you have to double-quote your password to get this to work.</p>
 
 <p>My wifi_vu enable script [save as executable script and execute when you want to use the network]:</p>
 
