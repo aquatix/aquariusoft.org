@@ -3,6 +3,12 @@ body
 	font-family: verdana, tahoma, helvetica, sans;
 	font-size: .8em;
 	margin: 0;
+	background: white url("background.png") no-repeat top right;
+	/*
+	background-image: url("background.png");
+	background-position: top right;
+	background-repeat: no-repeat;
+	*/
 }
 
 h1
@@ -161,13 +167,15 @@ th
 .pagebody
 {
 	color: #000;
-	background-color: #FFF;
+/*	background-color: #FFF;*/
+	background: transparent;
 /*	border-top: 1px solid #000;*/
 /*	border-bottom: 1px solid #1C45A3;*/
 }
 
 .content
 {
+	background: transparent;
 }
 
 .updatedat
@@ -240,6 +248,9 @@ th
 	float: right;
 	text-align: right;
 	padding-right: .5em;
+
+	background: white;
+	padding-bottom: .2em;
 }
 
 pre, tt
