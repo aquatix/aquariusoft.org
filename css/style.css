@@ -1,0 +1,222 @@
+body
+{
+	font-family: verdana, tahoma, helvetica, sans;
+	font-size: .8em;
+}
+
+h1
+{
+	font-size: 1.9em;
+}
+
+h2
+{
+	font-size: 1.3em;
+}
+
+h3
+{
+	font-size: 1em;
+	font-weight: bold;
+}
+
+ul li
+{
+	list-style-type: square;
+}
+
+a
+{
+	text-decoration: none;
+	color: #1C45A3;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	color: #1C45A3;
+}
+
+th
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+
+#banner
+{
+/*
+	background-color: #E7F1FB;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+*/
+}
+
+.navbar
+{
+	margin-top: .5em;
+	border-top: 1px solid #1C45A3;
+	border-bottom: 1px solid #1C45A3;
+	background-color: #c6d0e8;
+	padding: .5em;
+	padding-left: 0.2em;
+}
+
+	.navbar a
+	{
+		padding-top: .2em;
+		padding-bottom: .2em;
+		padding-left: .5em;
+		padding-right: .5em;
+		color: #FFF;
+		text-decoration: none;
+		background-color: #1C45A3;
+		border: 1px solid #1C45A3;
+		/*
+		background-color: transparent;
+		background-color: #1C45A3;
+		border-top: 1px solid #5384f6;
+		border-left: 1px solid #5384f6;
+		border-bottom: 1px solid #002373;
+		border-right: 1px solid #002373;
+		*/
+	}
+
+	.navbar a:hover
+	{
+		padding-top: .2em;
+		padding-bottom: .2em;
+		padding-left: .5em;
+		padding-right: .5em;
+		color: #1C45A3;
+		text-decoration: none;
+		background-color: #c6d0e8;
+		border: 1px solid #1C45A3;
+		/*
+		background-color: #6984ff;
+		border-bottom: 1px solid #5384f6;
+		border-right: 1px solid #5384f6;
+		border-top: 1px solid #002373;
+		border-left: 1px solid #002373;
+		*/
+	}
+
+.subnavbar
+{
+	border-top: 1px solid #1C45A3;
+	border-right: 1px solid #1C45A3;
+	background-color: #c6d0e8;
+	padding: .3em;
+}
+
+	.subnavbar ul
+	{
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 1em;
+		padding-left: 0;
+	}
+
+	.subnavbar li
+	{
+		padding-left: 0;
+		margin-left: 0;
+		/*list-style-image: url("bullet.gif");*/
+		list-style-image: url("bullet.png");
+	}
+
+	.subnavbar ul.info
+	{
+		margin-top: .5em;
+		padding-top: .5em;
+		border-top: 1px dotted #1C45A3;
+	}
+
+	.subnavbar ul.info li
+	{
+		list-style: none;
+		font-size: .7em;
+	}
+
+.pagebody
+{
+	color: #000;
+	background-color: #FFF;
+/*	border-top: 1px solid #000;*/
+/*	border-bottom: 1px solid #1C45A3;*/
+}
+
+.content
+{
+}
+
+.content img
+{
+	border: 1px solid #1C45A3;
+	padding: 3px;
+}
+
+.news
+{
+	margin-top: .5em;
+/*	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;*/
+/*	background-color: #DDEEFF;*/
+	padding: .3em;
+}
+
+	.news .date
+	{
+		/*border-top: 1px dotted #1C45A3;*/
+		font-weight: bold;
+	}
+
+	.news p
+	{
+		margin-top: 0;
+		padding-top: .2em;
+		padding-left: .2em;
+		padding-bottom: .3em;
+		margin-bottom: 0;
+		margin-left: .8em;
+		border-top: 1px solid #1C45A3;
+		border-bottom: 1px solid #1C45A3;
+		background-color: #c6d0e8;
+	}
+
+.formfields p
+{
+	margin-top: 0;
+	margin-bottom: .2em;
+}
+
+.footer
+{
+	margin-top: .5em;
+	padding: .2em;
+	border-top: 1px solid #CCC;
+	font-size: .8em;
+	font-style: italic;
+}
+
+/*
+ * aquariusoft.org modifications
+ */
+
+.logo
+{
+	float: left;
+}
+
+.portalnav
+{
+	float: right;
+	text-align: right;
+}
+
+.navbar
+{
+	clear: both;
+}
+

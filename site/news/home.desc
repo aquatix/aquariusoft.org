@@ -1,1 +1,18 @@
-08-11-2005=<p>Hoi, dit is een uitprobeersel</p>
+2005-12-05=<p>As I'm currently developing a new version of <a href="page/linux/aquamorph/">aquamorph</a>, I updated the projects' pages. Stay tuned for the long awaited release of version 0.3 of aquariusoft's Linux livecd</p>
+2005-10-05=<p>The <a href="http://www.morphix.org/">Morphix</a> crew has a gathering from the 26th of November till the 29th. More info at <a href="page/linux/morphest2005/">the Morphest 2005 page</a>.</p>
+2005-08-22=<p>Updated the <a href="/bugs/">bug tracker</a> and the <a href="/forum/">forum</a> to the latest versions of the software. Both now feature RSS feeds so now you can stay informed of anything new.</p>
+2005-05-04=<p>Updated the <a href="page/html/overload/">overload project page</a> and added a <a href="page/html/htmlmodules/">project page for the HTML modules page</a></p>
+2005-05-02=<p>Added a <a href="page/linux/xsupplicant4vu/">configuration for xsupplicant</a> to use with the wireless network on the Vrije Universiteit and the <a href="page/html/overload/">project page</a> for the <a href="/overload/">overload feedreader</a>. Cleaned up the frontpage a bit and finally redid the <a href="page/windows/">windows programs page</a>. Updated the <a href="page/html/">HTML projects page</a> when I was at it too.</p>
+2004-12-02=<p>Implemented a nice url rewrite scheme, so the url's used on this site are a lot cleaner. No longer those [<acronym title="In My Humble Opinion">IMHO</acronym> ugly] parameter style urls. Please update your bookmarks accordingly. Tweaked the <acronym title="Cascading Style Sheets">CSS</acronym> a bit. Updated quite some content [update links, add <a href="page/main/featured/">featured items</a> and more].</p>
+2004-08-22=<p>Reorganized and cleaned up a lot of code of this site to make it more generic and christened the <acronym title="Content Management System">CMS</acronym> <a href="page/html/aqute/">aqute</a>, which will be available for download when it's actually useful for third parties. Cleaned up the styling of the top navigation to let it blend in better with the rest of the site. And last but not least: wrote a parser for special NEWS tags so dynamic news sections are possible. <acronym title="RDF Site Summary">RSS</acronym> feeds will follow.</p>
+2004-05-06=<p>Finished the new <acronym title="Cascading Style Sheets">CSS</acronym> design, updated some pages and finally putted the new website online. It still needs some tweaking, but it's finally almost done now.</p>
+2004-05-05=<p>Began designing a new <acronym title="Cascading Style Sheets">CSS</acronym>. It's going to be a very clean one.</p>
+2004-04-02=<p>Tried to fix the <acronym title="Cascading Style Sheets">CSS</acronym> for <acronym title="Internet Explorer">IE</acronym>. Validated some pages, updated the frontpage. Renamed "Main section" to "Home".</p>
+2004-04-01=<p>Redesigned general navigation layout, with new color scheme.</p>
+2004-03-25=<p>Designed a menu layout.</p>
+2004-03-22=<p>Restyled the news item layout.</p>
+2004-03-16=<p>Restyled the page layout. Made it xhtml 1.1, finally stopped using tables as positioning tools [yuck] and made a new stylesheet from scratch.</p>
+2004-01-08=<p>Added the <a href="page/palm/">Palm source</a> and the <a href="page/security/">Security</a> sections. Updated the <a href="page/linux/aquamorph/">aquamorph</a> page.</p>
+2003-12-17=<p>A major code overhaul in the logic behind this site. And a new logo :) See it at bottom of this or every other page.</p>
+2003-12-15=<p>Updates to the <a href="page/linux/aquamorph/">aquamorph</a> page, the Credits page and this Homepage.</p>
+2003-10-09=<p>Put the files of the <a href="page/windows/">Windows programs</a> on this server, so they could be downloaded from here. Still have to make new pages for each program though.</p>
