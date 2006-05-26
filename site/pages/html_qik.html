@@ -2,15 +2,66 @@
 
 <div class="updatedat">updated @ 2006-01-22</div>
 
+<div class="mininav"><a href="#download">Download</a> | <a href="#installing">Installing</a> | <a href="#customizing">Costumizing</a> | <a href="#showcase">Showcase</a> | <a href="#hacks">Hacks</a></div>
+
 <p>Framework to quickly set up a website from scratch. Use flat files or a database, your choice.</p>
 
-<p>The current version -- which will be available online in a few days -- uses flat files to quickly build a full-fletched website, like the <a href="/">aquariusoft.org</a> website you're currently visiting, of the <a href="http://www.mapleleaves.nl/">website of the Dutch basketball club Mapleleaves</a>.</p>
+<p>The current version -- which is now available online -- uses flat files to quickly build a full-fletched website, like the <a href="/">aquariusoft.org</a> website you're currently visiting, of the <a href="http://www.mapleleaves.nl/">website of the Dutch basketball club Mapleleaves</a>. It enables you to build a site from scratch in literally minutes, safe from altering the design. Future releases will feature a search function, RSS feeds for news, a database backend [MySQL] with management module [<acronym title="Content Management System">CMS</acronym>] and more.</p>
 
 <p>For up-to-date information, check the <a href="files/qik_changelog.txt">CHANGELOG</a> and the <a href="files/qik_todo.txt">TODO</a></p>
 
-<p>More to come</p>
+<h2 id="download">Download</h2>
 
-<h2>Download</h2>
+<p class="download"><a href="files/html/qik/20060201_release.tar.bz2">@@@icon=archive@@@ Snapshot 2006-02-01</a> [support for flat files only]</p>
 
-<p>Will be available at the end of January</p>
+<p>Qik is released under the <a href="http://www.gnu.org/copyleft/gpl.html">GPL</a> version 2, which means it's Free and you may use it as you want, and alter it, as long as you make the source publicly available again.</p>
+
+<h2 id="installing">Installing</h2>
+
+<p>Just copy the contents of the tarball to the place you want them to have. This doesn't have to be the root of your web server. For example:</p>
+<pre>
+tar xjf qik_release.tar.bz2
+mv qik_root/* /var/www/
+</pre>
+
+<h2 id="customizing">Customizing</h2>
+
+<p>Pages, sections, news and tiles are located in the /site subdirectory. If you
+add a page to the /site/pages directory, give it a name in the form of
+&lt;sectionname&gt;_&lt;pagename&gt;.html , for example home_welcome.html . Add it to the
+section file /site/sections/home.desc as "welcome=Welcome at my site" for
+example.</p>
+
+<p>There are two CSS [Cascading Style Sheets] files located in the /css directory.
+You can modify style.css to your likings. struct.css is for setting up the
+general structure of the pages, and can of course be edited too, but that
+shouldn't be necessairy.</p>
+
+<p>For this purpose you can also modify /site/pagetemplate.php which contains the
+general html frame of the pages, and the code of the navigation and sub
+navigation.</p>
+
+<p>You can also create news files in the /site/news directory. For example,
+/site/news/home.desc will be used when you put the tag &#064;@@news=home:2:5&#064;@@ in
+your page. The 2 and 5 stand for the item it will start and end. You can also
+ignore the second number, than it will start at 2 and output all items. If you
+only do a &#064;@@news=home&#064;@@ all items will be shown.</p>
+
+<p>Pages can include snippets too. These are called tiles and can be included by
+putting a tag of the form &#064;@@tile=todo&#064;@@ in a page. This will include the
+contents of /site/tiles/todo.html into your current page. Useful for reusing
+certain pieces, for example.</p>
+
+<p>Qik includes icons in the directory /images/icons/, which can be used with the tag &#064;@@icon=name&#064;@@ , where
+"name" is the part of the filename without ".png".</p>
+
+<h2 id="showcase">Showcase</h2>
+
+<p>This very site is designed with Qik. To get an idea in how you can make differently looking sites, take a look at the <a href="http://www.mapleleaves.nl/">dutch Mapleleaves basketball club website</a> too.</p>
+
+<h2 id="hacks">Hacks</h2>
+
+<p>Interesting things to do with Qik. For example a small script to parse <a href="">irssi</a> IRC chatlogs and generate a Qik website out of it, so you can easily navigate your logs, and in the future easily query them with the Search function.</p>
+
+<p class="download"><a href="files/html/qik/20060201_qik_irc_hack.tar.bz2">@@@icon=archive@@@ Qik irc hack 2006-02-01</a> [support for flat files only]</p>
 

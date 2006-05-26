@@ -62,6 +62,12 @@ th
 	font-weight: bold;
 }
 
+p
+{
+	padding-left: 1em;
+	padding-right: .5em;
+}
+
 .wrapperbox
 {
 	text-align: center;
@@ -336,6 +342,8 @@ th
 	{
 /*		margin: 0;*/
 		margin-top: .2em;
+		padding-left: 0;
+		padding-right: 0;
 	}
 /*
 	.news a, .news a:hover
@@ -360,6 +368,7 @@ th
 	margin-top: .5em;
 	padding: .2em;
 	border-top: 1px solid #CCC;
+	border-top: 1px solid #65788d;
 	font-size: .8em;
 	font-style: italic;
 }
