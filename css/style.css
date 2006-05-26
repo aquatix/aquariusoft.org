@@ -46,15 +46,14 @@ a
 {
 	text-decoration: none;
 	color: #3f5671;
-	color: #7f97b2;
+	color: #3f5671;
 }
 
 a:hover
 {
 	text-decoration: underline;
 	color: #3f5671;
-	color: #9dbadb;
-	color: #7f97b2;
+	color: #3f5671;
 }
 
 th
@@ -66,9 +65,7 @@ th
 p
 {
 	padding-left: 1em;
-	padding-left: .5em;
 	padding-right: .5em;
-	text-align: justify;
 }
 
 .wrapperbox
@@ -109,8 +106,7 @@ p
 	background-color: #1288d0;
 	background-color: #65788d;
 	padding: .3em;
-	padding-left: .2em;
-	padding-left: .4em;
+	padding-left: 0.2em;
 	color: #FFF;
 	font-weight: bold;
 	font-size: .9em;
@@ -184,7 +180,6 @@ p
 	/*background-color: #3f5671;*/
 	background-color: #FFF;
 	margin: 0;
-	margin-bottom: 1em;
 /*	padding: .3em;
 	color: #FFF;*/
 	border: 1px solid #3f5671;
@@ -329,7 +324,6 @@ p
 */
 		padding: .3em;
 		padding-left: .5em;
-		padding-right: .5em;
 		margin-bottom: 0;
 /*		margin-left: .8em;*/
 /*
