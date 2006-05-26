@@ -1,3 +1,5 @@
+2006-01-21=<p>Updated some pages and did some tweaks to the layout. Added support for images in the navigation.</p>
+2006-01-19=<p>Updated <a href="page/html/qik/">Qik</a> so it supports multiple languages, news items and more. Extensive rewrite to make it a lot more versatile and even easier to set up.</p>\n<p>Copied the pages from the database to flat files to use with Qik, developed a new look for aquariusoft.org and put the first version of it online at the new server. Also added a <a href="page/nl/home/">Dutch page</a>.</p>
 2005-12-05=<p>As I'm currently developing a new version of <a href="page/linux/aquamorph/">aquamorph</a>, I updated the projects' pages. Stay tuned for the long awaited release of version 0.3 of aquariusoft's Linux livecd</p>
 2005-10-05=<p>The <a href="http://www.morphix.org/">Morphix</a> crew has a gathering from the 26th of November till the 29th. More info at <a href="page/linux/morphest2005/">the Morphest 2005 page</a>.</p>
 2005-08-22=<p>Updated the <a href="/bugs/">bug tracker</a> and the <a href="/forum/">forum</a> to the latest versions of the software. Both now feature RSS feeds so now you can stay informed of anything new.</p>

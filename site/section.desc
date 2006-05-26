@@ -1,5 +1,6 @@
 # Describes the sections on the site
 main=Home and news
+nl=<img src="images/nl.gif" alt="Nederlands" /> Nederlands
 linux=All things Linux
 html=HTML projects
 palm=Palm source
@@ -7,4 +8,4 @@ security=Security
 windows=Windows progs
 #gallery=Gallery
 #links=Links
-contact=Contact
+#contact=Contact
