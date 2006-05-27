@@ -457,3 +457,27 @@ table td
 	color: #FFF;
 }
 
+.showcase
+{
+	padding: .2em;
+	margin-bottom: 1em;
+}
+
+	.thumbnail
+	{
+		float: left;
+	}
+
+	.description
+	{
+		float: left;
+		width: 60%;
+	}
+
+hr
+{
+	clear: both;
+	border: 0;
+/*	border-top: 1px dotted #3f5671;*/
+}
+
