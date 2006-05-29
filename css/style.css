@@ -78,7 +78,7 @@ p
 /*	background: transparent url("alpha.png");*/
 	background-color: #FEFEFE;
 	border: 1px solid #DDD;
-	width: 80%;
+	width: 90%;
 	padding: .5em;
 	/*margin: 0 auto 0 auto;*/
 	margin: 1em auto 1em auto;
@@ -471,7 +471,7 @@ table td
 	.description
 	{
 		float: left;
-		width: 60%;
+		width: 55%;
 	}
 
 hr
