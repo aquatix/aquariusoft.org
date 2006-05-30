@@ -1,11 +1,13 @@
+/*
+ * aquariusoft.org stylesheet
+ * v2006-05-29
+ */
+
 body
 {
 	font-family: verdana, tahoma, helvetica, sans;
 	font-size: .8em;
 	margin: 0;
-	background: #d9dde3;
-	background: #7f97b2;
-/*	background: #7f97b2 url("lines_repeating.png");*/
 	background-color: #EEE;
 	color: #333333;
 }
@@ -21,7 +23,6 @@ h1
 h2
 {
 	font-size: 1.3em;
-	border-bottom: 1px solid #3f5671;
 	color: #65788d;
 	border-bottom: 1px solid #65788d;
 }
@@ -41,15 +42,12 @@ ul li
 a
 {
 	text-decoration: none;
-	color: #3f5671;
 	color: #7f97b2;
 }
 
-a:hover
+a:hover, .subnavbar a.highlight
 {
 	text-decoration: underline;
-	color: #3f5671;
-	color: #9dbadb;
 	color: #7f97b2;
 }
 
@@ -61,7 +59,6 @@ th
 
 p
 {
-	padding-left: 1em;
 	padding-left: .5em;
 	padding-right: .5em;
 	text-align: justify;
@@ -74,37 +71,20 @@ p
 
 .page
 {
-/*	background: white url("lines_repeating.png");*/
-/*	background: transparent url("alpha.png");*/
 	background-color: #FEFEFE;
 	border: 1px solid #DDD;
 	width: 90%;
 	padding: .5em;
-	/*margin: 0 auto 0 auto;*/
 	margin: 1em auto 1em auto;
 	text-align: left;
 }
 
 #banner
 {
-/*
-	background-color: #E7F1FB;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
-*/
 }
 
 .navbar
 {
-/*	clear: both;*/
-/*
-	margin-top: .5em;
-	border-top: 1px solid #3f5671;
-	border-bottom: 1px solid #3f5671;
-	background-color: #c6d0e8;
-	padding: .5em;
-	padding-left: 0.2em;
-*/
 	margin-top: .5em;
 	background-color: #1288d0;
 	background-color: #65788d;
@@ -123,38 +103,15 @@ p
 		color: #FFF;
 		text-decoration: none;
 		font-weight: normal;
-		/*background-color: #3f5671;
-		border: 1px solid #3f5671;*/
-		/*
-		background-color: transparent;
-		background-color: #3f5671;
-		border-top: 1px solid #5384f6;
-		border-left: 1px solid #5384f6;
-		border-bottom: 1px solid #002373;
-		border-right: 1px solid #002373;
-		*/
 	}
 
-	.navbar a:hover
+	.navbar a:hover, .navbar a.highlight
 	{
 		padding-left: .2em;
 		padding-right: .2em;
 		color: #FFF;
 		text-decoration: underline;
 		font-weight: normal;
-		/*background-color: #c6d0e8;
-		border: 1px solid #3f5671;*/
-		/*
-		background-color: #6984ff;
-		border-bottom: 1px solid #5384f6;
-		border-right: 1px solid #5384f6;
-		border-top: 1px solid #002373;
-		border-left: 1px solid #002373;
-		*/
-	}
-
-	.navbar a.highlight
-	{
 	}
 
 	.navbar img
@@ -165,39 +122,18 @@ p
 
 .pagebody
 {
-/*	color: #000;*/
-/*	background-color: #FFF;*/
 	background: transparent;
-/*	border-top: 1px solid #000;*/
-/*	border-bottom: 1px solid #3f5671;*/
 	padding: 0;
 }
 
 .subnavbar
 {
-/*
-	border-top: 1px solid #3f5671;
-	border-right: 1px solid #3f5671;
-	background-color: #c6d0e8;
-	padding: .3em;
-*/
-	/*background-color: #3f5671;*/
 	background-color: #FFF;
 	margin: 0;
 	margin-bottom: 1em;
-/*	padding: .3em;
-	color: #FFF;*/
 	border: 1px solid #3f5671;
 	border: 1px solid #65788d;
 	padding-bottom: .3em;
-/*	font-weight: bold;*/
-/*
-	border-top: 2px solid #72141a;
-	border-right: 2px solid #72141a;
-	background-color: #3f5671;
-	padding: .3em;
-	color: #fff;
-*/
 }
 
 	.subnavbar h2
@@ -215,7 +151,6 @@ p
 		padding-top: .2em;
 		padding-bottom: .2em;
 		text-align: center;
-/*		border-bottom: 1px dotted #3f5671;*/
 	}
 
 	.subnavbar ul
@@ -249,12 +184,6 @@ p
 		list-style: none;
 		font-size: .7em;
 	}
-/*
-	.subnavbar a
-	{
-		color: #FFF;
-	}
-*/
 
 	.subnavbar input
 	{
@@ -283,17 +212,8 @@ p
 
 .news
 {
-/*	clear: both*/
-/*	margin-top: .5em;*/
-/*	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;*/
-/*	background-color: #DDEEFF;*/
-
-
 	background-color: #3f5671;
 	background-color: #FFF;
-	/*padding: .3em;*/
-	/*color: #FFF;*/
 	border: 1px solid #3f5671;
 	border: 1px solid #65788d;
 	padding: 0;
@@ -301,26 +221,7 @@ p
 
 	.news .date
 	{
-		/*border-top: 1px dotted #3f5671;*/
-/*		font-weight: bold;*/
-/*
-		font-size: .8em;
-
-		background: #FAF4C8;
-		border-right: 1px solid #E3DE9F;
-		border-bottom: 1px solid #E3DE9F;
-		float: left;
-		text-align: center;
-		line-height: 1.1em;
-		padding: 2px 1px 5px 1px;
-		width: 2.2em;
-		width: 3.5em;
-		color: #A19D68;
-		margin: 0 0.5em 1em 0;
-*/
 		font-weight: bold;
-/*		border-bottom: 1px dotted #FFF;*/
-		background-color: #3f5671;
 		background-color: #65788d;
 		padding: .2em;
 		padding-left: .5em;
@@ -330,46 +231,19 @@ p
 	.news .newscontent
 	{
 		margin-top: 0;
-/*
-		padding-top: .2em;
-		padding-bottom: .3em;
-*/
 		padding: .3em;
 		padding-left: .5em;
 		padding-right: .5em;
 		margin-bottom: 0;
-/*		margin-left: .8em;*/
-/*
-		border-top: 1px solid #3f5671;
-		border-bottom: 1px solid #3f5671;
-		background-color: #c6d0e8;
-*/
-/*
-		background-color: #3f5671;
-		padding: .3em;
-		color: #FFF;
-*/
 	}
 
 	.news p
 	{
-/*		margin: 0;*/
 		margin-top: .2em;
 		padding-left: 0;
 		padding-right: 0;
 	}
-/*
-	.news a, .news a:hover
-	{
-		color: #FFF;
-		text-decoration: underline;
-	}
 
-	.news a:hover
-	{
-		color: #d9dde3;
-	}
-*/
 .formfields p
 {
 	margin-top: 0;
@@ -400,21 +274,17 @@ p
 	float: right;
 	text-align: right;
 	padding-right: .5em;
-
-/*	background: white;*/
 	padding-top: .1em;
 	padding-bottom: .1em;
 }
 
 pre, tt
 {
-        /*font-size: 110%;*/
         font-size: 1.2em;
 }
 
 pre
 {
-/*        border: 1px solid #C0C0C0;*/
         border: 1px solid #3f5671;
         padding: .5em;
 	background-color: #FFF;
@@ -478,6 +348,5 @@ hr
 {
 	clear: both;
 	border: 0;
-/*	border-top: 1px dotted #3f5671;*/
 }
 
