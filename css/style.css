@@ -338,10 +338,16 @@ table td
 		float: left;
 	}
 
+	.thumbnail img
+	{
+		border: 1px solid #65788d;
+/*		padding: 1px;*/
+	}
+
 	.description
 	{
 		float: left;
-		width: 55%;
+		width: 54%;
 	}
 
 hr

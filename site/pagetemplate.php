@@ -1,6 +1,6 @@
 <?php
 /*
- * v0.1.03 2006-04-01
+ * v0.1.05 2006-06-01
  */
 
 /*
@@ -13,7 +13,6 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	$template .= "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
 	//$template .= "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n";
 	$template .= "<head>\n";
-	//$template .= "<title>aquariusoft.org | " . $page_title . "</title>\n";
 	$template .= "<title>" . $page_title . " | aquariusoft.org</title>\n";
 	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/struct.css\"/>\n";
 	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
@@ -56,19 +55,17 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 function buildNav($skel, $sections)
 {
 	$result = '';
+	/* If you want a delimiter between the links, add it to $divider */
 	$divider = ' | ';
 	for ($i = 0; $i < count($sections); $i++)
 	{
 		if ('' != trim($sections[$i]))
 		{
-			//$parts = explode("=", $sections[$i]);
 			$sectionkey = getKey($sections[$i]);
 			$section = getValue($sections[$i]);
-			//if ($parts[0][0] != "#")	// '#' denotes a comment in the description file
 			if ('#' != $sectionkey[0])	// '#' denotes a comment in the description file
 			{
 				/* If you want a delimiter between the links, add it here */
-				//$result .= " <a href=\"" . $skel["base_uri"] . "page/" . $parts[0] . "/\">" . trim($parts[1]) . "</a>";
 				if (isset($skel['section']) && $sectionkey == $skel['section'])
 				{
 					$active = ' class="highlight"';
@@ -84,8 +81,6 @@ function buildNav($skel, $sections)
 			}
 		}
 	}
-	/* If you want a delimiter between the links, add it here */
-	//$result .= ' <a href="' . $skel['base_uri'] . 'page/sitemap/">Sitemap</a>';
 	return $result;
 }
 
@@ -118,8 +113,6 @@ function buildSubnav($skel, $section, $subsections)
 		}
 	}
 	$result .= "\t\t</ul>\n";
-	//$result .= "\t</div>\n";
-	//$result .= "\t<div class=\"subnavbar\">\n";
 	$result .= "\t\t<ul class=\"info\">\n";
 	$result .= "\t\t\t<li><form action=\"http://www.google.com/search\" method=\"get\"><input type=\"hidden\" name=\"q\" value=\"site:aquariusoft.org\" /><input type=\"text\" class=\"searchfield\" name=\"q\" size=\"20\" /><input type=\"submit\" value=\"find\" /></form></li>\n";
 	$result .= "\t\t</ul>\n"; 
@@ -127,8 +120,6 @@ function buildSubnav($skel, $section, $subsections)
 	$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/firefox/\" title=\"Get Firefox - Web Browsing Redefined [and take back the web]\"><img src=\"images/firefox_pixel.png\" alt=\"Get Firefox\"/></a></li>\n";
 	$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/thunderbird/\" title=\"Get Thunderbird and reclaim your inbox!\"><img src=\"images/thunderbird_pixel.png\" alt=\"Get Thunderbird\"/></a></li>\n";
 	$result .= "\t\t</ul>\n";
-	//$result .= "\t</div>\n";
-	//$result .= "\t<div class=\"subnavbar\">\n";
 	$result .= "\t\t<ul class=\"info\">\n";
 	$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
 	$result .= "\t\t</ul>\n";
