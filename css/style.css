@@ -348,6 +348,8 @@ table td
 	{
 		float: left;
 		width: 54%;
+		padding: 0;
+		margin: 0;
 	}
 
 hr

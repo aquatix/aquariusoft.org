@@ -1,0 +1,30 @@
+<!-- created @ 2006-06-09 -->
+<div class="updatedat">updated @ 2006-06-09</div>
+
+<p>This is a small howto to get the ATI fglrx driver working on your Debian (sid) installation.</p>
+
+<h2>The steps</h2>
+
+<h3>Foreplay</h3>
+<ul>
+	<li>Go to <a href="http://support.ati.com/">ATI's support page and download the latest driver for you platform</a> [mind whether you are on 32bits or 64bits]</li>
+	<li>The filename will be something like: ati-driver-installer-8.25.18-x86.run , where 8.25.18 is the driver version and x86 your platform</li>
+	<li>Copy this file to a dir like /usr/src</li>
+	<li>Run it: sh ati-driver-installer-8.25.18-x86.run</li>
+	<li>It'll ask you about what you want it to do; choose "create packages for my platform" and choose the Debian flavour your on</li>
+	<li>When it's finished, it'll have generated various .deb's</li>
+	<li>If you haven't got module-assistant installed, do that now: apt-get install module-assistant</li>
+</ul>
+
+<h3>Installing</h3>
+<ul>
+	<li>Install fglrx-driver_xxx.deb and fglrx-kernel-src_xxx.deb</li>
+	<li>m-a update</li>
+	<li>m-a prepare</li>
+	<li>m-a</li>
+	<li>SELECT and check fglrx-kernel</li>
+	<li>Follow the steps in the screen</li>
+	<li>Be sure to install the driver when asked</li>
+	<li>Done!</li>
+</ul>
+
