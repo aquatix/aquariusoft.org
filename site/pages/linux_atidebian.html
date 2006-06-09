@@ -1,7 +1,7 @@
 <!-- created @ 2006-06-09 -->
 <div class="updatedat">updated @ 2006-06-09</div>
 
-<p>This is a small howto to get the ATI fglrx driver working on your Debian (sid) installation.</p>
+<p>This is a small howto to get the <a href="http://ati.com/">ATI</a> fglrx driver working on your <a href="http://www.debian.org/">Debian</a> [sid] installation. As of 8.25.18 the driver finally supports Xorg 7.0</p>
 
 <h2>The steps</h2>
 
@@ -27,4 +27,8 @@
 	<li>Be sure to install the driver when asked</li>
 	<li>Done!</li>
 </ul>
+
+<p>Well, you're done installing the driver. Edit your /etc/X11/xorg.conf and change the Driver entry in the Device section to "fglrx". Restart X.</p>
+
+<p>Now you can check whether it works: run glxinfo and check whether direct rendering is enabled, and wether ATI is doing that for you [glxinfo | grep direct]. fglrxinfo should give you some more info. Of course, you can test with glxgears too, but as this isn't a benchmark -- which you should be aware of -- but rather a testing tool, you have to start it with -printfps.</p>
 
