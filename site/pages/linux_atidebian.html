@@ -1,5 +1,5 @@
 <!-- created @ 2006-06-09 -->
-<div class="updatedat">updated @ 2006-06-09</div>
+<div class="updatedat">updated @ 2006-06-11</div>
 
 <p>This is a small howto to get the <a href="http://ati.com/">ATI</a> fglrx driver working on your <a href="http://www.debian.org/">Debian</a> [sid] installation. As of 8.25.18 the driver finally supports Xorg 7.0</p>
 
@@ -11,7 +11,12 @@
 	<li>The filename will be something like: ati-driver-installer-8.25.18-x86.run , where 8.25.18 is the driver version and x86 your platform</li>
 	<li>Copy this file to a dir like /usr/src</li>
 	<li>Run it: sh ati-driver-installer-8.25.18-x86.run</li>
-	<li>It'll ask you about what you want it to do; choose "create packages for my platform" and choose the Debian flavour your on</li>
+	<li>It'll ask you about what you want it to do; choose "create packages for my platform"</li>
+	<li>Choose to create Debian packages [of course]</li>
+	<li>Agree with the license</li>
+	<li>Enter some installation path [/ is fine, enter /tmp/blah if you don't need ATI's install log and license file]</li>
+	<li>Check Debian packages</li>
+	<li>Choose the Debian flavour you're on</li>
 	<li>When it's finished, it'll have generated various .deb's</li>
 	<li>If you haven't got module-assistant installed, do that now: apt-get install module-assistant</li>
 </ul>
@@ -28,7 +33,7 @@
 	<li>Done!</li>
 </ul>
 
-<p>Well, you're done installing the driver. Edit your /etc/X11/xorg.conf and change the Driver entry in the Device section to "fglrx". Restart X.</p>
+<p>Well, you're done installing the driver. Try modprobe fglrx now. If it complains about version magic and an Invalid module format, purge all fglrx-* packages from your system [apt-get --purge remove fglrx-* and try again]. Edit your /etc/X11/xorg.conf and change the Driver entry in the Device section to "fglrx". Restart X.</p>
 
 <p>Now you can check whether it works: run glxinfo and check whether direct rendering is enabled, and wether ATI is doing that for you [glxinfo | grep direct]. fglrxinfo should give you some more info. Of course, you can test with glxgears too, but as this isn't a benchmark -- which you should be aware of -- but rather a testing tool, you have to start it with -printfps.</p>
 
