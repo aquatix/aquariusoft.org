@@ -1,6 +1,7 @@
 aquamorph=aquamorph livecd
 # if value is empty, it will not show up in the sub navigation
 aquamorph_news=
+aquamorph_packages=
 aquamorph_todo=
 atidebian=ATI fglrx on Debian
 backup=backup script
