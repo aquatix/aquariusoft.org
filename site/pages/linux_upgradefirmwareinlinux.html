@@ -1,0 +1,39 @@
+<!-- created @ 2007-01-10 -->
+<div class="updatedat">updated @ 2007-01-10</div>
+
+<p>Updating your Bios or other firmware using Linux [most companies ship updates as Windows/Dos executables, .exe] and without needing a floppy disk drive.</p>
+
+<p>How? Check this:</p>
+
+<ol>
+	<li>Download the firmware executable you want applied</li>
+	<li>Look for a Freedos disk image, like for example <a href="http://linux.dell.com/biosdisk/">the one on Dell's website</a></li>
+	<li>Now create a disk image out of the firmware:
+<pre>
+cp /usr/share/biosdisk/dosdisk.img /tmp/fwdisk1.img
+mount -o loop /tmp/fwtemp.img /mnt/tmp
+cp fwhd3313.exe /mnt/tmp
+umount /mnt/tmp
+</pre></li>
+	<li>Create a blank disk for the unpacked firmware:
+<pre>
+dd if=/dev/zero of=/boot/fwdisk.img bs=1474560 count=1
+</pre></li>
+	<li>Run the <a href="http://fabrice.bellard.free.fr/qemu/">Qemu emulator</a> [apt-get install qemu] to process the unpacked files and write them to this disk image:
+<pre>
+qemu -fda /tmp/fwtemp.img -fdb /boot/fwdisk.img
+A:\>fwhd3313
+...
+exit qemu
+</pre></li>
+	<li>Edit with your favourite editor your grub menu [/boot/grub/menu.lst in Debian, /boot/grub/grub.conf in other Linuxes]. Add:
+<pre>
+title "My bios update"
+	kernel /memdisk
+	initrd=/fwdisk.img floppy
+</pre></li>
+	<li>Safe the changes, reboot the machine and choose the freshly created option. Follow the manufacturers directions doing the firmware update</li>
+</ol>
+
+<p>I took this howto from the Dutch Linux Magazine, edition 6 of January 2007 [page 13]. I'm not responsible to any damage caused by people using it. It may fry your harddrive, date your girlfriend or just flawlessly update your videocard's firmware for better overclocking. Use at your own risk, and enjoy :)</p>
+
