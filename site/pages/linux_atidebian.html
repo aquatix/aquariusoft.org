@@ -1,5 +1,7 @@
 <!-- created @ 2006-06-09 -->
-<div class="updatedat">updated @ 2006-06-11</div>
+<div class="updatedat">updated @ 2007-09-17</div>
+
+<p><em>Update at 2007-09-17:</em> You can nowadays just do an <code>apt-get install fglrx-driver fglrx-kernel-src</code>, then start from point 2 of the installing sequence.</p>
 
 <p>This is a small howto to get the <a href="http://ati.com/">ATI</a> fglrx driver working on your <a href="http://www.debian.org/">Debian</a> [sid] installation. As of 8.25.18 the driver finally supports Xorg 7.0</p>
 
@@ -22,7 +24,7 @@
 </ul>
 
 <h3>Installing</h3>
-<ul>
+<ol>
 	<li>Install fglrx-driver_xxx.deb and fglrx-kernel-src_xxx.deb</li>
 	<li>m-a update</li>
 	<li>m-a prepare</li>
@@ -31,9 +33,9 @@
 	<li>Follow the steps in the screen</li>
 	<li>Be sure to install the driver when asked</li>
 	<li>Done!</li>
-</ul>
+</ol>
 
 <p>Well, you're done installing the driver. Try modprobe fglrx now. If it complains about version magic and an Invalid module format, purge all fglrx-* packages from your system [apt-get --purge remove fglrx-* and try again]. Edit your /etc/X11/xorg.conf and change the Driver entry in the Device section to "fglrx". Restart X.</p>
 
-<p>Now you can check whether it works: run glxinfo and check whether direct rendering is enabled, and wether ATI is doing that for you [glxinfo | grep direct]. fglrxinfo should give you some more info. Of course, you can test with glxgears too, but as this isn't a benchmark -- which you should be aware of -- but rather a testing tool, you have to start it with -printfps.</p>
+<p>Now you can check whether it works: run glxinfo and check whether direct rendering is enabled, and whether ATI is doing that for you [glxinfo | grep direct]. fglrxinfo should give you some more info. Of course, you can test with glxgears too, but as this isn't a benchmark -- which you should be aware of -- but rather a testing tool, you have to start it with -printfps.</p>
 

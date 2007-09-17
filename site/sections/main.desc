@@ -2,6 +2,6 @@ welcome=Welcome
 # leave value empty to not let it show up in the nav
 dutch=
 news=Old news
-featured=Featured
+#featured=Featured
 contact=Contact
 about=About

@@ -13,7 +13,7 @@
 <ul>
 	<li>Use a Debian based Linux distro [preferably Debian sid, aka unstable, but every recent one should do]</li>
 
-	<li>Get <a href="http://morphix.org/index.php?option=com_content&amp;task=category&amp;sectionid=4&amp;id=73&amp;Itemid=59">a morphix based .iso</a> [or better: just a base .iso, preferably a stable one atm, like 0.5-pre5 or <a href="http://www.morphix.org/autobuilds/">an autobuilded base .iso</a>]</li>
+	<li>Get <a href="http://morphix.org/index.php?option=com_content&amp;task=category&amp;sectionid=4&amp;id=73&amp;Itemid=59">a morphix based .iso</a> [or better: just a base .iso, preferably a stable one at the moment, like 0.5-pre5 or <a href="http://www.morphix.org/autobuilds/">an autobuilded base .iso</a>]</li>
 	<li>Open a root terminal [su -, you get the point]</li>
 	<li>mount -t iso9660 -o loop nameoftheisoyoudownloaded.iso /mnt/whatever</li>
 	<li>cp -a /mnt/whatever/* /path/to/the/extracted/stuff [like /scratch/iso]</li>
@@ -42,13 +42,13 @@
 	<li>Copy/move your myprograms.mod into /scratch/iso/mainmod</li>
 	<li>make-iso /scratch/iso myfirstlivecd.iso</li>
 
-	<li>Done. Burn to cd with your favorite burn program or run with "qemu -cdrom myfirstlivecd.iso" in the qemu emulator, for example</li>
+	<li>Done. Burn to cd with your favourite burn program or run with "qemu -cdrom myfirstlivecd.iso" in the qemu emulator, for example</li>
 </ul>
 
 
 <h2>More advanced stuff</h2>
 
-<p>If you manually modify some stuff in /tmp/libmorphix-&lt;randomsequence&gt; [e.g., /tmp/libmorphix-9oVKWq] , you have to use the following command to recompress the mainmod:
+<p>If you manually modify some stuff in /tmp/libmorphix-&lt;randomsequence&gt; [e.g., /tmp/libmorphix-9oVKWq] , you have to use the following command to re-compress the mainmod:
 "module-builder /tmp/libmorphix-9oVKWq aquamorph_20051120a.mod" [or whatever you want to call the mainmodule].</p>
 
 <p>When you want to be able to resize windows ntfs partitions from the livecd, add  package ntfsprogs to your .xml and use the program ntfsresize when booted</p>
