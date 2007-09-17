@@ -278,9 +278,11 @@ p
 	padding-bottom: .1em;
 }
 
-pre, tt
+pre, tt, code
 {
         font-size: 1.2em;
+        font-size: 1em;
+	font-family: monospace, "courier new";
 }
 
 pre
@@ -288,6 +290,7 @@ pre
         border: 1px solid #3f5671;
         padding: .5em;
 	background-color: #FFF;
+	overflow: auto;
 }
 
 .mininav
