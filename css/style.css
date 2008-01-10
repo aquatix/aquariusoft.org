@@ -1,6 +1,6 @@
 /*
  * aquariusoft.org stylesheet
- * v2006-05-29
+ * v2008-01-10
  */
 
 body
@@ -64,6 +64,20 @@ p
 	text-align: justify;
 }
 
+/* Hides from IE5-mac; HACK for iframe not resizing properly in IE \*/
+* html .content {height: 1%;}
+/* End hide from IE5-mac */
+
+img
+{
+	border: 0;
+}
+
+img a
+{
+	border: 0;
+}
+
 .wrapperbox
 {
 	text-align: center;
@@ -122,12 +136,16 @@ p
 
 .pagebody
 {
+	margin-top: .5em;
+	line-height: 1.2;
 	background: transparent;
 	padding: 0;
 }
 
 .subnavbar
 {
+	float: left;
+	width: 13em;
 	background-color: #FFF;
 	margin: 0;
 	margin-bottom: 1em;
@@ -190,9 +208,15 @@ p
 		border: 1px solid #3f5671;
 	}
 
+	.subnavbar input.searchfield
+	{
+		width: 7em;
+	}
+
 
 .content
 {
+	margin-left: 15em;
 	background: transparent;
 }
 
@@ -252,6 +276,7 @@ p
 
 .footer
 {
+	clear: both;
 	margin-top: .5em;
 	padding: .2em;
 	border-top: 1px solid #CCC;
