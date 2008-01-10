@@ -1,6 +1,6 @@
 <?php
 /*
- * v0.1.05 2006-06-01
+ * v0.1.06 2008-01-10
  */
 
 /*
@@ -14,7 +14,6 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	//$template .= "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n";
 	$template .= "<head>\n";
 	$template .= "<title>" . $page_title . " | aquariusoft.org</title>\n";
-	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/struct.css\"/>\n";
 	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
 	$template .= "</head>\n<body>\n";
 
@@ -126,7 +125,9 @@ function buildSubnav($skel, $section, $subsections)
 	return $result . "\t</div>\n";
 }
 
-
+/*
+ * If site has an admin section, this builds its subnavigation
+ */
 function buildAdminSubnav($skel, $section, $subsections)
 {
 	$result = "\t<div class=\"subnavbar\">\n";
