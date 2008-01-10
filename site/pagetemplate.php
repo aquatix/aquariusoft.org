@@ -125,4 +125,56 @@ function buildSubnav($skel, $section, $subsections)
 	$result .= "\t\t</ul>\n";
 	return $result . "\t</div>\n";
 }
+
+
+function buildAdminSubnav($skel, $section, $subsections)
+{
+	$result = "\t<div class=\"subnavbar\">\n";
+	$result .= "\t<h2>" . $skel['sectionname'] . "</h2>\n";
+	for ($i = 0; $i < count($subsections); $i++)
+	{
+		if ('' != trim($subsections[$i]))
+		{
+			$pagekey = getKey($subsections[$i]);
+			$page = getValue($subsections[$i]);
+			if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
+			{
+				if (isset($skel['page']) && $pagekey == $skel['page'])
+				{
+					$active = ' class="highlight"';
+				} else
+				{
+					$active = '';
+				}
+				$result .= "<a href=\"" . $skel['base_uri'] . 'admin/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . "</a> | ";
+			}
+		}
+	}
+	return $result . "</div>\n";
+}
+
+
+/*
+ * Build the gallery from the items provided in $galleryitems, which are of the form
+ * $galleryitems[$i]['title']
+ * $galleryitems[$i]['filename']
+ * $galleryitems[$i]['targetfilename']
+ */
+function buildGallery($skel, $galleryname, $galleryitems)
+{
+	$result = '';
+	$imagecounter = 0;
+	for ($i = 0; $i < count($galleryitems); $i++)
+	{
+		$imagecounter++;
+		$result .= "<div class=\"galleryimage\"><div class=\"theimage\"><a href=\"" . $galleryitems[$i]['targetfilename'] . "\" target=\"_blank\"><img src=\"" . $galleryitems[$i]['filename'] . "\" alt=\"" . $galleryitems[$i]['title'] . "\" /></a></div><p>" . $galleryitems[$i]['title'] . "</p>\n</div>\n";
+		/* Insert a horizontal ruler every 4 lines, so unevenly sized items show up correctly */
+		/*if ($imagecounter % 4 == 0)
+		{
+			$result .= "\n<hr />\n";
+		}*/
+	}
+	return $result;
+}
+
 ?>
