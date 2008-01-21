@@ -9,6 +9,8 @@
  */
 $skel['language'] = 'en';
 $skel['multilanguage'] = false;
+
+/* Enable or disable Qik's debug mode */
 $skel['debugmode'] = true;
 
 /* Additional information to be shown when a user gets a 'page not found' */
@@ -17,6 +19,8 @@ $skel['404_message'] = '<p>If you are looking for the overload feedreader, pleas
 $skel['404_message'] .= '<p><em>The gallery will be up soon again</em>; as fast as the old server arrives here and the files have been copied.</p>';
 */
 //$skel['404_message'] .= '<p>Also, the bugtracker, gallery, forum and webmail and the weblog dammIT will be online again soon.</p>';
+$skel['404_message'] = '<p>If you are looking for the overload feedreader, please note <a href="page/html/overload">it has been discontinued</a>. It might come back, rewritten in Python/Django, for example, but not soon.</p>';
+$skel['404_message'] .= '<p>Also, the forum has been discontinued because of disuse.</p>';
 
 /* Set max thumbnail size [optional, defaults to 80px] */
 $skel['thumbsize'] = 100;
