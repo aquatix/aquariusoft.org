@@ -1,0 +1,16 @@
+<!-- created @ 2008-01-21 13:39 -->
+<!-- $Id$ -->
+<div class="updatedat">updated @ 2008-01-21</div>
+
+<pre>
+$ MYREPO=/home/me/someplace
+
+$ svnadmin create $MYREPO
+$ echo '#!/bin/sh' &gt; $MYREPO/hooks/pre-revprop-change
+$ chmod +x $MYREPO/hooks/pre-revprop-change
+$ svnsync init file://$MYREPO http://SVN.remote.url.goes.here/
+$ svnsync sync file://$MYREPO
+</pre>
+
+<p>... then repeat the "svnsync sync" to sync down the changes since last time, perhaps in a cron job.</p>
+
