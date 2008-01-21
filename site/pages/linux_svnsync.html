@@ -2,6 +2,8 @@
 <!-- $Id$ -->
 <div class="updatedat">updated @ 2008-01-21</div>
 
+<p>If you have a <a href="http://en.wikipedia.org/wiki/Subversion_(software)">Subversion</a> repository on a server you don't have shell access to [so you can't do a simple <code>svnadmin dump</code>], the following enables you to pull all changes and history from that repository to a local one, defined in MYREPO:</p>
+
 <pre>
 $ MYREPO=/home/me/someplace
 
@@ -13,4 +15,5 @@ $ svnsync sync file://$MYREPO
 </pre>
 
 <p>... then repeat the "svnsync sync" to sync down the changes since last time, perhaps in a cron job.</p>
+<p>[<a href="http://kylecordes.com/2007/06/08/svnsync-svn-backup/">source</a>]</p>
 

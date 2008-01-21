@@ -9,6 +9,7 @@
  */
 $skel['language'] = 'en';
 $skel['multilanguage'] = false;
+$skel['debugmode'] = true;
 
 /* Additional information to be shown when a user gets a 'page not found' */
 /*
