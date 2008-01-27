@@ -1,6 +1,6 @@
 /*
  * aquariusoft.org stylesheet
- * v2008-01-10
+ * v2008-01-16
  */
 
 body
@@ -384,5 +384,17 @@ hr
 {
 	clear: both;
 	border: 0;
+}
+
+/*
+.gallery_thumbs
+{
+	border: 1px solid #65788d;
+	padding: .2em;
+}
+*/
+.gallery_thumbs .thumb
+{
+	float: left;
 }
 
