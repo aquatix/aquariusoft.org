@@ -25,6 +25,9 @@ $skel['404_message'] .= '<p>Also, the forum has been discontinued because of dis
 /* Set max thumbnail size [optional, defaults to 80px] */
 $skel['thumbsize'] = 100;
 
+/* Enable or disable Qik's debug mode */
+$skel['debugmode'] = false;
+
 /* Set usedb to false for using flat files [only supported mechanism at the moment] */
 $skel['usedb'] = false;
 $skel['dbhost'] = '';
