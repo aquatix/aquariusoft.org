@@ -1,0 +1,63 @@
+<!-- created @ 20080302 18:32 -->
+<div class="updatedat">updated @ 2008-03-02</div>
+
+<h2>CPU Frequency Control</h2>
+First remove this:
+<pre>
+aptitude remove powernowd
+</pre>
+
+<p>Then instal sysfsutils, cpufreqd, cpufrequtils:</p>
+
+<pre>
+apt-get install sysfsutils cpufreqd cpufrequtils
+</pre>
+
+<p>Now we'll load the modules:</p>
+<pre>
+modprobe speedstep-centrino
+modprobe cpufreq_conservative
+modprobe cpufreq_ondemand
+modprobe cpufreq_powersave
+modprobe cpufreq_stats
+modprobe cpufreq_userspace
+</pre>
+<p>speedstep-centrino is the module for controlling centrino processors, the rest are frequency "governors". 
+We'll test that everything went as expected:</p>
+<pre>
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+</pre>
+<p>You should see output similar to</p>
+<pre>
+powersave conservative ondemand performance userspace
+</pre>
+You can change the current scheme by something like
+<pre>
+echo powersave &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</pre>
+And view the current cpu frequency by
+<pre>
+cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+</pre>
+
+<p>Now we need to load them at boot time.
+Add the following lines to the end of /etc/modules</p>
+<pre>
+speedstep-centrino
+cpufreq_conservative
+cpufreq_ondemand
+cpufreq_powersave
+cpufreq_stats
+cpufreq_userspace
+</pre>
+<p>Add the following lines to /etc/sysfs.conf</p>
+<pre>
+devices/system/cpu/cpu0/cpufreq/scaling_governor=userspace
+</pre>
+<p>Where userspace can be changed to another governor type (i.e. conservative, powersave, etc.). You can also add other configuration options that are specific to the governor selected.</p>
+
+<p>Now you can add a cpu applet to your favourite panel [like CPUFreq plugin for the xfce4 panel, or the <a href="http://www.ubuntugeek.com/howto-change-cpu-frequency-scaling-in-ubuntu.html">cpu frequency changing applet in Gnome, as described in this Ubuntu howto</a>. This applet can also change governors]. The ondemand mode seems to work really decently for me. powersave is even more agressive in preserving power, which will result in a clocked down cpu the whole time.</p>
+<!--Tip: Whenever I plug out of AC power and plug in again, I would find myself on "performance" governor, I would then change to powersave to change the cpu frequency.</p>-->
+
+<p>[<a href="http://www.linuxquestions.org/questions/debian-26/install-guide-debian-etch-on-t42-incl.-compiz-undervolting-wireless-hdd-shock-pro-579907/">source</a>]</p>
+
