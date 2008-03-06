@@ -1,5 +1,5 @@
 <!-- created @ 20080302 18:32 -->
-<div class="updatedat">updated @ 2008-03-02</div>
+<div class="updatedat">updated @ 2008-03-06</div>
 
 <h2>CPU Frequency Control</h2>
 First remove this:
@@ -61,3 +61,69 @@ devices/system/cpu/cpu0/cpufreq/scaling_governor=userspace
 
 <p>[<a href="http://www.linuxquestions.org/questions/debian-26/install-guide-debian-etch-on-t42-incl.-compiz-undervolting-wireless-hdd-shock-pro-579907/">source</a>]</p>
 
+<p>You can modify your /etc/cpufreqd.conf to your needs. Mine looks like this:</p>
+<pre>
+[General]
+pidfile=/var/run/cpufreqd.pid
+poll_interval=2
+verbosity=4
+#enable_remote=1
+#remote_group=root
+[/General]
+
+[Profile]
+name=Performance High
+minfreq=100%
+maxfreq=100%
+policy=performance
+#exec_post=echo 8 &gt; /proc/acpi/sony/brightness
+[/Profile]
+
+[Profile]
+name=On Demand High
+minfreq=40%
+maxfreq=10%
+policy=ondemand
+[/Profile]
+
+[Profile]
+name=Powersave Low
+minfreq=40%
+maxfreq=40%
+policy=powersave
+[/Profile]
+
+##
+# Basic states
+##
+# when AC use performance mode
+[Rule]
+name=AC Rule
+ac=on                      # (on/off)
+battery_interval=0-100
+#profile=Performance High  # enable this if you want the most performance when on AC
+profile=On Demand High
+[/Rule]
+
+# conservative mode when not AC
+[Rule]
+name=AC Off
+ac=off                     # (on/off)
+#exec_post=echo 3 &gt; /proc/acpi/sony/brightness
+profile=Powersave Low
+[/Rule]
+
+##
+# Special Rules
+##
+# CPU Too hot!
+[Rule]
+name=CPU Too Hot
+acpi_temperature=55-100
+cpu_interval=50-100
+#profile=Performance Low
+profile=Powersave Low
+[/Rule]
+</pre>
+
+<p>This removes the rule to run at Performance when on AC [I want my laptop to be cool and quiet, thanks], and the Ondemand scheme takes care of clocking higher and lower when needed.</p>
