@@ -398,5 +398,6 @@ hr
 .gallery_thumbs .thumb
 {
 	float: left;
+	width: 155px;
 }
 
