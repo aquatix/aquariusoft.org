@@ -15,6 +15,12 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	$template .= "<head>\n";
 	$template .= "<title>" . $page_title . " | aquariusoft.org</title>\n";
 	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
+
+	/* IE6 and older transparent png hack */
+	$template .= "<!--[if lte IE 6]>\n";
+	$template .= "\t<script type=\"text/javascript\" src=\"css/supersleight-min.js\"></script>\n";
+	$template .= "<![endif]-->\n";
+
 	$template .= "</head>\n<body>\n";
 
 	$template .= "<div class=\"wrapperbox\">\n";
