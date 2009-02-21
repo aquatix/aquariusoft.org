@@ -18,7 +18,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 
 	/* IE6 and older transparent png hack */
 	$template .= "<!--[if lte IE 6]>\n";
-	$template .= "\t<script type=\"text/javascript\" src=\"css/supersleight-min.js\"></script>\n";
+	$template .= "\t<script type=\"text/javascript\" src=\"" . $skel["base_uri"] . "css/supersleight-min.js\"></script>\n";
 	$template .= "<![endif]-->\n";
 
 	$template .= "</head>\n<body>\n";
