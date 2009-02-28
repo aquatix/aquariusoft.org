@@ -162,6 +162,18 @@ function buildAdminSubnav($skel, $section, $subsections)
 
 
 /*
+ * Build a news item (from @@@news@@@ tag) out of $title and $content
+ */
+function buildNewsItem($skel, $title, $content)
+{
+	$result .= "<div class=\"news\">\n";
+	$result .= "\t<div class=\"date\">" . $title . "</div>";
+	$result .= "<div class=\"newscontent\">" . $content . "</div>\n</div>\n\n";
+	return $result;
+}
+
+
+/*
  * Build the gallery from the items provided in $galleryitems, which are of the form
  * $galleryitems[$i]['title']
  * $galleryitems[$i]['filename']
