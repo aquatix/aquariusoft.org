@@ -13,7 +13,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	$template .= "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
 	//$template .= "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n";
 	$template .= "<head>\n";
-	$template .= "<title>" . $page_title . " | aquariusoft.org</title>\n";
+	$template .= "<title>" . $page_title . ' | ' . $skel['sitetitle'] . "</title>\n";
 	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
 
 	/* IE6 and older transparent png hack */
@@ -131,6 +131,7 @@ function buildSubnav($skel, $section, $subsections)
 	return $result . "\t</div>\n";
 }
 
+
 /*
  * If site has an admin section, this builds its subnavigation
  */
@@ -196,4 +197,32 @@ function buildGallery($skel, $galleryname, $galleryitems)
 	return $result;
 }
 
+
+/*
+ * Build the page in a gallery showing the previous/next thumbnails and the current picture
+ */
+function buildGalleryPage($skel, $galleryname, $galleryitems, $item)
+{
+	$item = $item - 1; /* Arrays are 0-based */
+	$base = $skel['base_server'] . $skel['base_uri'];
+
+	$body  = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n";
+	$body .= "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
+	$body .= "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	$body .= "<head>\n";
+	$body .= '<title>' . dict($skel, 'picture') . ': ' . $galleryitems[$item]['title'] . ' | ' . $skel['sitetitle'] . "</title>\n";
+	$body .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
+	$body .= "<table class=\"gallerynav\" width=\"100%\">\n";
+	$previtem = max(0, $item-1);
+	$nextitem = min(count($galleryitems)-1, $item+1);
+	$body .= '<tr><td height="' . ($skel['thumbsize']+5) . '" width="' . ($skel['thumbsize']+5) . '" style="background-image: url(' . $base . $galleryitems[0]['filename'] . ');"><a href="' . $galleryitems[0]['galleryitem'] . '">|&lt;</a></td><td width="' . ($skel['thumbsize']+5) . '" style="background-image: url(' . $base . $galleryitems[$previtem]['filename'] . ');"><a href="' . $galleryitems[$previtem]['galleryitem'] . '">&lt;&lt;</a></td>';
+	$body .= '<td>' . $galleryitems[$item]['title'] . '</td>';
+	$body .= '<td width="' . ($skel['thumbsize']+5) . '" style="background-image: url(' . $base . $galleryitems[$nextitem]['filename'] . ');"><a href="' . $galleryitems[$nextitem]['galleryitem'] . '">&gt;&gt;</a></td><td width="' . ($skel['thumbsize']+5) . '" style="background-image: url(' . $base . $galleryitems[count($galleryitems)-1]['filename'] . ');"><a href="' . $galleryitems[count($galleryitems)-1]['galleryitem'] . '">&gt;|</a></td></tr>';
+	$body .= "\n<tr><td colspan=\"5\">";
+	$body .= '<img src="' . $galleryitems[$item]['targetfilename'] . '" />';
+	$body .= "</td></tr>\n</table>\n";
+	$body .= "</body></html>\n";
+
+	return $body;
+}
 ?>
