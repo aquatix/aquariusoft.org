@@ -1,0 +1,234 @@
+/**
+ * aquariusoft.org mobile CSS
+ * $Id$
+ */
+
+body
+{
+	font-family: verdana, tahoma, helvetica, sans;
+	font-size: 13px;
+	margin: 0;
+	/*background-color: #EEE;*/
+	background-color: #FFF;
+	color: #333333;
+}
+
+h1
+{
+	font-size: 1.9em;
+	margin-top: .7em;
+	margin-bottom: 0;
+	color: #65788d;
+}
+
+h2
+{
+	font-size: 1.3em;
+	color: #65788d;
+	border-bottom: 1px solid #65788d;
+}
+
+h3
+{
+	font-size: 1em;
+	font-weight: bold;
+	color: #65788d;
+}
+
+ul li
+{
+	list-style-type: square;
+}
+
+a
+{
+	text-decoration: none;
+	color: #7f97b2;
+}
+
+a:hover, .subnavbar a.highlight
+{
+	text-decoration: underline;
+	color: #7f97b2;
+}
+
+th
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+p
+{
+	padding-left: .5em;
+	padding-right: .5em;
+	text-align: justify;
+}
+
+em
+{
+	font-style: italic;
+	font-weight: bold;
+}
+
+img
+{
+	border: 0;
+}
+
+.pagebody
+{
+	padding: .3em;
+}
+
+.navbar
+{
+	margin: 0;
+	background-color: #65788d;
+	padding: .3em;
+	padding-left: .4em;
+	color: #FFF;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+	.navbar a
+	{
+		padding: .3em;
+		color: #FFF;
+		text-decoration: none;
+		font-weight: normal;
+	}
+
+/*
+.subnavbar
+{
+	background-color: #92a0ae;
+	background-color: #c1c9d1;
+}
+*/
+.subnavbar
+{
+	background-color: #FFF;
+	margin: 0;
+	margin-bottom: 1em;
+	border: 1px solid #3f5671;
+	border: 1px solid #65788d;
+	padding-bottom: .3em;
+}
+
+	.subnavbar h2
+	{
+		background-color: #65788d;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: #FFF;
+		margin-top: 0;
+		margin-bottom: .5em;
+		border-bottom: 0;
+		padding-left: .3em;
+		padding-right: .3em;
+		padding-top: .2em;
+		padding-bottom: .2em;
+		text-align: center;
+	}
+
+	.subnavbar ul
+	{
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 1.4em;
+		margin-right: .5em;
+		padding-left: 0;
+	}
+
+	.subnavbar li
+	{
+		padding-left: 0;
+		margin-left: 0;
+		list-style: none;
+		list-style: square;
+		list-style-image: url("bullet.png");
+	}
+
+	.subnavbar ul.info
+	{
+		margin-top: .5em;
+		padding-top: .5em;
+		border-top: 1px dotted #FFF;
+		border-top: 1px dotted #3f5671;
+	}
+
+	.subnavbar ul.info li
+	{
+		list-style: none;
+		font-size: .7em;
+	}
+
+	.subnavbar input
+
+.mininav
+{
+	border-top: 1px dotted #3f5671;
+	border-bottom: 1px dotted #3f5671;
+	font-size: .8em;
+	font-weight: bold;
+	padding: .2em;
+}
+
+.updatedat
+{
+	text-align: right;
+	font-size: .8em;
+}
+
+.footer
+{
+	clear: both;
+	margin-top: .5em;
+	padding: .2em;
+	border-top: 1px solid #CCC;
+	border-top: 1px solid #65788d;
+	font-size: .8em;
+	font-style: italic;
+}
+
+.news
+{
+	background-color: #3f5671;
+	background-color: #FFF;
+	border: 1px solid #3f5671;
+	border: 1px solid #65788d;
+	padding: 0;
+}
+
+	.news .date
+	{
+		font-weight: bold;
+		background-color: #65788d;
+		padding: .2em;
+		padding-left: .5em;
+		color: #FFF;
+	}
+
+	.news .newscontent
+	{
+		margin-top: 0;
+		padding: .3em;
+		padding-left: .5em;
+		padding-right: .5em;
+		margin-bottom: 0;
+	}
+
+	.news p
+	{
+		margin-top: .2em;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+.formfields p
+{
+	margin-top: 0;
+	margin-bottom: .2em;
+}

@@ -14,42 +14,67 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	//$template .= "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n";
 	$template .= "<head>\n";
 	$template .= "<title>" . $page_title . ' | ' . $skel['sitetitle'] . "</title>\n";
-	$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
 
-	/* IE6 and older transparent png hack */
-	$template .= "<!--[if lte IE 6]>\n";
-	$template .= "\t<script type=\"text/javascript\" src=\"" . $skel["base_uri"] . "css/supersleight-min.js\"></script>\n";
-	$template .= "<![endif]-->\n";
+	$uagent_obj = new uagent_info();
+	//if ($uagent_obj->DetectSmartphone())
+	if (true)
+	{
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style_mobile.css\"/>\n";
 
-	$template .= "</head>\n<body>\n";
+		$template .= "</head>\n<body>\n";
+		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span></div>\n";
+		$template .= "<div class=\"navbar\">" . $navbar . "</div>\n";
 
-	$template .= "<div class=\"wrapperbox\">\n";
-	$template .= "<div class=\"page\">\n";
+		$template .= "<div class=\"pagebody\">\n";
+		$template .= $subnavbar;
+		$template .= "\t<div class=\"content\">\n";
 
-	/*
-	 * simple banner:
-	 $template .= "<div id=\"banner\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org logo\" width=\"170\" height=\"53\" /></a></div>\n";
-	 */
-	$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span><span class=\"portalnav\"><a href=\"http://aquariusoft.org/gallery/\">gallery</a> | <a href=\"http://aquariusoft.org/bugs/\">bugtracker</a> | <a href=\"http://aquariusoft.org/~mbscholt/\">dammIT weblog</a> | <a href=\"http://aquariusoft.org/photolog/\">photolog</a> | <a href=\"http://www.cs.vu.nl/~mbscholt/\">:M</a> | <a href=\"/page/main/about/\">about</a></span></div>\n";
+		$template .= $body;
 
-	/* Hack for IE's whitespace bug caused by the float */
-	$template .= "<br style=\"clear:both; height: 1px;\" />\n";
+		$template .= "\t</div>\n";
+		$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
+		$template .= "</div>\n";
+		$template .= "</body></html>\n";
+	} else
+	{
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
 
-	$template .= "<div class=\"navbar\">" . $navbar . "</div>\n";
+		/* IE6 and older transparent png hack */
+		$template .= "<!--[if lte IE 6]>\n";
+		$template .= "\t<script type=\"text/javascript\" src=\"" . $skel["base_uri"] . "css/supersleight-min.js\"></script>\n";
+		$template .= "<![endif]-->\n";
 
-	$template .= "<div class=\"pagebody\">\n";
-	$template .= $subnavbar;
-	$template .= "\t<div class=\"content\">\n";
+		$template .= "</head>\n<body>\n";
 
-	$template .= $body;
+		$template .= "<div class=\"wrapperbox\">\n";
+		$template .= "<div class=\"page\">\n";
 
-	$template .= "\t</div>\n";
-	$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
-	$template .= "<!-- version: " . $skel["version"] . ", parse time: " . (microtime() - $skel["starttime"]) . "sec -->\n";
-	$template .= "</div>\n";
-	$template .= "</div>\n";
-	$template .= "</div>\n";
-	$template .= "</body></html>\n";
+
+		/*
+		 * simple banner:
+		 $template .= "<div id=\"banner\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org logo\" width=\"170\" height=\"53\" /></a></div>\n";
+		 */
+		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span><span class=\"portalnav\"><a href=\"http://aquariusoft.org/gallery/\">gallery</a> | <a href=\"http://aquariusoft.org/bugs/\">bugtracker</a> | <a href=\"http://aquariusoft.org/~mbscholt/\">dammIT weblog</a> | <a href=\"http://aquariusoft.org/photolog/\">photolog</a> | <a href=\"http://www.cs.vu.nl/~mbscholt/\">:M</a> | <a href=\"/page/main/about/\">about</a></span></div>\n";
+
+		/* Hack for IE's whitespace bug caused by the float */
+		$template .= "<br style=\"clear:both; height: 1px;\" />\n";
+
+		$template .= "<div class=\"navbar\">" . $navbar . "</div>\n";
+
+		$template .= "<div class=\"pagebody\">\n";
+		$template .= $subnavbar;
+		$template .= "\t<div class=\"content\">\n";
+
+		$template .= $body;
+
+		$template .= "\t</div>\n";
+		$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
+		$template .= "<!-- version: " . $skel["version"] . ", parse time: " . (microtime() - $skel["starttime"]) . "sec -->\n";
+		$template .= "</div>\n";
+		$template .= "</div>\n";
+		$template .= "</div>\n";
+		$template .= "</body></html>\n";
+	}
 	return $template;
 }
 
@@ -121,10 +146,14 @@ function buildSubnav($skel, $section, $subsections)
 	$result .= "\t\t<ul class=\"info\">\n";
 	$result .= "\t\t\t<li><form action=\"http://www.google.com/search\" method=\"get\"><input type=\"hidden\" name=\"q\" value=\"site:aquariusoft.org\" /><input type=\"text\" class=\"searchfield\" name=\"q\" size=\"20\" /><input type=\"submit\" value=\"find\" /></form></li>\n";
 	$result .= "\t\t</ul>\n"; 
-	$result .= "\t\t<ul class=\"info\">\n";
-	$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/firefox/\" title=\"Get Firefox - Web Browsing Redefined [and take back the web]\"><img src=\"images/firefox_pixel.png\" alt=\"Get Firefox\"/></a></li>\n";
-	$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/thunderbird/\" title=\"Get Thunderbird and reclaim your inbox!\"><img src=\"images/thunderbird_pixel.png\" alt=\"Get Thunderbird\"/></a></li>\n";
-	$result .= "\t\t</ul>\n";
+	$uagent_obj = new uagent_info();
+	if (!$uagent_obj->DetectSmartphone())
+	{
+		$result .= "\t\t<ul class=\"info\">\n";
+		$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/firefox/\" title=\"Get Firefox - Web Browsing Redefined [and take back the web]\"><img src=\"images/firefox_pixel.png\" alt=\"Get Firefox\"/></a></li>\n";
+		$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/thunderbird/\" title=\"Get Thunderbird and reclaim your inbox!\"><img src=\"images/thunderbird_pixel.png\" alt=\"Get Thunderbird\"/></a></li>\n";
+		$result .= "\t\t</ul>\n";
+	}
 	$result .= "\t\t<ul class=\"info\">\n";
 	$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
 	$result .= "\t\t</ul>\n";
