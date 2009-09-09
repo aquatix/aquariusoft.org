@@ -16,17 +16,15 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	$template .= "<title>" . $page_title . ' | ' . $skel['sitetitle'] . "</title>\n";
 
 	$uagent_obj = new uagent_info();
-	//if ($uagent_obj->DetectSmartphone())
-	if (true)
+	if ($uagent_obj->DetectSmartphone())
+	//if (true)
 	{
 		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style_mobile.css\"/>\n";
 
 		$template .= "</head>\n<body>\n";
 		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span></div>\n";
-		$template .= "<div class=\"navbar\">" . $navbar . "</div>\n";
-
+		$template .= "<div class=\"navbar\"><a href=\"#navigation\">navigation &darr;</a></div>\n";
 		$template .= "<div class=\"pagebody\">\n";
-		$template .= $subnavbar;
 		$template .= "\t<div class=\"content\">\n";
 
 		$template .= $body;
@@ -34,6 +32,10 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "\t</div>\n";
 		$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
 		$template .= "</div>\n";
+
+		$template .= "<div class=\"navbar\" id=\"navigation\">" . $navbar . "</div>\n";
+		$template .= $subnavbar;
+
 		$template .= "</body></html>\n";
 	} else
 	{
