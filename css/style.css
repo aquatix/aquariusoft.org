@@ -91,6 +91,13 @@ img a
 	padding: .5em;
 	margin: 1em auto 1em auto;
 	text-align: left;
+
+        -moz-border-radius-bottomleft:6px;
+        -moz-border-radius-bottomright:6px;
+        -moz-border-radius-topleft:6px;
+        -moz-border-radius-topright:6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
 }
 
 #banner
@@ -108,6 +115,23 @@ img a
 	color: #FFF;
 	font-weight: bold;
 	font-size: .9em;
+/*
+        -moz-border-radius-bottomleft:4px;
+        -moz-border-radius-bottomright:4px;
+        -moz-border-radius-topleft:4px;
+        -moz-border-radius-topright:4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+*/
+        -moz-border-radius-topleft:4px;
+        -moz-border-radius-topright:4px;
+        -moz-border-radius-bottomright:4px;
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
 }
 
 	.navbar a
@@ -152,6 +176,10 @@ img a
 	border: 1px solid #3f5671;
 	border: 1px solid #65788d;
 	padding-bottom: .3em;
+
+        -moz-border-radius-bottomleft:4px;
+        -webkit-border-bottom-left-radius: 4px;
+        border-bottom-left-radius: 4px;
 }
 
 	.subnavbar h2
@@ -359,18 +387,48 @@ table td
 
 .showcase
 {
-	padding: .2em;
-	margin-bottom: 1em;
+	width: 750px;
+	margin-top: 1em;
+/*
+        -moz-border-radius-bottomleft:6px;
+        -moz-border-radius-bottomright:6px;
+        -moz-border-radius-topleft:6px;
+        -moz-border-radius-topright:6px;
+*/
+	-moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+	border: 1px solid #DDD;
 }
+
+	.showcase h2, .showcase h3
+	{
+		margin-top: .2em;
+	}
 
 	.thumbnail
 	{
 		float: left;
+/*		height: 310px;*/
+		width: 310px;
+		background-color: #EEE;
+		padding: 6px;
+		border-right: 1px solid #DDD;
+/*
+		padding: 3px;
+        -moz-border-radius-bottomleft:6px;
+        -moz-border-radius-bottomright:6px;
+        -moz-border-radius-topleft:6px;
+        -moz-border-radius-topright:6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+	border: 1px solid #DDD;
+*/
 	}
 
 	.thumbnail img
 	{
-		border: 1px solid #65788d;
+/*		border: 1px solid #65788d;*/
 /*		padding: 1px;*/
 	}
 
@@ -378,14 +436,50 @@ table td
 	{
 		float: left;
 		width: 54%;
+		width: 400px;
 		padding: 0;
+		padding: 6px;
 		margin: 0;
 	}
-
+/*
+	.link
+	{
+		padding-left: 400px;
+		clear: both;
+	}
+*/
 hr
 {
 	clear: both;
 	border: 0;
+}
+
+table.showcase
+{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+
+        -moz-border-radius-bottomleft:6px;
+        -moz-border-radius-bottomright:6px;
+        -moz-border-radius-topleft:6px;
+        -moz-border-radius-topright:6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+	border: 1px solid #DDD;
+}
+
+
+table.showcase td
+{
+	padding: 6px;
+}
+
+table.showcase td.thumbnail
+{
+	background-color: #EEE;
+	border-right: 1px solid #DDD;
 }
 
 /*
@@ -398,6 +492,53 @@ hr
 .gallery_thumbs .thumb
 {
 	float: left;
-	width: 155px;
+	width: 240px;
+	height: 270px;
+	background-color: #bdccde;
+	background-color: #e1e9f3;
+	background-color: #EEE;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	padding: 6px;
+	text-align: center;
+
+        -moz-border-radius-bottomleft:6px;
+        -moz-border-radius-bottomright:6px;
+        -moz-border-radius-topleft:6px;
+        -moz-border-radius-topright:6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+	border: 1px solid #DDD;
 }
 
+.gallery_thumbs .image, .gallery_thumbs a
+{
+	height: 240px;
+	width: 240px;
+/*	background-color: #DDD;*/
+/*	background-color: #FFF;*/
+}
+
+.gallery_thumbs a
+{
+	display: block;
+}
+
+.gallery_thumbs img
+{
+/*
+	vertical-align: middle;
+	vertical-align: text-bottom;
+	position: absolute;
+	top: 50%;
+	height: 240px;
+	margin-top: -120px;
+*/
+}
+
+.gallery_thumbs .description
+{
+	margin-top: 1em;
+	font-size: .8em;
+	width: 100%;
+}
