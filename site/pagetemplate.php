@@ -19,7 +19,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	if ($uagent_obj->DetectSmartphone())
 	//if (true)
 	{
-		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style_mobile.css\"/>\n";
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style_mobile.css\"/>\n";
 
 		$template .= "</head>\n<body>\n";
 		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span></div>\n";
@@ -39,11 +39,11 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "</body></html>\n";
 	} else
 	{
-		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style.css\"/>\n";
 
 		/* IE6 and older transparent png hack */
 		$template .= "<!--[if lte IE 6]>\n";
-		$template .= "\t<script type=\"text/javascript\" src=\"" . $skel["base_uri"] . "css/supersleight-min.js\"></script>\n";
+		$template .= "\t<script type=\"text/javascript\" src=\"" . $skel['base_uri'] . "css/supersleight-min.js\"></script>\n";
 		$template .= "<![endif]-->\n";
 
 		$template .= "</head>\n<body>\n";
@@ -54,24 +54,25 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 
 		/*
 		 * simple banner:
-		 $template .= "<div id=\"banner\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org logo\" width=\"170\" height=\"53\" /></a></div>\n";
+		 $template .= "<div id=\"banner\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org logo\" width=\"170\" height=\"53\" /></a></div>\n";
 		 */
-		//$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel["base_uri"] . "\"><img src=\"" . $skel["base_uri"] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span><span class=\"portalnav\"><a href=\"http://aquariusoft.org/gallery/\">gallery</a> &bull; <a href=\"http://aquariusoft.org/bugs/\">bugtracker</a> &bull; <a href=\"http://aquariusoft.org/~mbscholt/\">dammIT weblog</a> &bull; <a href=\"http://aquariusoft.org/photolog/\">photolog</a> &bull; <a href=\"http://www.cs.vu.nl/~mbscholt/\">:M</a> &bull; <a href=\"/page/main/about/\">about</a></span></div>\n";
-		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . 'images/aquariusoft_org.png" alt="aquariusoft.org" width="170" height="53" /></a></span><span class="portalnav"><a href="http://aquariusoft.org/photos/">gallery</a> &bull; <a href="http://aquariusoft.org/gallery/">old gallery</a> &bull; <a href="http://aquariusoft.org/bugs/">bugtracker</a> &bull; <a href="http://aquariusoft.org/~mbscholt/">dammIT weblog</a> &bull; <a href="http://aquariusoft.org/photolog/">photolog</a> &bull; <a href="http://www.cs.vu.nl/~mbscholt/">:M</a> &bull; <a href="/page/main/about/">about</a></span></div>' . "\n";
+		//$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span><span class=\"portalnav\"><a href=\"http://aquariusoft.org/gallery/\">gallery</a> &bull; <a href=\"http://aquariusoft.org/bugs/\">bugtracker</a> &bull; <a href=\"http://aquariusoft.org/~mbscholt/\">dammIT weblog</a> &bull; <a href=\"http://aquariusoft.org/photolog/\">photolog</a> &bull; <a href=\"http://www.cs.vu.nl/~mbscholt/\">:M</a> &bull; <a href=\"/page/main/about/\">about</a></span></div>\n";
+		//$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . 'images/aquariusoft_org.png" alt="aquariusoft.org" width="170" height="53" /></a></span><span class="portalnav"><a href="http://aquariusoft.org/photos/">gallery</a> &bull; <a href="http://aquariusoft.org/gallery/">old gallery</a> &bull; <a href="http://aquariusoft.org/bugs/">bugtracker</a> &bull; <a href="http://aquariusoft.org/~mbscholt/">dammIT weblog</a> &bull; <a href="http://aquariusoft.org/photolog/">photolog</a> &bull; <a href="http://www.cs.vu.nl/~mbscholt/">:M</a> &bull; <a href="/page/main/about/">about</a></span></div>' . "\n";
+		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . 'images/aquariusoft_org.png" alt="aquariusoft.org" width="170" height="53" /></a></span><span class="portalnav"><a href="http://aquariusoft.org/photos/">gallery</a> &bull; <a href="http://aquariusoft.org/gallery/">old gallery</a> &bull; <a href="http://aquariusoft.org/bugs/">bugtracker</a> &bull; <a href="http://aquariusoft.org/~mbscholt/">dammIT weblog</a></span></div>' . "\n";
 
 		/* Hack for IE's whitespace bug caused by the float */
 		$template .= "<br style=\"clear:both; height: 1px;\" />\n";
 
 		$template .= "<div class=\"navbar\">" . $navbar . "</div>\n";
+		$template .= $subnavbar;
 
 		$template .= "<div class=\"pagebody\">\n";
-		$template .= $subnavbar;
 		$template .= "\t<div class=\"content\">\n";
 
 		$template .= $body;
 
 		$template .= "\t</div>\n";
-		$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
+		$template .= "<div class=\"footer\">" . $skel['copyright'] . ' / ' . "<a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></div>\n";
 		$template .= "<!-- version: " . $skel["version"] . ", parse time: " . (microtime() - $skel["starttime"]) . "sec -->\n";
 		$template .= "</div>\n";
 		$template .= "</div>\n";
@@ -125,6 +126,7 @@ function buildNav($skel, $sections)
 function buildSubnav($skel, $section, $subsections)
 {
 	$result = "\t<div class=\"subnavbar\">\n";
+/*
 	$result .= "\t<h2>" . $skel['sectionname'] . "</h2>\n";
 	$result .= "\t\t<ul>\n";
 	for ($i = 0; $i < count($subsections); $i++)
@@ -161,7 +163,27 @@ function buildSubnav($skel, $section, $subsections)
 	$result .= "\t\t<ul class=\"info\">\n";
 	$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
 	$result .= "\t\t</ul>\n";
-	return $result . "\t</div>\n";
+*/
+	for ($i = 0; $i < count($subsections); $i++)
+	{
+		if ('' != trim($subsections[$i]))
+		{
+			$pagekey = getKey($subsections[$i]);
+			$page = getValue($subsections[$i]);
+			if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
+			{
+				if (isset($skel['page']) && $pagekey == $skel['page'])
+				{
+					$active = ' class="highlight"';
+				} else
+				{
+					$active = '';
+				}
+				$result .= "<a href=\"" . $skel['base_uri'] . 'page/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . " </a>";
+			}
+		}
+	}
+	return $result . "</div>\n";
 }
 
 
@@ -244,7 +266,7 @@ function buildGalleryPage($skel, $galleryname, $galleryitems, $item)
 	$body .= "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
 	$body .= "<head>\n";
 	$body .= '<title>' . dict($skel, 'picture') . ': ' . $galleryitems[$item]['title'] . ' | ' . $skel['sitetitle'] . "</title>\n";
-	$body .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel["base_uri"] . "css/style.css\"/>\n";
+	$body .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style.css\"/>\n";
 	$body .= "<table class=\"gallerynav\" width=\"100%\">\n";
 	$previtem = max(0, $item-1);
 	$nextitem = min(count($galleryitems)-1, $item+1);

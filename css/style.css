@@ -20,11 +20,24 @@ h1
 	color: #65788d;
 }
 
+/*
 h2
 {
 	font-size: 1.3em;
 	color: #65788d;
 	border-bottom: 1px solid #65788d;
+}
+*/
+h2
+{
+	font-size: 1.3em;
+	color: #FFF;
+	background-color: #65788d;
+	margin: 0;
+	padding: .3em;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
 }
 
 h3
@@ -43,12 +56,14 @@ a
 {
 	text-decoration: none;
 	color: #7f97b2;
+	color: #65788d;
 }
 
-a:hover, .subnavbar a.highlight
+a:hover
 {
 	text-decoration: underline;
 	color: #7f97b2;
+	color: #65788d;
 }
 
 th
@@ -125,13 +140,13 @@ img a
 */
         -moz-border-radius-topleft:4px;
         -moz-border-radius-topright:4px;
-        -moz-border-radius-bottomright:4px;
+/*        -moz-border-radius-bottomright:4px;*/
         -webkit-border-top-left-radius: 4px;
         -webkit-border-top-right-radius: 4px;
-        -webkit-border-bottom-right-radius: 4px;
+/*        -webkit-border-bottom-right-radius: 4px;*/
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+/*        border-bottom-right-radius: 4px;*/
 }
 
 	.navbar a
@@ -168,18 +183,22 @@ img a
 
 .subnavbar
 {
-	float: left;
-	width: 13em;
-	background-color: #FFF;
+/*	font-size: .8em;*/
+	font-size: .9em;
+	background-color: #EEE;
 	margin: 0;
 	margin-bottom: 1em;
-	border: 1px solid #3f5671;
-	border: 1px solid #65788d;
-	padding-bottom: .3em;
+	border: 1px solid #DDD;
+	border-top: 0;
+	padding-top: .1em;
+	padding-bottom: .1em;
 
         -moz-border-radius-bottomleft:4px;
+        -moz-border-radius-bottomright:4px;
         -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
         border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
 }
 
 	.subnavbar h2
@@ -199,24 +218,44 @@ img a
 		text-align: center;
 	}
 
+	.subnavbar a
+	{
+		padding: .1em;
+		padding-left: .3em;
+		border-right: 1px dotted #DDD;
+		color: #333333;
+		text-shadow: #666 1px 1px 1px;
+		text-shadow: #DDD 1px 1px 1px;
+	}
+
+	.subnavbar a.highlight, .subnavbar a:hover
+	{
+		background-color: #DDD;
+		text-decoration: none;
+		text-shadow: #EEE 1px 1px 1px;
+	}
+
 	.subnavbar ul
 	{
-		margin-top: 0;
-		margin-bottom: 0;
-		margin-left: 1.4em;
-		margin-right: .5em;
-		padding-left: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	.subnavbar li
 	{
+/*
 		padding-left: 0;
 		margin-left: 0;
 		list-style: none;
 		list-style: square;
 		list-style-image: url("bullet.png");
+*/
+		float: left;
+		margin: 0 0.15em;
+		list-style: none;
 	}
-
+/*
 	.subnavbar ul.info
 	{
 		margin-top: .5em;
@@ -237,19 +276,19 @@ img a
 		background: transparent;
 		color: #000;
 	}
-
+*/
 	.subnavbar input.searchfield
 	{
 		width: 7em;
 	}
 
-
+/*
 .content
 {
 	margin-left: 15em;
 	background: transparent;
 }
-
+*/
 	.content .download img
 	{
 		border: 0;
@@ -264,22 +303,36 @@ img a
 	font-size: .8em;
 }
 
+.newsblock
+{
+	margin-top: 1em;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+	border: 1px solid #DDD;
+}
+
 .news
 {
+/*
 	background-color: #3f5671;
 	background-color: #FFF;
 	border: 1px solid #3f5671;
 	border: 1px solid #65788d;
+*/
 	padding: 0;
 }
 
 	.news .date
 	{
 		font-weight: bold;
-		background-color: #65788d;
+/*		background-color: #65788d;*/
+		background-color: #EEE;
 		padding: .2em;
 		padding-left: .5em;
 		color: #FFF;
+		color: #333;
+		text-shadow: #DDD 1px 1px 1px;
 	}
 
 	.news .newscontent
@@ -298,6 +351,13 @@ img a
 		padding-right: 0;
 	}
 
+	.newsnav
+	{
+		border-top: 1px dotted #DDD;
+		padding: .2em;
+		background-color: #EEE;
+	}
+
 .formfields p
 {
 	margin-top: 0;
@@ -311,6 +371,7 @@ img a
 	padding: .2em;
 	border-top: 1px solid #CCC;
 	border-top: 1px solid #65788d;
+	border-top: 1px solid #DDD;
 	font-size: .8em;
 	font-style: italic;
 }
@@ -455,34 +516,6 @@ hr
 	border: 0;
 }
 
-table.showcase
-{
-	border: 0;
-	padding: 0;
-	margin: 0;
-	border-collapse: collapse;
-
-        -moz-border-radius-bottomleft:6px;
-        -moz-border-radius-bottomright:6px;
-        -moz-border-radius-topleft:6px;
-        -moz-border-radius-topright:6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
-	border: 1px solid #DDD;
-}
-
-
-table.showcase td
-{
-	padding: 6px;
-}
-
-table.showcase td.thumbnail
-{
-	background-color: #EEE;
-	border-right: 1px solid #DDD;
-}
-
 /*
 .gallery_thumbs
 {
@@ -542,4 +575,5 @@ table.showcase td.thumbnail
 	margin-top: 1em;
 	font-size: .8em;
 	width: 100%;
+	text-shadow: #DDD 1px 1px 1px;
 }
