@@ -17,22 +17,22 @@ h1
 	font-size: 1.9em;
 	margin-top: .7em;
 	margin-bottom: 0;
-	color: #65788d;
+	color: #38587c;
 }
 
 /*
 h2
 {
 	font-size: 1.3em;
-	color: #65788d;
-	border-bottom: 1px solid #65788d;
+	color: #38587c;
+	border-bottom: 1px solid #38587c;
 }
 */
 h2
 {
 	font-size: 1.3em;
 	color: #FFF;
-	background-color: #65788d;
+	background-color: #38587c;
 	margin: 0;
 	padding: .3em;
         -moz-border-radius: 4px;
@@ -44,7 +44,7 @@ h3
 {
 	font-size: 1em;
 	font-weight: bold;
-	color: #65788d;
+	color: #38587c;
 }
 
 ul li
@@ -56,14 +56,14 @@ a
 {
 	text-decoration: none;
 	color: #7f97b2;
-	color: #65788d;
+	color: #38587c;
 }
 
 a:hover
 {
 	text-decoration: underline;
 	color: #7f97b2;
-	color: #65788d;
+	color: #38587c;
 }
 
 th
@@ -124,7 +124,7 @@ img a
 {
 	margin-top: .5em;
 	background-color: #1288d0;
-	background-color: #65788d;
+	background-color: #38587c;
 	padding: .3em;
 	padding-left: .2em;
 	padding-left: .4em;
@@ -205,7 +205,7 @@ img a
 	.subnavbar h2
 	{
 		background-color: #3f5671;
-		background-color: #65788d;
+		background-color: #38587c;
 		font-size: 1.1em;
 		font-weight: bold;
 		color: #FFF;
@@ -320,7 +320,7 @@ img a
 	background-color: #3f5671;
 	background-color: #FFF;
 	border: 1px solid #3f5671;
-	border: 1px solid #65788d;
+	border: 1px solid #38587c;
 */
 	padding: 0;
 }
@@ -328,7 +328,7 @@ img a
 	.news .date
 	{
 		font-weight: bold;
-/*		background-color: #65788d;*/
+/*		background-color: #38587c;*/
 		background-color: #EEE;
 		padding: .2em;
 		padding-left: .5em;
@@ -373,7 +373,7 @@ img a
 	margin-top: .5em;
 	padding: .2em;
 	border-top: 1px solid #CCC;
-	border-top: 1px solid #65788d;
+	border-top: 1px solid #38587c;
 	border-top: 1px solid #DDD;
 	font-size: .8em;
 	font-style: italic;
@@ -452,7 +452,7 @@ table td
 
 .odd td
 {
-	background-color: #65788d;
+	background-color: #38587c;
 	color: #FFF;
 }
 
@@ -500,7 +500,7 @@ table td
 
 	.thumbnail img
 	{
-/*		border: 1px solid #65788d;*/
+/*		border: 1px solid #38587c;*/
 /*		padding: 1px;*/
 	}
 
@@ -529,7 +529,7 @@ hr
 /*
 .gallery_thumbs
 {
-	border: 1px solid #65788d;
+	border: 1px solid #38587c;
 	padding: .2em;
 }
 */
