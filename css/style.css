@@ -101,7 +101,7 @@ img a
 .page
 {
 	background-color: #FEFEFE;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 	width: 90%;
 	padding: .5em;
 	margin: 1em auto 1em auto;
@@ -189,7 +189,7 @@ img a
 	background-color: #EEE;
 	margin: 0;
 	margin-bottom: 1em;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 	border-top: 0;
 	padding-top: .1em;
 	padding-bottom: .1em;
@@ -223,15 +223,15 @@ img a
 	{
 		padding: .1em;
 		padding-left: .3em;
-		border-right: 1px dotted #DDD;
+		border-right: 1px dotted #CCC;
 		color: #333333;
 		text-shadow: #666 1px 1px 1px;
-		text-shadow: #DDD 1px 1px 1px;
+		text-shadow: #CCC 1px 1px 1px;
 	}
 
 	.subnavbar a.highlight, .subnavbar a:hover
 	{
-		background-color: #DDD;
+		background-color: #CCC;
 		text-decoration: none;
 		text-shadow: #EEE 1px 1px 1px;
 	}
@@ -311,7 +311,7 @@ img a
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 }
 
 .news
@@ -334,7 +334,7 @@ img a
 		padding-left: .5em;
 		color: #FFF;
 		color: #333;
-		text-shadow: #DDD 1px 1px 1px;
+		text-shadow: #CCC 1px 1px 1px;
 	}
 
 	.news .newscontent
@@ -355,7 +355,7 @@ img a
 
 	.newsnav
 	{
-		border-top: 1px dotted #DDD;
+		border-top: 1px dotted #CCC;
 		padding: .2em;
 		padding-left: .4em;
 		background-color: #EEE;
@@ -374,7 +374,7 @@ img a
 	padding: .2em;
 	border-top: 1px solid #CCC;
 	border-top: 1px solid #38587c;
-	border-top: 1px solid #DDD;
+	border-top: 1px solid #CCC;
 	font-size: .8em;
 	font-style: italic;
 }
@@ -470,7 +470,7 @@ table td
 	-moz-border-radius: 6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 }
 
 	.showcase h2, .showcase h3
@@ -485,7 +485,7 @@ table td
 		width: 310px;
 		background-color: #EEE;
 		padding: 6px;
-		border-right: 1px solid #DDD;
+		border-right: 1px solid #CCC;
 /*
 		padding: 3px;
         -moz-border-radius-bottomleft:6px;
@@ -494,7 +494,7 @@ table td
         -moz-border-radius-topright:6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 */
 	}
 
@@ -552,14 +552,14 @@ hr
         -moz-border-radius-topright:6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 }
 
 .gallery_thumbs .image, .gallery_thumbs a
 {
 	height: 240px;
 	width: 240px;
-/*	background-color: #DDD;*/
+/*	background-color: #CCC;*/
 /*	background-color: #FFF;*/
 }
 
@@ -585,5 +585,5 @@ hr
 	margin-top: 1em;
 	font-size: .8em;
 	width: 100%;
-	text-shadow: #DDD 1px 1px 1px;
+	text-shadow: #CCC 1px 1px 1px;
 }
