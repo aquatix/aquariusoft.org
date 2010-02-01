@@ -19,7 +19,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	if ($uagent_obj->DetectSmartphone())
 	//if (true)
 	{
-		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style_mobile.css\"/>\n";
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style_mobile.css?20100201\"/>\n";
 
 		$template .= "</head>\n<body>\n";
 		$template .= "<div id=\"banner\"><span class=\"logo\"><a href=\"" . $skel['base_uri'] . "\"><img src=\"" . $skel['base_uri'] . "images/aquariusoft_org.png\" alt=\"aquariusoft.org\" width=\"170\" height=\"53\" /></a></span></div>\n";
@@ -39,7 +39,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "</body></html>\n";
 	} else
 	{
-		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style.css\"/>\n";
+		$template .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $skel['base_uri'] . "css/style.css?20100201\"/>\n";
 
 		/* IE6 and older transparent png hack */
 		$template .= "<!--[if lte IE 6]>\n";
