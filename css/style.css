@@ -473,6 +473,11 @@ table td
 	border: 1px solid #CCC;
 }
 
+	.narrow
+	{
+		width: 600px;
+	}
+
 	.showcase h2, .showcase h3
 	{
 		margin-top: .2em;

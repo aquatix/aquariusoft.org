@@ -8,8 +8,9 @@ body
 	font-family: verdana, tahoma, helvetica, sans;
 	font-size: 13px;
 	margin: 0;
-	/*background-color: #EEE;*/
-	background-color: #FFF;
+	/*background-color: #EEE;
+	background-color: #FFF;*/
+	background-color: #38587c;
 	color: #333333;
 }
 
@@ -81,9 +82,62 @@ img
 	border: 0;
 }
 
+pre, tt, code
+{
+	font-size: 1.2em;
+	font-size: 1em;
+	font-family: monospace, "courier new";
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: auto;
+}
+
+pre
+{
+	border: 1px solid #3f5671;
+	padding: .5em;
+	background-color: #FFF;
+	overflow: auto;
+}
+
+hr
+{
+	clear: both;
+	border: 0;
+}
+
+#banner
+{
+	background-color: #FEFEFE;
+/*
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+*/
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
 .pagebody
 {
 	padding: .3em;
+	background-color: #FEFEFE;
+/*
+	-moz-border-radius-bottomleft: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+*/
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
 .navbar
@@ -106,6 +160,17 @@ img
 		font-weight: normal;
 	}
 
+	.navbar a:hover, .navbar a.highlight
+	{   
+		padding: .3em;
+		margin: .1em;
+		color: #FFF;
+		text-decoration: none;
+		font-weight: normal;
+		text-decoration: underline;
+	}   
+
+
 /*
 .subnavbar
 {
@@ -117,10 +182,13 @@ img
 {
 	background-color: #FFF;
 	margin: 0;
-	margin-bottom: 1em;
+/*	margin-bottom: 1em;
 	border: 1px solid #3f5671;
-	border: 1px solid #38587c;
-	padding-bottom: .3em;
+	border: 3px solid #38587c;*/
+	padding: .3em;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
 	.subnavbar h2
@@ -138,7 +206,7 @@ img
 		padding-bottom: .2em;
 		text-align: center;
 	}
-
+/*
 	.subnavbar ul
 	{
 		margin-top: 0;
@@ -172,7 +240,7 @@ img
 	}
 
 	.subnavbar input
-
+*/
 .mininav
 {
 	border-top: 1px dotted #3f5671;
@@ -248,11 +316,21 @@ img
 		background-color: #EEE;
 	}
 
+.showcase
+{
+	margin-top: 1em;
+}
+
+	.showcase h2
+	{
+		margin-top: 1em;
+	}
+
 .gallery_thumbs .description
 {
 	margin-top: 1em;
 	font-size: .8em;
-	width: 100%;
+/*	width: 100%;*/
 	text-shadow: #CCC 1px 1px 1px;
 }
 

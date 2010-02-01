@@ -30,7 +30,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= $body;
 
 		$template .= "\t</div>\n";
-		$template .= "<div class=\"footer\">" . $skel["copyright"] . "</div>\n";
+		$template .= "<div class=\"footer\">" . $skel['copyright'] . ' / ' . "<a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></div>\n";
 		$template .= "</div>\n";
 
 		$template .= "<div class=\"navbar\" id=\"navigation\">" . $navbar . "</div>\n";
@@ -89,30 +89,63 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 function buildNav($skel, $sections)
 {
 	$result = '';
-	/* If you want a delimiter between the links, add it to $divider */
-	$divider = ' | ';
-	$divider = ' &bull; ';
-	for ($i = 0; $i < count($sections); $i++)
+	$uagent_obj = new uagent_info();
+	if ($uagent_obj->DetectSmartphone())
+	//if (true)
 	{
-		if ('' != trim($sections[$i]))
+		$result .= "<ul>\n";
+		for ($i = 0; $i < count($sections); $i++)
 		{
-			$sectionkey = getKey($sections[$i]);
-			$section = getValue($sections[$i]);
-			if ('#' != $sectionkey[0])	// '#' denotes a comment in the description file
+			if ('' != trim($sections[$i]))
 			{
-				/* If you want a delimiter between the links, add it here */
-				if (isset($skel['section']) && $sectionkey == $skel['section'])
+				$sectionkey = getKey($sections[$i]);
+				$section = getValue($sections[$i]);
+				if ('#' != $sectionkey[0])	// '#' denotes a comment in the description file
 				{
-					$active = ' class="highlight"';
-				} else
-				{
-					$active = '';
+					/* If you want a delimiter between the links, add it here */
+					if (isset($skel['section']) && $sectionkey == $skel['section'])
+					{
+						$active = ' class="highlight"';
+					} else
+					{
+						$active = '';
+					}
+					if (count($sections) - 1 == $i)
+					{
+						$divider = '';
+					}
+					$result .= '<li><a href="' . $skel['base_uri'] . 'page/' . $sectionkey . '/"' . $active . '>' . trim($section) . '</a></li>';
 				}
-				if (count($sections) - 1 == $i)
+			}
+		}
+		$result .= "</ul>\n";
+	} else
+	{
+		/* If you want a delimiter between the links, add it to $divider */
+		$divider = ' | ';
+		$divider = ' &bull; ';
+		for ($i = 0; $i < count($sections); $i++)
+		{
+			if ('' != trim($sections[$i]))
+			{
+				$sectionkey = getKey($sections[$i]);
+				$section = getValue($sections[$i]);
+				if ('#' != $sectionkey[0])	// '#' denotes a comment in the description file
 				{
-					$divider = '';
+					/* If you want a delimiter between the links, add it here */
+					if (isset($skel['section']) && $sectionkey == $skel['section'])
+					{
+						$active = ' class="highlight"';
+					} else
+					{
+						$active = '';
+					}
+					if (count($sections) - 1 == $i)
+					{
+						$divider = '';
+					}
+					$result .= '<a href="' . $skel['base_uri'] . 'page/' . $sectionkey . '/"' . $active . '>' . trim($section) . '</a>' . $divider;
 				}
-				$result .= '<a href="' . $skel['base_uri'] . 'page/' . $sectionkey . '/"' . $active . '>' . trim($section) . '</a>' . $divider;
 			}
 		}
 	}
@@ -128,6 +161,7 @@ function buildSubnav($skel, $section, $subsections)
 	$result = "\t<div class=\"subnavbar\">\n";
 	$uagent_obj = new uagent_info();
 	if ($uagent_obj->DetectSmartphone())
+	//if (true)
 	{
 		//$result .= "\t<h2>" . $skel['sectionname'] . "</h2>\n";
 		$result .= "\t\t<ul>\n";
@@ -151,6 +185,7 @@ function buildSubnav($skel, $section, $subsections)
 			}
 		}
 		$result .= "\t\t</ul>\n";
+/*
 		$result .= "\t\t<ul class=\"info\">\n";
 		$result .= "\t\t\t<li><form action=\"http://www.google.com/search\" method=\"get\"><input type=\"hidden\" name=\"q\" value=\"site:aquariusoft.org\" /><input type=\"text\" class=\"searchfield\" name=\"q\" size=\"20\" /><input type=\"submit\" value=\"find\" /></form></li>\n";
 		$result .= "\t\t</ul>\n"; 
@@ -165,6 +200,7 @@ function buildSubnav($skel, $section, $subsections)
 		$result .= "\t\t<ul class=\"info\">\n";
 		$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
 		$result .= "\t\t</ul>\n";
+*/
 	} else
 	{
 		/* regular site */
