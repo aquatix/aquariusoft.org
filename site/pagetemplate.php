@@ -126,60 +126,66 @@ function buildNav($skel, $sections)
 function buildSubnav($skel, $section, $subsections)
 {
 	$result = "\t<div class=\"subnavbar\">\n";
-/*
-	$result .= "\t<h2>" . $skel['sectionname'] . "</h2>\n";
-	$result .= "\t\t<ul>\n";
-	for ($i = 0; $i < count($subsections); $i++)
+	$uagent_obj = new uagent_info();
+	if ($uagent_obj->DetectSmartphone())
 	{
-		if ('' != trim($subsections[$i]))
+		//$result .= "\t<h2>" . $skel['sectionname'] . "</h2>\n";
+		$result .= "\t\t<ul>\n";
+		for ($i = 0; $i < count($subsections); $i++)
 		{
-			$pagekey = getKey($subsections[$i]);
-			$page = getValue($subsections[$i]);
-			if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
+			if ('' != trim($subsections[$i]))
 			{
-				if (isset($skel['page']) && $pagekey == $skel['page'])
+				$pagekey = getKey($subsections[$i]);
+				$page = getValue($subsections[$i]);
+				if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
 				{
-					$active = ' class="highlight"';
-				} else
-				{
-					$active = '';
+					if (isset($skel['page']) && $pagekey == $skel['page'])
+					{
+						$active = ' class="highlight"';
+					} else
+					{
+						$active = '';
+					}
+					$result .= "\t\t\t<li><a href=\"" . $skel['base_uri'] . 'page/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . "</a></li>\n";
 				}
-				$result .= "\t\t\t<li><a href=\"" . $skel['base_uri'] . 'page/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . "</a></li>\n";
 			}
 		}
-	}
-	$result .= "\t\t</ul>\n";
-	$result .= "\t\t<ul class=\"info\">\n";
-	$result .= "\t\t\t<li><form action=\"http://www.google.com/search\" method=\"get\"><input type=\"hidden\" name=\"q\" value=\"site:aquariusoft.org\" /><input type=\"text\" class=\"searchfield\" name=\"q\" size=\"20\" /><input type=\"submit\" value=\"find\" /></form></li>\n";
-	$result .= "\t\t</ul>\n"; 
-	$uagent_obj = new uagent_info();
-	if (!$uagent_obj->DetectSmartphone())
-	{
-		$result .= "\t\t<ul class=\"info\">\n";
-		$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/firefox/\" title=\"Get Firefox - Web Browsing Redefined [and take back the web]\"><img src=\"images/firefox_pixel.png\" alt=\"Get Firefox\"/></a></li>\n";
-		$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/thunderbird/\" title=\"Get Thunderbird and reclaim your inbox!\"><img src=\"images/thunderbird_pixel.png\" alt=\"Get Thunderbird\"/></a></li>\n";
 		$result .= "\t\t</ul>\n";
-	}
-	$result .= "\t\t<ul class=\"info\">\n";
-	$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
-	$result .= "\t\t</ul>\n";
-*/
-	for ($i = 0; $i < count($subsections); $i++)
-	{
-		if ('' != trim($subsections[$i]))
+		$result .= "\t\t<ul class=\"info\">\n";
+		$result .= "\t\t\t<li><form action=\"http://www.google.com/search\" method=\"get\"><input type=\"hidden\" name=\"q\" value=\"site:aquariusoft.org\" /><input type=\"text\" class=\"searchfield\" name=\"q\" size=\"20\" /><input type=\"submit\" value=\"find\" /></form></li>\n";
+		$result .= "\t\t</ul>\n"; 
+		$uagent_obj = new uagent_info();
+		if (!$uagent_obj->DetectSmartphone())
 		{
-			$pagekey = getKey($subsections[$i]);
-			$page = getValue($subsections[$i]);
-			if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
+			$result .= "\t\t<ul class=\"info\">\n";
+			$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/firefox/\" title=\"Get Firefox - Web Browsing Redefined [and take back the web]\"><img src=\"images/firefox_pixel.png\" alt=\"Get Firefox\"/></a></li>\n";
+			$result .= "\t\t\t<li><a href=\"http://www.mozilla.com/thunderbird/\" title=\"Get Thunderbird and reclaim your inbox!\"><img src=\"images/thunderbird_pixel.png\" alt=\"Get Thunderbird\"/></a></li>\n";
+			$result .= "\t\t</ul>\n";
+		}
+		$result .= "\t\t<ul class=\"info\">\n";
+		$result .= "\t\t\t<li><a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></li>\n";
+		$result .= "\t\t</ul>\n";
+	} else
+	{
+		/* regular site */
+
+		for ($i = 0; $i < count($subsections); $i++)
+		{
+			if ('' != trim($subsections[$i]))
 			{
-				if (isset($skel['page']) && $pagekey == $skel['page'])
+				$pagekey = getKey($subsections[$i]);
+				$page = getValue($subsections[$i]);
+				if ('#' != $pagekey[0] && '' != trim($page))	// '#' denotes a comment in the description file
 				{
-					$active = ' class="highlight"';
-				} else
-				{
-					$active = '';
+					if (isset($skel['page']) && $pagekey == $skel['page'])
+					{
+						$active = ' class="highlight"';
+					} else
+					{
+						$active = '';
+					}
+					$result .= "<a href=\"" . $skel['base_uri'] . 'page/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . " </a>";
 				}
-				$result .= "<a href=\"" . $skel['base_uri'] . 'page/' . $section . '/' . $pagekey . '/"' . $active . '>' . trim($page) . " </a>";
 			}
 		}
 	}
