@@ -16,6 +16,8 @@ $skel['debugmode'] = false;
 
 /* The title of the site, shown in the browser's titlebar */
 $skel['sitetitle'] = 'aquariusoft.org';
+$skel['siteuri'] = 'aquariusoft.org';
+$skel['searchform'] = true;
 
 /* Additional information to be shown when a user gets a 'page not found' */
 /*
