@@ -1,0 +1,41 @@
+<!-- created @ 2010-04-16 -->
+<div class="updatedat">updated @ 2010-04-16</div>
+
+<p>How to import (self-signed) certificates into the certificate store of your phone if the application doesn't do this for you.</p>
+
+<p>This can be of use if the mail client silently refuses your self-signed certificate (it refuses to continue in the setup wizard where you entered your IMAP credentials with use of SSL for example).</p>
+
+<p>This howto assumes a <em>rooted phone</em> and talks specifically about certificates for mail. These can be substituted for other applications of course. You also need the <a href="http://developer.android.com/sdk/">Android developer toolkit</a>, or more specifically the adb tool. This tutorial assumes it's in your PATH, but you can provide a full path (like /usr/local/bin/android/android-sdk-linux/tools/adb). Also, it works best when performed as <em>root</em> on your pc.</p>
+
+<ul>
+	<li>Get the latest bcprov-jdk16-NNN.jar from <a href="http://www.bouncycastle.org/latest_releases.html">http://www.bouncycastle.org/latest_releases.html</a></li>
+	<li>Get /etc/ssl/certs/dovecot.der from your server (exact location may vary); this is the certificate used by the Dovecot IMAPs server</li>
+	<li>Similarly, get /etc/exim4/exim.crt from your server; this is for smtp (sending of email)</li>
+</ul>
+
+<pre>
+# install the jar, on my debian/ubuntu box that's this:
+sudo mv bcprov-jdk16-145.jar /usr/lib/jvm/java-6-sun-1.6.0.14/jre/lib/ext/
+
+# add the certificate as trusted cert
+keytool -importcert -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass changeit -trustcacerts -alias YOURSERVER_dovecot -file dovecot.der
+
+# test whether it worked
+keytool -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass changeit -v -list| grep -i yourserver
+
+# Repeat this for exim.crt:
+keytool -importcert -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass changeit -trustcacerts -alias YOURSERVER_exim -file exim.crt
+
+# Now upload to the phone. First mount its /system read/write:
+adb shell mount -o remount,rw /dev/block/mtdblock3 /system
+
+# Upload the certificates
+adb push cacerts.bks /system/etc/security/
+
+# Remount /system read-only
+adb shell mount -o remount,ro /dev/block/mtdblock3 /system
+</pre>
+
+<p>Kill Mail on your device or reboot. Setup of your email account should work now.</p>
+
+<p>Based on <a href="http://code.google.com/p/android/issues/detail?id=1016#c34">this comment</a>, but with fixes.</p>
