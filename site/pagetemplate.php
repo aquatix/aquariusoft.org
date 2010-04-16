@@ -36,6 +36,17 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "<div class=\"navbar\" id=\"navigation\">" . $navbar . "</div>\n";
 		$template .= $subnavbar;
 
+		/* Google Analytics stuff */
+		$template .= "<script type=\"text/javascript\">\n";
+		$template .= "var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n";
+		$template .= "document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n";
+		$template .= "</script>\n";
+		$template .= "<script type=\"text/javascript\">\n";
+		$template .= "try {\n";
+		$template .= "var pageTracker = _gat._getTracker(\"UA-10643901-2\");\n";
+		$template .= "pageTracker._trackPageview();\n";
+		$template .= "} catch(err) {}</script>\n";
+
 		$template .= "</body></html>\n";
 	} else
 	{
@@ -74,6 +85,18 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "\t</div>\n";
 		$template .= "<div class=\"footer\">" . $skel['copyright'] . ' / ' . "<a href=\"http://aquariusoft.org/page/html/qik/\">build with qik</a></div>\n";
 		$template .= "<!-- version: " . $skel["version"] . ", parse time: " . (microtime() - $skel["starttime"]) . "sec -->\n";
+
+		/* Google Analytics stuff */
+		$template .= "<script type=\"text/javascript\">\n";
+		$template .= "var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n";
+		$template .= "document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n";
+		$template .= "</script>\n";
+		$template .= "<script type=\"text/javascript\">\n";
+		$template .= "try {\n";
+		$template .= "var pageTracker = _gat._getTracker(\"UA-10643901-2\");\n";
+		$template .= "pageTracker._trackPageview();\n";
+		$template .= "} catch(err) {}</script>\n";
+
 		$template .= "</div>\n";
 		$template .= "</div>\n";
 		$template .= "</div>\n";
