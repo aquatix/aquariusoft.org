@@ -7,6 +7,7 @@ aquamorph_todo=
 backup=backup scripts
 #backup_db=backup script for DBs
 #irssi=irssi notifications
+django=django
 irssi=irssi
 livecd_howto=livecd HOWTO
 #morphest2005=Morphest 2005

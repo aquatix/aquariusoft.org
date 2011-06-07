@@ -44,6 +44,6 @@ $skel['logfile'] = '/var/log/qik/aquariusoftorg.log';
 $skel['logpass'] = 'hallo666';
 
 /* the text to be displayed in the footer */
-$skel['copyright'] = '&copy; 1999-2010 webmaster (at) aquariusoft.org';
+$skel['copyright'] = '&copy; 1999-2011 webmaster (at) aquariusoft.org';
 
 ?>
