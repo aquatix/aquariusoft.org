@@ -3,6 +3,7 @@ main=Home
 nl=<img src="images/nl.gif" alt="Nederlands" /> Nederlands
 linux=Linux
 html=HTML projects
+django=Django
 android=Android
 palm=Palm source
 portfolio=Portfolio
