@@ -15,6 +15,23 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 	$template .= "<head>\n";
 	$template .= "<title>" . $page_title . ' | ' . $skel['sitetitle'] . "</title>\n";
 
+
+	$piwik_snippet = <<<'EOD'
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://aquariusoft.org/r00t/webstats/" : "http://aquariusoft.org/r00t/webstats/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://aquariusoft.org/r00t/webstats/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+EOD;
+
+
 	$uagent_obj = new uagent_info();
 	if ($uagent_obj->DetectSmartphone())
 	//if (true)
@@ -47,6 +64,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "pageTracker._trackPageview();\n";
 		$template .= "} catch(err) {}</script>\n";
 
+		$template .= $piwik_snippet;
 		$template .= "</body></html>\n";
 	} else
 	{
@@ -100,6 +118,7 @@ function buildPage($skel, $page_title, $navbar, $subnavbar, $body)
 		$template .= "</div>\n";
 		$template .= "</div>\n";
 		$template .= "</div>\n";
+		$template .= $piwik_snippet;
 		$template .= "</body></html>\n";
 	}
 	return $template;
