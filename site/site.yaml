@@ -1,17 +1,33 @@
 # site configuration
-section 1:
-    name: Section 1
-    page-1:
-        name: Page number 1
-        slug: page-nr-1
-        # filename is implicit: page-nr-1.md and page-nr-1.html will be tried
-section 2:
-    name: Section numero dos
-    page 42:
-        name: 42 you know
-        slug: 42-you-know
-        file: 42.html
-    info:
-        name: Info page
-        slug: info
-        file: info_page.md
+main:
+    name: Home
+
+    welcome:
+        name: AquariuSoft
+    # leave value empty to not let it show up in the nav
+    dutch:
+        name:
+    news:
+        name: Old news
+    #featured=Featured
+    contact:
+        name: Contact
+    about:
+        name: About
+
+nl:
+    name: <img src="images/nl.gif" alt="Nederlands" /> Nederlands
+
+linux:
+    name: Linux
+
+html:
+    name: HTML projects
+django:
+    name: Django
+android:
+    name: Android
+palm:
+    name: Palm source
+portfolio:
+    name: Portfolio
