@@ -8,35 +8,35 @@ footer: |
 subdirs: false
 sections:
     main:
-        name: Home
+        title: Home
         slug: home
         pages:
             welcome:
-                name: AquariuSoft
+                title: AquariuSoft
             # leave value empty to not let it show up in the nav
             dutch:
-                name:
+                title:
             news:
-                name: Old news
+                title: Old news
             #featured=Featured
             contact:
-                name: Contact
+                title: Contact
             about:
-                name: About
+                title: About
 
     nl:
-        name: <img src="images/nl.gif" alt="Nederlands" /> Nederlands
+        title: <img src="images/nl.gif" alt="Nederlands" /> Nederlands
 
     linux:
-        name: Linux
+        title: Linux
 
     html:
-        name: HTML projects
+        title: HTML projects
     django:
-        name: Django
+        title: Django
     android:
-        name: Android
+        title: Android
     palm:
-        name: Palm source
+        title: Palm source
     portfolio:
-        name: Portfolio
+        title: Portfolio
