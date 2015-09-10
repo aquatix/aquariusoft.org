@@ -1,14 +1,31 @@
 <html>
 <head>
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>{% block title %}{{ page.title }}{% endblock %} - {{ site.title }}</title>
     <meta name="author" content="{{ author }}" />
     <meta name="description" content="{{ description }}" />
     <meta name="copyright" content="{{ site.copyright }}" />
     <link rel="stylesheet" type="text/css" href="/styles/structure.css">
     <link rel="stylesheet" href="/styles/fonts/bariol/bariol.css"/>
+
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.2/styles/default.min.css">
+    <script src="http://yandex.st/highlightjs/8.2/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+{% block navbar %}
+{% set active_page = active_page|default('index') -%}
+<nav>
+    <ul id="navigation">
+    {% for href, id, caption in navbar %}
+      <li{% if id == active_page %} class="active"{% endif
+      %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+    {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+{% block body %}
 {{ htmlbody }}
 <footer>{{ footer }}</footer>
+{% endblock %}
 </body>
 </html>

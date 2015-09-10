@@ -66,3 +66,13 @@ em {
     color: #AA7C39;
 }
 
+
+code
+{
+    font-family: "monospace";
+}
+
+pre
+{
+    overflow: auto;
+}
