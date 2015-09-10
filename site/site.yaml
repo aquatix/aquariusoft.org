@@ -29,14 +29,70 @@ sections:
 
     linux:
         title: Linux
+        pages:
+
+            aquamorph:
+                title: aquamorph livecd
+            # if value is empty, it will not show up in the sub navigation
+            aquamorph_news:
+                title: 
+            aquamorph_packages:
+                title:
+            aquamorph_todo:
+                title:
+            backup:
+                title: backup scripts
+            irssi:
+                title: irssi
+            livecd_howto:
+                title: livecd HOWTO
+            mellow:
+                title: Mellow Subsonic
+            svnsync:
+                title: svn remote sync
+            upgradefirmwareinlinux:
+                title: firmware upgrading
+            wpasupplicant4vu:
+                title: wpasupplicant for VU
+            xsupplicant4vu:
+                title: xsupplicant for VU
+
 
     html:
         title: HTML projects
+        pages:
+            qik:
+                title: Qik site framework
+            blog:
+                title: "simplog: weblog software"
+            htmlmodules:
+                title: HTML modules
+            iplugs:
+                title: iplugs
+            overload:
+                title: overload information manager
     django:
         title: Django
+        pages:
+            config:
+                title: Configure
+            djangocon:
+                title: DjangoCon
     android:
         title: Android
+        pages:
+            news:
+                title: News
+            essentials:
+                title: Essential apps
+            list:
+                title: Cool List
+            certs:
+                title: Install certificates
     palm:
         title: Palm source
+        pages:
+            bluetooth_linux:
+                title: bluetooth and Linux
     portfolio:
         title: Portfolio
