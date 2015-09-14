@@ -16,11 +16,12 @@
 {% set active_page = active_page|default('index') -%}
 <nav>
     <ul id="navigation">
-    {% for href, id, caption in navbar_section %}
+    {% for section_href, section_id, section_caption, navbar_section in navbar %}
     <li{% if id == active_section %} class="active"{% endif %}>
+        <a href="{{ section_href|e }}">{{ section_caption }}</a>
         <ul>
         {% for href, id, caption in navbar_section %}
-        <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+        <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption }}</a></li>
         {% endfor %}
         </ul>
     </li>
