@@ -10,8 +10,10 @@ body {
     text-rendering: optimizeLegibility;
     background-color: #0E553C;
     color: #72AB97;
-    margin: 0px;
+    /*margin: 0px;*/
     height: 100%;
+    margin:40px auto;
+    max-width:800px;
 }
 
 input, button, textarea {
@@ -86,4 +88,9 @@ nav li ul
 nav li:hover ul, nav li:focus ul nav li.active ul
 {
     display:block;
+}
+
+footer
+{
+    margin: 2em 0;
 }
