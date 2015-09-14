@@ -6,6 +6,11 @@ copyright: Michiel Scholten
 footer: |
     &copy; 1999-2015 webmaster (at) aquariusoft.org // <a href="https://github.com/aquatix/paragoo">build with paragoo</a>
 subdirs: false
+errorpage: |
+    <p>If you are looking for the overload feedreader, please note <a href="page/html/overload">it has been discontinued</a>. It might come back -- rewritten in Python/Django for example -- but not soon.</p>
+    <p>The Windows section is gone, as the applications were unmaintained and quite antique.</p>
+    <p>Also, the forum has been discontinued because of disuse.</p>
+    <p>If you notice something missing, don't hesitate to <a href="page/main/contact/">contact me</a>.</p>
 sections:
     main:
         title: Home
