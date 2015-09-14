@@ -13,7 +13,7 @@
 
 <p>Here is my own [slightly censored] backup script. Save as backup or something and run as "backup daily", "backup weekly" and/or "backup monthly" in your crontab file [see below]</p>
 
-<pre style="height: 40em;">
+<pre><code>
 #!/bin/sh
 #
 # Makes an incremental daily or weekly backup of the homedirs and of the mail dir
@@ -132,18 +132,18 @@ umount "$BACKUPDIR"
 echo "> [`date +%H:%M:%S`] Unmounted backup partition"
 
 echo "== Done ======"
-</pre>
+</code></pre>
 
 <p>Your backup_exclude file can look like this:</p>
 
-<pre>
+<pre><code>
 .mozilla/*
 tmp/*
-</pre>
+</code></pre>
 
 <p>Or on your workstation:</p>
 
-<pre>
+<pre><code>
 News/*
 .thumbnails/*
 .xMule/*
@@ -160,12 +160,12 @@ News/*
 .pan/newszilla/*
 .pan/demon/*
 bin/azureus/*
-</pre>
+</code></pre>
 
 
 <p>Your crontab can look like this, if you use a backup script for databases too:</p>
 
-<pre>
+<pre><code>
 # First day of month at 3:00am == Monthly full backup of homedirs and e-mail
 00 3   1 * *  /storage/system/backup/backup monthly
 45 2   1 * *  /storage/system/backup/backup_db monthly
@@ -173,7 +173,7 @@ bin/azureus/*
 # Sat at 3:30am == Weekly cummulative backup of homedirs and e-mail
 30 3   * * 6  /storage/system/backup/backup weekly
 45 3   * * 6  /storage/system/backup/backup_db weekly
-</pre>
+</code></pre>
 
 
 <!-- created @ 2005-06-02 22:57:15
@@ -185,7 +185,7 @@ bin/azureus/*
 
 <p>Here is my own [slightly censored] backup script. Save as backup_db or something and run as "backup_db weekly" and/or "backup_db monthly" in your crontab file [see below]</p>
 
-<pre style="height: 40em;">
+<pre><code>
 !/bin/sh
 #
 # Makes an incremental daily or weekly backup of the homedirs and of the mail dir and mysql dir
@@ -257,12 +257,12 @@ umount "$BACKUPPARTITION"
 echo "> [`date +%H:%M:%S`] Unmounted backup partition"
 
 echo "== Done ======"
-</pre>
+</code></pre>
 
 
 <p>Your crontab can look like this, if you use a backup script for homedirs etc too:</p>
 
-<pre>
+<pre><code>
 # First day of month at 3:00am == Monthly full backup of homedirs and e-mail
 00 3   1 * *  /storage/system/backup/backup monthly
 45 2   1 * *  /storage/system/backup/backup_db monthly
@@ -270,5 +270,5 @@ echo "== Done ======"
 # Sat at 3:30am == Weekly cummulative backup of homedirs and e-mail
 30 3   * * 6  /storage/system/backup/backup weekly
 45 3   * * 6  /storage/system/backup/backup_db weekly
-</pre>
+</code></pre>
 
