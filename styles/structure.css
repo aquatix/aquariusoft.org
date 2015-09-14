@@ -77,3 +77,13 @@ pre
 {
     overflow: auto;
 }
+
+nav li ul
+{
+    display:none;
+}
+
+nav li:hover ul, nav li:focus ul nav li.active ul
+{
+    display:block;
+}
