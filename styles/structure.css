@@ -71,8 +71,9 @@ em {
 
 code
 {
-    font-family: "monospace";
-/*    font-size: 0.7em;*/
+    font-family: Hack, monospace;
+    font-size: 90%;
+    line-height: 95%;
 }
 
 pre
