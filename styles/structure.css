@@ -1,7 +1,10 @@
+@import url( 'normalize.css' );
+
+/*
 html {
     height: 100%;
 }
-
+*/
 body {
     font-family: "bariol_regularregular", Arial;
     letter-spacing: 0.01em;
@@ -11,7 +14,9 @@ body {
     background-color: #0E553C;
     color: #72AB97;
     /*margin: 0px;*/
+/*
     height: 100%;
+*/
     margin:40px auto;
     max-width:800px;
 }
@@ -80,6 +85,13 @@ pre
 {
     overflow: auto;
 }
+
+ul,
+ol
+{
+    list-style: none;
+}
+
 /*
 nav li ul
 {
