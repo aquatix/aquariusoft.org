@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 {% block navbar %}
 {% set active_page = active_page|default('index') -%}
-<nav>
-    <ul id="navigation">
+<nav id="nav" role="navigation">
+    <a href="#nav" title="Show navigation">Show navigation</a>
+    <a href="#" title="Hide navigation">Hide navigation</a>
+    <ul class="clearfix">
     {% for section_href, section_id, section_caption, navbar_section in navbar %}
     <li{% if section_id == active_section %} class="active"{% endif %}>
-        <a href="{{ section_href|e }}">{{ section_caption }}</a>
+        <a href="{{ section_href|e }}" aria-haspopup="true"><span>{{ section_caption }}</span></a>
         <ul>
             {% for href, id, caption in navbar_section %}
             <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption }}</a></li>
@@ -29,6 +33,14 @@
     {% endfor %}
     </ul>
 </nav>
+
+<script src="/scripts/doubletaptogo.js"></script>
+<script>
+    $( function()
+    {
+        $( '#nav li:has(ul)' ).doubleTapToGo();
+    });
+</script>
 {% endblock %}
 {% block body %}
 <h1>{{ page.title }}</h1>
