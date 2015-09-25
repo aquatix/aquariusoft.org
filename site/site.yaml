@@ -64,7 +64,7 @@ sections:
 
 
     html:
-        title: HTML projects
+        title: Web projects
         pages:
             qik:
                 title: Qik site framework
