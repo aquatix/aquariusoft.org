@@ -114,7 +114,8 @@ footer
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     position: absolute;
-    top: 25%;
+/*    top: 25%;*/
+    top: 5%;
     left: 50%;
     margin-left: -30em; /* 30 480 */
 }
@@ -234,12 +235,15 @@ footer
 
     #nav
     {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
         position: relative;
         top: auto;
         left: auto;
     }
         #nav > a
         {
+            display: none;
             width: 3.125em; /* 50 */
             height: 3.125em; /* 50 */
             text-align: left;
@@ -268,11 +272,39 @@ footer
             display: block;
         }
 
+        #nav li
+        {
+            position: relative;
+        }
+            #nav li a
+            {
+                color: #fff;
+                display: block;
+            }
+            #nav li a:active
+            {
+                background-color: #c00 !important;
+            }
+
+    #nav span:after
+    {
+        width: 0;
+        height: 0;
+        border: 0.313em solid transparent; /* 5 */
+        border-bottom: none;
+        border-top-color: #efa585;
+        content: '';
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        right: -0.313em; /* 5 */
+    }
 
     /* first level */
 
     #nav > ul
     {
+        background-color: #e15a1f;
         height: auto;
         display: none;
         position: absolute;
@@ -285,11 +317,14 @@ footer
         }
         #nav > ul > li
         {
+            height: 100%;
             width: 100%;
             float: none;
         }
             #nav > ul > li > a
             {
+                font-size: 1.5em; /* 24 */
+                line-height: 2.5em; /* 60 (24) */
                 height: auto;
                 text-align: left;
                 padding: 0 0.833em; /* 20 (24) */
@@ -298,6 +333,11 @@ footer
                 {
                     border-right: none;
                     border-bottom: 1px solid #cc470d;
+                }
+                #nav > ul > li:hover > a,
+                #nav > ul:not( :hover ) > li.active > a
+                {
+                    background-color: #cc470d;
                 }
 
 
@@ -308,6 +348,35 @@ footer
             position: static;
             padding: 1.25em; /* 20 */
             padding-top: 0;
+            background-color: #cc470d;
+            display: none;
+/*
+            position: absolute;
+            top: 100%;
+*/
         }
+            #nav li:hover ul
+            {
+                display: block;
+                left: 0;
+                right: 0;
+            }
+                #nav li:not( :first-child ):hover ul
+                {
+                    left: -1px;
+                }
+                #nav li ul a
+                {
+                    font-size: 1.25em; /* 20 */
+                    border-top: 1px solid #e15a1f;
+                    padding: 0.75em; /* 15 (20) */
+                }
+                    #nav li ul li a:hover,
+                    #nav li ul:not( :hover ) li.active a
+                    {
+                        background-color: #e15a1f;
+                    }
+
+
 }
 
