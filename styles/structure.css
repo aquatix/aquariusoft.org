@@ -350,10 +350,6 @@ footer
             padding-top: 0;
             background-color: #cc470d;
             display: none;
-/*
-            position: absolute;
-            top: 100%;
-*/
         }
             #nav li:hover ul
             {
