@@ -20,6 +20,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+{% block site_header %}
+<div id="site_header">
+    <h1><a href="/">{{ site.title }}</a></h1>
+</div>
+{% endblock %}
 {% block navbar %}
 {% set active_page = active_page|default('index') -%}
 <nav id="nav" role="navigation">

@@ -17,7 +17,7 @@ sections:
         slug: home
         pages:
             welcome:
-                title: AquariuSoft
+                title: Welcome
             # leave value empty to not let it show up in the nav
             dutch:
                 title:
