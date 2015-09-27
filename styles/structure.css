@@ -9,7 +9,7 @@ body {
     font-family: "bariol_regularregular", Arial;
     letter-spacing: 0.01em;
     font-size: 1em;
-    padding: 40px;
+    padding: 40px 40px 40px 10px;
     text-rendering: optimizeLegibility;
     background-color: #0E553C;
     color: #72AB97;
@@ -83,7 +83,8 @@ pre
 ul,
 ol
 {
-    list-style: none;
+/*    list-style: none;*/
+/*    padding-left: 0;*/
 }
 
 /*
@@ -115,8 +116,23 @@ footer
 
 #content
 {
-    margin-left: 20%;
+    margin-left: 22%;
     max-width: 800px;
+}
+
+@media only screen and ( max-width: 62.5em ) /* 1000 */
+{
+    #nav
+    {
+        width: 10%;
+        margin: 0;
+    }
+
+    ul
+    {
+        padding-left: 20px;
+    }
+
 }
 
 @media only screen and ( max-width: 40em ) /* 640 */
