@@ -13,14 +13,6 @@ body {
     text-rendering: optimizeLegibility;
     background-color: #0E553C;
     color: #72AB97;
-    /*margin: 0px;*/
-/*
-    height: 100%;
-*/
-/*
-    margin:40px auto;
-    max-width:800px;
-*/
 }
 
 input, button, textarea {
@@ -144,8 +136,6 @@ footer
     {
         float: none;
         width: 100%;
-
-        font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         position: relative;
         top: auto;
