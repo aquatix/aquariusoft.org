@@ -121,11 +121,6 @@ footer
 
 @media only screen and ( max-width: 40em ) /* 640 */
 {
-    html
-    {
-        font-size: 75%; /* 12 */
-    }
-
     #content
     {
         margin-left: 0;
