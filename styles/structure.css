@@ -17,8 +17,10 @@ body {
 /*
     height: 100%;
 */
+/*
     margin:40px auto;
     max-width:800px;
+*/
 }
 
 input, button, textarea {
@@ -108,9 +110,21 @@ footer
     margin: 2em 0;
 }
 
-#nav > a
+#nav
 {
-    display: none;
+    float: left;
+    width: 20%;
+}
+
+    #nav > a
+    {
+        display: none;
+    }
+
+#content
+{
+    margin-left: 20%;
+    max-width: 800px;
 }
 
 @media only screen and ( max-width: 40em ) /* 640 */
@@ -120,8 +134,17 @@ footer
         font-size: 75%; /* 12 */
     }
 
+    #content
+    {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
     #nav
     {
+        float: none;
+        width: 100%;
+
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         position: relative;
