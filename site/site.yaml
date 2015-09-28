@@ -17,7 +17,7 @@ sections:
         slug: home
         pages:
             welcome:
-                title: AquariuSoft
+                title: Welcome
             # leave value empty to not let it show up in the nav
             dutch:
                 title:
@@ -47,6 +47,7 @@ sections:
                 title:
             backup:
                 title: backup scripts
+                description: A howto on periodically backing up import data from your server(s)
             irssi:
                 title: irssi
             livecd_howto:
@@ -64,7 +65,7 @@ sections:
 
 
     html:
-        title: HTML projects
+        title: Web projects
         pages:
             qik:
                 title: Qik site framework

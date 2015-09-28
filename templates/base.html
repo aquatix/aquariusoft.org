@@ -1,9 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
     <title>{% block title %}{{ page.title }}{% endblock %} - {{ site.title }}</title>
     <meta name="author" content="{{ author }}" />
     <meta name="description" content="{{ description }}" />
     <meta name="copyright" content="{{ site.copyright }}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/styles/structure.css">
     <link rel="stylesheet" href="/styles/fonts/bariol/bariol.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.013/css/hack.min.css">
@@ -15,6 +20,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+{% block site_header %}
+<div id="site_header">
+    <h1><a href="/">{{ site.title }}</a></h1>
+</div>
+{% endblock %}
 {% block navbar %}
 {% set active_page = active_page|default('index') -%}
 <nav id="nav" role="navigation">
@@ -42,10 +52,37 @@
     });
 </script>
 {% endblock %}
+<div id="content">
 {% block body %}
 <h1>{{ page.title }}</h1>
-{{ htmlbody | paragoo_includes }}
+{{ htmlbody }}
 <footer>{{ footer }}</footer>
 {% endblock %}
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10643901-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</div>
+</div>
+</div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://aquariusoft.org/r00t/webstats/" : "http://aquariusoft.org/r00t/webstats/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://aquariusoft.org/r00t/webstats/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
 </body>
 </html>
