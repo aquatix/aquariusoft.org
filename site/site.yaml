@@ -30,7 +30,7 @@ sections:
                 title: About
 
     nl:
-        title: <img src="images/nl.gif" alt="Nederlands" /> Nederlands
+        title: <img src="/images/nl.gif" alt="Nederlands" /> Nederlands
 
     linux:
         title: Linux

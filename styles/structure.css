@@ -9,7 +9,7 @@ body {
     font-family: "bariol_regularregular", Arial;
     letter-spacing: 0.01em;
     font-size: 1em;
-    padding: 0 40px 40px 10px;
+    padding: 0 10px 40px 10px;
     text-rendering: optimizeLegibility;
     background-color: #0E553C;
     color: #72AB97;
@@ -150,6 +150,12 @@ footer
     {
         margin-left: 0;
         max-width: 100%;
+    }
+
+    ul, ol
+    {
+        list-style: none;
+        padding-left: 0;
     }
 
     #nav
