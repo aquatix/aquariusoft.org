@@ -31,14 +31,22 @@ sections:
 
     nl:
         title: <img src="/images/nl.gif" alt="Nederlands" /> Nederlands
+        pages:
+            home:
+                title: Welkom
+            portfolio:
+                title: Portfolio
+            contact:
+                title: Contact
 
     linux:
         title: Linux
         pages:
 
+            # if value is empty, it will not show up in the sub navigation
+            # or set visible: false
             aquamorph:
                 title: aquamorph livecd
-            # if value is empty, it will not show up in the sub navigation
             aquamorph_news:
                 title:
             aquamorph_packages:
