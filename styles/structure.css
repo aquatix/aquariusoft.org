@@ -13,6 +13,7 @@ body {
     text-rendering: optimizeLegibility;
     background-color: #0E553C;
     color: #72AB97;
+    line-height: 1.4;
 }
 
 input, button, textarea {
@@ -68,7 +69,7 @@ h3 {
 
 p {
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: .3em;
 }
 
 em {
