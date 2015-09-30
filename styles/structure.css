@@ -146,10 +146,17 @@ footer
 
 @media only screen and ( max-width: 40em ) /* 640 */
 {
+
+    #site_header
+    {
+        float: left;
+    }
+
     #content
     {
         margin-left: 0;
         max-width: 100%;
+        clear: both;
     }
 
     ul, ol
@@ -160,10 +167,11 @@ footer
 
     #nav
     {
-        float: none;
-        width: 100%;
+        /*float: none;*/
+        float: right;
+/*        width: 100%;*/
         font-weight: 400;
-        position: relative;
+/*        position: relative;*/
         top: auto;
         left: auto;
     }
