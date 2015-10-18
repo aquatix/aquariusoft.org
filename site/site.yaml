@@ -46,7 +46,7 @@ sections:
             # if value is empty, it will not show up in the sub navigation
             # or set visible: false
             aquamorph:
-                title: aquamorph livecd
+                title: "aquamorph livecd"
             aquamorph_news:
                 title:
             aquamorph_packages:
