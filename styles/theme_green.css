@@ -2,20 +2,6 @@
  * Dark green theme with orange highlights
  */
 
-
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:700);
-@import url(/styles/fonts/bariol/bariol.css);
-@import url(//cdn.jsdelivr.net/font-hack/2.015/css/hack.min.css);
-
-/* Code blocks */
-@import url(/styles/highlightjs/tomorrow-night.css);
-
-/* Main CSS with block structure */
-@import url(/styles/structure.css);
-
-
-/* Colours and font designations */
 body {
     font-family: "bariol_regularregular", Arial;
     letter-spacing: 0.01em;
