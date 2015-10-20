@@ -46,7 +46,7 @@ sections:
             # if value is empty, it will not show up in the sub navigation
             # or set visible: false
             aquamorph:
-                title: "aquamorph livecd"
+                title: "⌚ aquamorph livecd"
             aquamorph_news:
                 title:
             aquamorph_packages:
@@ -67,24 +67,26 @@ sections:
             upgradefirmwareinlinux:
                 title: firmware upgrading
             wpasupplicant4vu:
-                title: wpasupplicant for VU
+                title: ⌚ wpasupplicant for VU
             xsupplicant4vu:
-                title: xsupplicant for VU
+                title: ⌚ xsupplicant for VU
 
 
     html:
         title: Web projects
         pages:
-            qik:
-                title: Qik site framework
             blog:
-                title: "simplog: weblog software"
+                title: "simplog/kontent: weblog software"
+            paragoo:
+                title: paragoo site generator
+            qik:
+                title: ⌚ Qik site framework
             htmlmodules:
-                title: HTML modules
+                title: ⌚ HTML modules
             iplugs:
-                title: iplugs
+                title: ⌚ iplugs
             overload:
-                title: overload information manager
+                title: ⌚ overload information manager
     django:
         title: Django
         pages:
