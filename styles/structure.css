@@ -47,7 +47,9 @@ h3 {
 
 p {
     margin-top: 0px;
-    margin-bottom: .3em;
+    margin-bottom: .5em;
+    line-height: 1.7em;
+    font-size: 1.1em;
 }
 
 em {
@@ -103,6 +105,11 @@ footer
     #nav > ul
     {
         margin-top: 0;
+        list-style: none;
+        background: #231D1D;
+        background: #0A2B1F;
+        padding: 40px;
+        border-radius: 9px;
     }
 
 #content
@@ -177,6 +184,12 @@ footer
         #nav:target > a:last-of-type
         {
             display: block;
+        }
+
+        #nav > ul
+        {
+            padding: 0;
+            border-radius: 0;
         }
 
         #nav li
