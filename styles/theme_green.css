@@ -8,8 +8,8 @@ body {
     font-size: 1em;
     padding: 0 10px 40px 10px;
     text-rendering: optimizeLegibility;
-    background-color: #0E553C;
-    color: #72AB97;
+    background-color: #254238;
+    color: #E0E0E0;
     line-height: 1.4;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 a {
-    color: #FFDCAA;
+    color: #E0C49C;
 }
 
 a:hover {
