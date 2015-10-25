@@ -115,7 +115,8 @@ footer
 {
     margin-left: 22%;
     max-width: 800px;
-    margin-top: 16px;
+    margin-top: 0;
+    padding-top: 16px;
 }
 
 @media only screen and ( max-width: 62.5em ) /* 1000 */
