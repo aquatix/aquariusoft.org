@@ -11,6 +11,12 @@ errorpage: |
     <p>The Windows section is gone, as the applications were unmaintained and quite antique.</p>
     <p>Also, the forum has been discontinued because of disuse.</p>
     <p>If you notice something missing, don't hesitate to <a href="page/main/contact/">contact me</a>.</p>
+replacements:
+    # Text to replace in rendered pages, for example to make a uri absolute
+    href="image/:
+        href="/image/
+    href="files/:
+        href="/files/
 sections:
     main:
         title: Home
