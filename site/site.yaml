@@ -2,15 +2,37 @@
 title: AquariuSoft
 author: Michiel Scholten
 description: This site is the base for all projects by AquariuSoft, also known as Michiel Scholten. AquariuSoft is specialised in web development, system and network administration (Linux) and application development.
+logo: <img style="vertical-align:middle" src="/images/aquariusoft_org.png" alt="aquariusoft.org logo" />
 copyright: Michiel Scholten
 footer: |
-    &copy; 1999-2015 webmaster (at) aquariusoft.org // <a href="https://github.com/aquatix/paragoo">build with paragoo</a>
+    &copy; 1999-2016 webmaster (at) aquariusoft.org // <a href="https://github.com/aquatix/paragoo">build with paragoo</a>
+about_title: About AquariuSoft
+about: |
+    AquariuSoft.org is the project website of Michiel Scholten, collecting projects and howtos from various aspects of technological life.
 subdirs: false
 errorpage: |
     <p>If you are looking for the overload feedreader, please note <a href="page/html/overload">it has been discontinued</a>. It might come back -- rewritten in Python/Django for example -- but not soon.</p>
     <p>The Windows section is gone, as the applications were unmaintained and quite antique.</p>
     <p>Also, the forum has been discontinued because of disuse.</p>
     <p>If you notice something missing, don't hesitate to <a href="page/main/contact/">contact me</a>.</p>
+
+linkblocks:
+    block1:
+        title: Photography
+        links:
+            gallery:
+                title: Gallery
+                url: http://aquariusoft.org/photo/
+    block2:
+        title: Weblogs
+        links:
+            dammit:
+                title: dammIT
+                url: http://dammit.nl/
+            familiescholten:
+                title: Familie Scholten
+                url: http://familiescholten.net/
+
 replacements:
     # Text to replace in rendered pages, for example to make a uri absolute
     href="image/:
@@ -19,6 +41,7 @@ replacements:
         src="/image/
     href="files/:
         href="/files/
+
 sections:
     main:
         title: Home
