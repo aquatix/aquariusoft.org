@@ -113,17 +113,20 @@ sections:
         title: Web projects
         pages:
             blog:
-                title: "simplog/kontent: weblog software"
+                #title: "simplog/kontent: weblog software"
+                title: weblog software
             paragoo:
-                title: paragoo site generator
+                #title: paragoo site generator
+                title: paragoo
             qik:
-                title: ⌚ Qik site framework
+                title: ⌚ Qik framework
             htmlmodules:
                 title: ⌚ HTML modules
             iplugs:
                 title: ⌚ iplugs
             overload:
-                title: ⌚ overload information manager
+                #title: ⌚ overload information manager
+                title: ⌚ overload infomanager
     django:
         title: Django
         pages:
