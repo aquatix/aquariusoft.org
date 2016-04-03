@@ -41,6 +41,10 @@ replacements:
         href="/image/
     src="image/:
         src="/image/
+    href="images/:
+        href="/images/
+    src="images/:
+        src="/images/
     href="files/:
         href="/files/
 
