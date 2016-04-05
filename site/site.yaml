@@ -59,7 +59,7 @@ sections:
             dutch:
                 title:
             news:
-                title: Old news
+                title: News archive
             #featured=Featured
             contact:
                 title: Contact
@@ -105,19 +105,21 @@ sections:
                 title: firmware upgrading
             wpasupplicant4vu:
                 title: ⌚ wpasupplicant for VU
+                navtitle: ⌚ wpasupplicant
             xsupplicant4vu:
                 title: ⌚ xsupplicant for VU
+                navtitle: ⌚ xsupplicant
 
 
     html:
         title: Web projects
         pages:
             blog:
-                #title: "simplog/kontent: weblog software"
-                title: weblog software
+                title: "simplog/kontent: weblog software"
+                navtitle: weblog software
             paragoo:
-                #title: paragoo site generator
-                title: paragoo
+                title: paragoo site generator
+                navtitle: paragoo
             qik:
                 title: ⌚ Qik framework
             htmlmodules:
@@ -125,8 +127,8 @@ sections:
             iplugs:
                 title: ⌚ iplugs
             overload:
-                #title: ⌚ overload information manager
-                title: ⌚ overload infomanager
+                title: ⌚ overload information manager
+                navtitle: ⌚ overload
     django:
         title: Django
         pages:
