@@ -1,13 +1,13 @@
 <!-- created @ 2009-08-28 13:10:00 -->
 <div class="updatedat">updated @ 2010-08-19 / started updating at 2016-04-08</div>
 
-<p><i class=""></i> This list is in the process of being updated, from ancient 2010 apps to a current 2016 listing.</p>
-
 This page contains useful applications with a short description and a link to their PlayStore pages.
 
 Some applications appear twice under different categories, as they are multifacetted like that.
 
-*NB: I'm not endorsed by any of these applications; they are just being extremely handy, great to have or otherwise amusing. I am not responsible for whatever those applications do to your device or otherwise. See it as a repository or treasurebox for your Android phone. All of the applications in this list are free. There may exists paid versions of the programs with more features, so be sure to discover gems on your own. Also, there might be a donationware version available to thank the author for a job well done.
+<i class="material-icons">info_outline</i> This list is in the process of being updated, from ancient 2010 apps to a current 2016 listing.
+
+*NB:* I'm not endorsed by any of these applications; they are just being extremely handy, great to have or otherwise amusing. I am not responsible for whatever those applications do to your device or otherwise. See it as a repository or treasurebox for your Android phone. All of the applications in this list are free. There may exists paid versions of the programs with more features, so be sure to discover gems on your own. Also, there might be a donationware version available to thank the author for a job well done.
 
 
 [TOC]
