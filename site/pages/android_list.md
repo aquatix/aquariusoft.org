@@ -1,5 +1,5 @@
 <!-- created @ 2009-08-28 13:10:00 -->
-<div class="updatedat">updated @ 2010-08-19</div>
+<div class="updatedat">updated @ 2010-08-19 / started updating at 2016-04-08</div>
 
 <p><i class=""></i> This list is in the process of being updated, from ancient 2010 apps to a current 2016 listing.</p>
 
@@ -13,6 +13,11 @@ Some applications appear twice under different categories, as they are multiface
 [TOC]
 
 
+## Emulation
+
+@@@androidapp=org.ab.c64:Commodore64 emulator@@@
+
+
 ## Games
 
 <ul>
@@ -21,8 +26,6 @@ Some applications appear twice under different categories, as they are multiface
 	<li><a href="http://www.androlib.com/android.application.com-qualcomm-qx-dillo-jDxD.aspx">Armadillo Roll</a> - 3D racing game rolling an armadillo down a track</li>
 	<li><a href="http://www.androlib.com/android.application.com-glu-android-bonsai-DmD.aspx">Bonsai Blast</a> - shoot to match colored balls in groups of 3 or more</li>
 	<li><a href="http://www.androlib.com/android.application.com-labpixies-flood-EmC.aspx">Flood-It!</a> - simple yet addictive strategy game in which you have to flood the whole game board with one color in less than the allowed steps</li>
-	<li><a href="http://www.androlib.com/android.application.org-ab-c64-qzwC.aspx">Frodo</a> - Commodore64 emulator</li>
-    @@@androidapp=org.ab.c64:Commodore64 emulator@@@
 	<li><a href="http://www.androlib.com/android.application.com-fheft-graviturn-qzqx.aspx">Graviturn</a> - tilt your phone to move the red balls out of the screen while keeping the green balls</li>
 	<li><a href="http://www.androlib.com/android.application.com-google-code-mariosimulator-jwxi.aspx">Mario Simulator</a> - bounce around to the sound of Mario jumps and coins</li>
 	<li><a href="http://www.androlib.com/android.application.org-oep-pong-jiDB.aspx">Pong</a> - Pong!</li>
