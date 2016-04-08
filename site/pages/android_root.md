@@ -26,8 +26,8 @@ SuperSU systemless root tries to keep your OTA's (Over-The-Air updates) working.
 
 ## No navigation bar
 
-1) Add "qemu.hw.mainkeys = 1" to the end of your build prop. This permanently hides the Nav Bar
-2) Install [Swipe Navigation](https://play.google.com/store/apps/details?id=com.suphi.swipenavigation). This will make it so you navigate by swiping where the Nav Bar used to be. It's totally invisible and utterly intuitive, you literally just swipe up from the edge, no buttons, no timing to trigger something, no worrying about how far or fast you swiped... it just works.
+1. Add `qemu.hw.mainkeys=1` to the end of your build prop. This permanently hides the Nav Bar
+2. Install [Swipe Navigation](https://play.google.com/store/apps/details?id=com.suphi.swipenavigation). This will make it so you navigate by swiping where the Nav Bar used to be. It's totally invisible and utterly intuitive, you literally just swipe up from the edge, no buttons, no timing to trigger something, no worrying about how far or fast you swiped... it just works.
 
 @@@androidapp=com.suphi.swipenavigation@@@
 
