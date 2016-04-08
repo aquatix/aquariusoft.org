@@ -145,6 +145,9 @@ sections:
                 title: Essential apps
             list:
                 title: Cool List
+            root:
+                title: Rooting and updating rooted devices
+                navtitle: Rooting
             certs:
                 title: Install certificates
     palm:
