@@ -1,21 +1,20 @@
 <!-- created @ 2009-08-28 13:10:00 -->
 <div class="updatedat">updated @ 2010-08-19</div>
 
-<div class="mininav">
-<a href="#games">Games</a> | <a href="#location">Location based info</a> | <a href="#net">Networking, communication</a> | <a href="#news">News, information, weather etc.</a> | <a href="#productivity">Productivity</a> | <a href="#admin">Phone admin</a> | <a href="#shopping">Shopping, collections</a> | <a href="#tools">Tools</a> | <a href="#toys">Toys</a>
-</div>
+<p><i class=""></i> This list is in the process of being updated, from ancient 2010 apps to a current 2016 listing.</p>
 
-<p class="download">@@@icon=info@@@ 2010-08-19: As the contents are three months 'old' already, I'll revise it in a few days, adding some nice applications I found in the meanwhile</p>
+This page contains useful applications with a short description and a link to their PlayStore pages.
 
-<p>This page contains useful applications with a short description and a link to the respective Androlib pages which contains their QR-code (which allows for direct download with the market application on the device). Maybe the QR-codes will be added too later on.</p>
+Some applications appear twice under different categories, as they are multifacetted like that.
 
-<p>Start with getting <a href="#tools">Barcode Scanner</a> and find the respective <a href="http://en.wikipedia.org/wiki/QR_Code">QR-code</a>'s of the applications on <a href="http://androlib.com/">Androlib</a>. Great source of applications BTW.</p>
+*NB: I'm not endorsed by any of these applications; they are just being extremely handy, great to have or otherwise amusing. I am not responsible for whatever those applications do to your device or otherwise. See it as a repository or treasurebox for your Android phone. All of the applications in this list are free. There may exists paid versions of the programs with more features, so be sure to discover gems on your own. Also, there might be a donationware version available to thank the author for a job well done.
 
-<p>Some applications appear twice under different categories, as they are multifacetted like that.</p>
 
-<p><em>NB:</em> I'm not endorsed by any of these applications; they are just being extremely handy, great to have or otherwise amusing. I am not responsible for whatever those applications do to your device or otherwise. See it as a repository or treasurebox for your Android phone. All of the applications in this list are free. There may exists paid versions of the programs with more features, so be sure to discover gems on your own. Also, there might be a donationware version available to thank the author for a job well done.</p>
+[TOC]
 
-<h2 id="games">Games</h2>
+
+## Games
+
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-phil-Ctt.aspx">Abduction!</a> - Save your abducted cow friends by jumping up the platforms</li>
 	<li><a href="http://www.androlib.com/android.application.com-googlecode-andoku-Emp.aspx">Andoku</a> - sudoku game</li>
@@ -30,7 +29,7 @@
 	<li><a href="http://www.androlib.com/android.application.com-replica-replicaisland-nwFm.aspx">Replica Island</a> - Professor Kabochanomizu needs your help! He has created you--a small green robot with rockets for feet--to locate a mysterious artifact on a bizarre island.  Fly, stomp, and roll your way through 40 challenging levels to 3 unique endings</li>
 </ul>
 
-<h2 id="location">Location based info, tracking and GPS various</h2>
+## Location based info, tracking and GPS various
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-apksoftware-compass-qAC.aspx">Compass</a> - compass application using the electronic compass in the phone</li>
 	<li><a href="http://www.androlib.com/android.application.com-joelapenna-foursquared-qpBq.aspx">Foursquare</a> - keep track of your habits, parties and other interesting places</li>
@@ -46,7 +45,7 @@
 	<li><a href="http://www.androlib.com/android.application.com-wikitude-jpnp.aspx">Wikitude</a> - similar <a href="http://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a> application as Layar, but by the community</li>
 </ul>
 
-<h2 id="net">Networking, communication</h2>
+## Networking, communication
 <p>For applications like a wifi analyser, see <a href="#tools">Tools</a>.</p>
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-androbex-activity-jBFm.aspx">Androbex</a> - allows sharing files (Audio, Images and Videos) and contacts by sending them over bluetooth using OBEX push</li>
@@ -65,7 +64,7 @@
 	<li><a href="http://www.androlib.com/android.application.com-roundhill-androidwp-wFB.aspx">wpToGo</a> - Edit Wordpress weblog from your phone</li>
 </ul>
 
-<h2 id="news">News, information, weather etc.</h2>
+## News, information, weather etc.
 <ul>
 	<li><a href="http://nl.androlib.com/android.application.nl-jupe-weather-jCFq.aspx">Het Weer</a> - great <a href="http://www.jupe.nl/node/51">Dutch weather app</a>, including Buienradar images and more</li>
 	<li><a href="http://www.androlib.com/android.application.com-newsrob-wmq.aspx">NewsRob</a> - (offline) google (rss)reader client</li>
@@ -76,7 +75,8 @@
 	<li><a href="http://www.androlib.com/android.application.com-taptu-wapedia-android-xwt.aspx">Wapedia</a> - the fastest way to access the 3 million articles of wikipedia on your phone</li>
 </ul>
 
-<h2 id="productivity">Productivity</h2>
+## Productivity
+
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-threebanana-notes-pmz.aspx">3banana Notes</a> - Capture your notes on your phone and on the go (syncs with snaptic.com too, so you have your notes online too)</li>
 	<li><a href="http://www.androlib.com/android.application.com-timsu-astrid-pjE.aspx">Astrid</a> - todo list which can sync with <a href="http://rememberthemilk.com/">Remember the Milk</a></li>
@@ -87,7 +87,7 @@
 	<li><a href="http://www.androlib.com/android.application.com-sphericbox-syb-pAB.aspx">Share Your Board</a> - capture a whiteboard with the camera and make it into a readable image (de-warp, enhance contrast etc)</li>
 </ul>
 
-<h2 id="admin">Phone admin</h2>
+## Phone admin
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-metago-astro-qzq.aspx">Astro File Manager</a> - great file manager with build-in task manager, zip support and more</li>
 	<li><a href="http://www.androlib.com/android.application.com-modroid-battery-Fz.aspx">Battery Graph</a> - graph the load state of your phone's battery</li>
@@ -109,14 +109,14 @@
 	<li><a href="http://www.androlib.com/android.application.com-xtremelabs-android-speedtest-jpAp.aspx">Xtremelabs Speedtest</a> - test internet connection speed</li>
 </ul>
 
-<h2 id="shopping">Shopping, collections</h2>
+## Shopping, collections
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-app-my_collection-ixD.aspx">My Collection Pro</a> - Manage your collection of DVD, Blu-Ray, XBox, PS3, Wii, books, Music CD, and other media you own and who you loan them too.</li>
 	<li><a href="http://nl.androlib.com/android.application.nl-wligtenberg-tpw-jwnm.aspx">Pricewatch Scanner</a> - scan barcode of technical item and compare prices in the <a href="http://tweakers.net/pricewatch">Tweakers pricewatch</a></li>
 	<li><a href="http://www.androlib.com/android.application.com-snaptell-mobile-client-android-xpz.aspx">SnapTell</a> - snap a picture of the cover of any book, dvd, cd, or video game sold in the us, and within seconds get links to amazon, google, youtube, wikipedia,...</li>
 </ul>
 
-<h2 id="tools">Tools</h2>
+## Tools
 <ul>
 	<li><a href="http://www.androlib.com/android.application.com-aldiko-android-qpiC.aspx">Aldiko Book Reader</a> - Read and download thousands of books right on your Android phone. Browse huge catalogs of ebooks (most for FREE) or import your own ePub files</li>
 	<li><a href="http://www.androlib.com/android.application.com-google-zxing-client-android-xzA.aspx">Barcode Scanner</a> - scan 1D and 2D barcodes and qr-codes</li>
@@ -133,7 +133,7 @@
 	<li><a href="http://www.androlib.com/android.application.com-farproc-wifi-analyzer-jFCm.aspx">Wifi Analyzer</a> - Shows the Wi-Fi channels around you. Helps you to find a less crowded channel for your wireless router.</li>
 </ul>
 
-<h2 id="toys">Toys</h2>
+## Toys
 <ul>
 	<li><a href="http://www.androlib.com/android.application.net-androidcomics-acv-wnx.aspx">Comic viewer</a> - read comics in CBZ/ZIP, CBR/RAR (beta), ACV, JPEG, PNG, BMP, GIF files</p>
 	<li><a href="http://www.androlib.com/android.application.org-ab-c64-qzwC.aspx">Frodo C64</a> - Commodore64 emulator</li>
