@@ -56,8 +56,8 @@ sections:
             welcome:
                 title: Welcome
             # leave value empty to not let it show up in the nav
-            dutch:
-                title:
+            #dutch:
+            #    title:
             news:
                 title: News archive
             #featured=Featured
@@ -129,6 +129,15 @@ sections:
             overload:
                 title: ⌚ overload information manager
                 navtitle: ⌚ overload
+    python:
+        title: Python modules
+        pages:
+            nsapi:
+                title: NS API
+                slug: nsapi
+            utilkit:
+                title: utilkit library
+                navtitle: utilkit
     django:
         title: Django
         pages:
