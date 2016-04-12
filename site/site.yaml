@@ -66,20 +66,21 @@ sections:
             about:
                 title: About
 
-    nl:
-        title: <img src="/images/nl.gif" alt="Nederlands" /> Nederlands
-        pages:
-            home:
-                title: Welkom
-            portfolio:
-                title: Portfolio
-            contact:
-                title: Contact
-
     linux:
         title: Linux
         pages:
 
+            backup:
+                title: backup scripts
+                description: A howto on periodically backing up import data from your server(s)
+            irssi:
+                title: irssi
+            mellow:
+                title: Mellow Subsonic
+            svnsync:
+                title: svn remote sync
+            upgradefirmwareinlinux:
+                title: firmware upgrading
             # if value is empty, it will not show up in the sub navigation
             # or set visible: false
             aquamorph:
@@ -90,19 +91,8 @@ sections:
                 title:
             aquamorph_todo:
                 title:
-            backup:
-                title: backup scripts
-                description: A howto on periodically backing up import data from your server(s)
-            irssi:
-                title: irssi
             livecd_howto:
-                title: livecd HOWTO
-            mellow:
-                title: Mellow Subsonic
-            svnsync:
-                title: svn remote sync
-            upgradefirmwareinlinux:
-                title: firmware upgrading
+                title: ⌚ livecd HOWTO
             wpasupplicant4vu:
                 title: ⌚ wpasupplicant for VU
                 navtitle: ⌚ wpasupplicant
@@ -166,3 +156,13 @@ sections:
                 title: bluetooth and Linux
     portfolio:
         title: Portfolio
+
+    nl:
+        title: <img src="/images/nl.gif" alt="Nederlands" /> Nederlands
+        pages:
+            home:
+                title: Welkom
+            portfolio:
+                title: Portfolio
+            contact:
+                title: Contact
