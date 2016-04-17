@@ -12,6 +12,12 @@ Some applications appear twice under different categories, as they are multiface
 
 [TOC]
 
+## Development
+
+<ul>
+    <li>@@@androidapp=com.alorma.github:Great client for GitHub; browse your own projects and all other content@@@</li>
+</ul>
+
 
 ## Emulation
 
@@ -81,12 +87,9 @@ Some applications appear twice under different categories, as they are multiface
 ## Productivity
 
 <ul>
-	<li><a href="http://www.androlib.com/android.application.com-threebanana-notes-pmz.aspx">3banana Notes</a> - Capture your notes on your phone and on the go (syncs with snaptic.com too, so you have your notes online too)</li>
-	<li><a href="http://www.androlib.com/android.application.com-timsu-astrid-pjE.aspx">Astrid</a> - todo list which can sync with <a href="http://rememberthemilk.com/">Remember the Milk</a></li>
-	<li><a href="http://www.androlib.com/android.application.com-aurora-android-search-qzDi.aspx">Aurora Device Search</a> - global search: find something in all information available on the device, from sms and mail to web history and media</li>
+    <li>@@@androidapp=com.wunderkinder.wunderlistandroid:&#x1f4f1; Really nice todo-list. You can share lists with other people (handy for grocery lists or projects)@@@</li>
 	<li><a href="http://www.androlib.com/android.application.com-socialnmobile-colordict-jmDD.aspx">ColorDict</a> - <a href="http://www.androlib.com/r.aspx?r=colordict">dictionaries</a>, from <a href="http://www.androlib.com/android.application.com-socialnmobile-dictdata-dictionary-english-thesaurus-jtii.aspx">thesauri</a> to <a href="http://www.androlib.com/android.application.com-socialnmobile-dictaddon-wikipedia-encyclopedia-qwqD.aspx">wikipedia addon</a></li>
 	<li><a href="http://www.androlib.com/android.application.coolcherrytrees-software-detexify-qjmD.aspx">Detexify</a> - write the character on the screen and let it find out the TeX code</li>
-	<li><a href="http://www.androlib.com/android.application.com-android-demo-notepad3-qpj.aspx">Notes</a> - note taking application which supports encryption</li>
 	<li><a href="http://www.androlib.com/android.application.com-sphericbox-syb-pAB.aspx">Share Your Board</a> - capture a whiteboard with the camera and make it into a readable image (de-warp, enhance contrast etc)</li>
 </ul>
 
