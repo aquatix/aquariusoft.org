@@ -19,14 +19,14 @@
 <pre>apt-get install bluetooth</pre>
 
 <p>Check with hciconfig whether it works. The output will look something like this:</p>
-<pre>
+<pre><code>
 # hciconfig
 hci0:   Type: USB
         BD Address: 00:10:DC:AF:BB:E5 ACL MTU: 192:8  SCO MTU: 64:8
         UP RUNNING PSCAN ISCAN
         RX bytes:778010 acl:9154 sco:0 events:5193 errors:0
         TX bytes:182357 acl:5245 sco:0 commands:21 errors:0
-</pre>
+</code></pre>
 
 <p>This might also be a good time to set the PIN in <tt>/etc/bluetooth/pin</tt> [create the file if it doesn't exist yet] and check that your PC can find your palm using <tt>hcitool</tt> e.g.</p>
 
@@ -42,7 +42,7 @@ Scanning ...
 
 <p>The dund daemon will listen for incoming PPP connections and hand them off to pppd. To do this, create a file <tt>/etc/ppp/peers/dun</tt> containing (and customised to your setup of course): </p>
 
-<pre>
+<pre><code>
 debug
 57600
 noipdefault
@@ -55,13 +55,13 @@ ktune
 noauth
 local
 nodefaultroute
-noipx</pre>
+noipx</code></pre>
 
 <p>Be sure to change the IP addresses to something sensible for you, like 192.168.0.1:168.0.200 and look up the DNS server you use from your Internet Service Provider [for example by doing <code>cat /etc/resolv.conf</code>].</p>
 <p>Now invoke dund with the options:</p>
-<pre>dund --listen --persist --msdun call dun</pre> 
+<pre><code>dund --listen --persist --msdun call dun</code></pre> 
 <p>On a Debian system, you can do this at startup by adding the line:</p>
-<pre>DUND_OPTIONS="--listen --persist --msdun call dun"</pre>
+<pre><code>DUND_OPTIONS="--listen --persist --msdun call dun"</code></pre>
 <p>to <tt>/etc/default/bluetooth</tt> [formerly <tt>/etc/default/bluez-pan</tt> and later <tt>/etc/default/bluez-utils</tt>]. To enable this service at boottime, switch <tt>DUND_ENABLED=0</tt> to <tt>DUND_ENABLED=1</tt> in the same file.</p>
 
 <h2>Handheld Setup</h2>
@@ -92,5 +92,5 @@ noipx</pre>
 
 <h4>PC Setup</h4>
 <p>This part is easy - simply tell pilot-link [or jpilot; do this in the "Serial Port" field in Preferences] to use "net:any" as the port to use to connect to the Palm. e.g. <code>pilot-xfer -p net:any -l</code>. If using <a href="http://www.jpilot.org/">jpilot</a>, don't forget to install pilot-link too:</p>
-<pre>apt-get install jpilot pilot-link</pre>
+<pre><code>apt-get install jpilot pilot-link</code></pre>
 
