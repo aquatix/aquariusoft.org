@@ -25,6 +25,9 @@ linkblocks:
             gallery:
                 title: Gallery
                 url: http://aquariusoft.org/photo/
+            photolog:
+                title: Photolog
+                url: http://photolog.aquariusoft.org/
     block2:
         title: Weblogs
         links:
