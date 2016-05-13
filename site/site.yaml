@@ -111,12 +111,12 @@ sections:
     html:
         title: Web projects
         pages:
-            blog:
-                title: "simplog/kontent: weblog software"
-                navtitle: weblog software
             paragoo:
                 title: paragoo site generator
                 navtitle: paragoo
+            blog:
+                title: "simplog/kontent: weblog software"
+                navtitle: weblog software
             qik:
                 title: ⌚ Qik framework
             htmlmodules:
