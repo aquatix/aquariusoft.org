@@ -88,6 +88,8 @@ sections:
                 title: svn remote sync
             upgradefirmwareinlinux:
                 title: firmware upgrading
+            vcssync:
+                title: vcssync
             # if value is empty, it will not show up in the sub navigation
             # or set visible: false
             aquamorph:
