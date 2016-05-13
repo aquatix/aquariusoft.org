@@ -141,7 +141,8 @@ sections:
             config:
                 title: Configure
             djangocon:
-                title: DjangoCon
+                title: DjangoCon 2011 conference notes
+                navtitle: DjangoCon 2011
     android:
         title: Android
         pages:
