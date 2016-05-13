@@ -77,6 +77,9 @@ sections:
             backup:
                 title: backup scripts
                 description: A howto on periodically backing up import data from your server(s)
+            dotfiles:
+                title: .dotfiles
+                description: A public repository of my (non-sensitive) dotfiles, for reference and inspiration
             irssi:
                 title: irssi
             mellow:
