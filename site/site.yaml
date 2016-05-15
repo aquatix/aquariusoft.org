@@ -124,6 +124,9 @@ sections:
             blog:
                 title: "simplog/kontent: weblog software"
                 navtitle: weblog software
+            webhaak:
+                title: webhaak webhook service
+                navtitle: webhaak
             qik:
                 title: ⌚ Qik framework
             htmlmodules:
