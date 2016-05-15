@@ -18,6 +18,11 @@ errorpage: |
     <p>Also, the forum has been discontinued because of disuse.</p>
     <p>If you notice something missing, don't hesitate to <a href="page/main/contact/">contact me</a>.</p>
 
+googleanalytics: UA-10643901-2
+piwikurl: //aquariusoft.org/r00t/webstats/
+piwikdomains: "*.aquariusoft.org"
+piwikkey: 1
+
 linkblocks:
     block1:
         title: Photography
