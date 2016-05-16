@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/aquatix
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://aquariusoft.org
+  * I am aquatix (https://keybase.io/aquatix) on keybase.
+  * I have a public key with fingerprint 24A3 67C6 704E 0C12 036E  22C9 6493 F258 5DE7 8E4F
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010129a9098651561439e788e11d918530de3d7c1db8830e8385a19044ae11d1ce9b0a",
+            "fingerprint": "24a367c6704e0c12036e22c96493f2585de78e4f",
+            "host": "keybase.io",
+            "key_id": "6493f2585de78e4f",
+            "kid": "010129a9098651561439e788e11d918530de3d7c1db8830e8385a19044ae11d1ce9b0a",
+            "uid": "37a5be9be96e6a98b769a9b85dafd100",
+            "username": "aquatix"
+        },
+        "service": {
+            "hostname": "aquariusoft.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1463424301,
+    "expire_in": 157680000,
+    "prev": "fb9d2f6a0fc36b0ec7f5be9fa3a7559daf643d925dec366df5bdf2b503507c20",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMIqAnicrZJbSBRRGMdXyyLLyKK1C0GNGRW7cs5czlwiCtJ6iLWHLgYZ25mZM7uT
+ubPOzFqi9lAsYRCVEbR0gSi3O7hSUZmmkRFp0J3ICCowukFFZT2YnZGCHnrsvBzO
+9/3+/+/CuZE3wpebFVxwceG5D/eLsnq6UglfuTI5WMeoll7LKHVMJRm+yCadOG64
+0tQZhQEQQFbGMpAlJEABQZ6TiShJBEJdhpLAAZ1wuqhBXZUkDhCJkwQMZcDz2EOg
+RmQVYCbAGGYsQuy4bcZcasvymEOihkTAE6BBFnCIsKwmI17mDFaQBJ0WIbxBhVHL
+8RS0ORU7pNi0aIw+wsPt/YP/z30nhu04EQsqDREZEYRlSRURNVdpXWzoEAAPdIgd
+w1WE0rg6gV1zC9MQYGiwxtSIt1dvkL8A20w4luEWW3aEquO25VqatYkmo64bdxRP
+7NbGPXozUcO/fcKqGdPpJqmihtiOacUYBVJSc03PGPKI41meAzDAkC1x0yZh0yME
+EUmAHq8OqaGWhirrrIEwMDQOqYBoouHNZ2AOi4Ig06kQz+kyS/dKAaTTrG6wqgA4
+AYga683rkOqYxSgybRNHqKVjRmLYTdiEabjeWTHSl5XrG5WT7f0wX+6YCX/+XVNq
+9FDZ/B8dJSvwnK7I2D37zt55VXkpuv9JNLCr+Wi5Mvbz+1mtU7j2DQ1XE6FPmcLH
+vVNfLv+4vKfgyJ7zx549V+Ylmx88Kb0hXGi9lbTagjlW5uXZ44Wv914kN1/kFT18
+e6VN/1Ix6Cerv9/N/RG6fGbbp2BposKfnlnbuCTTn71z4q3xoWlG+mn7Mn+m1z+w
+eaBg8GhldN2kpejC22tbQ3tPRPIKB9ZfWXR4ZU/J0KmmvsVz6wMzvhagb/mP+te0
+rLiX7O5N3TydhpE3S3Zs3P2uJH9t0ldRJh3s6Gwsruo+WVZ/aPb27o7nqXF9X9bU
+1QjTD/T9XCU8Dbakbx84Hr50j4XW7ke/AOsfRXo=
+=WLGv
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aquatix
+
+==================================================================
