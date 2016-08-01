@@ -124,6 +124,9 @@ sections:
             blog:
                 title: "simplog/kontent: weblog software"
                 navtitle: weblog software
+            digimarks:
+                title: "digimarks bookmarks"
+                navtitle: digimarks
             webhaak:
                 title: webhaak webhook service
                 navtitle: webhaak
