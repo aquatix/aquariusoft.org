@@ -121,12 +121,12 @@ sections:
             paragoo:
                 title: paragoo site generator
                 navtitle: paragoo
-            blog:
-                title: "simplog/kontent: weblog software"
-                navtitle: weblog software
             digimarks:
                 title: "digimarks bookmarks"
                 navtitle: digimarks
+            blog:
+                title: "simplog/kontent: weblog software"
+                navtitle: weblog software
             webhaak:
                 title: webhaak webhook service
                 navtitle: webhaak
