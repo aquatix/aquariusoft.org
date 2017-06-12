@@ -13,8 +13,7 @@
 
 <p>Here is my own [slightly censored] backup script. Save as backup or something and run as "backup daily", "backup weekly" and/or "backup monthly" in your crontab file [see below]</p>
 
-<pre><code>
-#!/bin/sh
+<pre><code>#!/bin/sh
 #
 # Makes an incremental daily or weekly backup of the homedirs and of the mail dir
 #   or makes a complete backup of them, depending on the parameters passed to this script
@@ -136,15 +135,13 @@ echo "== Done ======"
 
 <p>Your backup_exclude file can look like this:</p>
 
-<pre><code>
-.mozilla/*
+<pre><code>.mozilla/*
 tmp/*
 </code></pre>
 
 <p>Or on your workstation:</p>
 
-<pre><code>
-News/*
+<pre><code>News/*
 .thumbnails/*
 .xMule/*
 *Cache/*
@@ -165,8 +162,7 @@ bin/azureus/*
 
 <p>Your crontab can look like this, if you use a backup script for databases too:</p>
 
-<pre><code>
-# First day of month at 3:00am == Monthly full backup of homedirs and e-mail
+<pre><code># First day of month at 3:00am == Monthly full backup of homedirs and e-mail
 00 3   1 * *  /storage/system/backup/backup monthly
 45 2   1 * *  /storage/system/backup/backup_db monthly
 #
@@ -185,8 +181,7 @@ bin/azureus/*
 
 <p>Here is my own [slightly censored] backup script. Save as backup_db or something and run as "backup_db weekly" and/or "backup_db monthly" in your crontab file [see below]</p>
 
-<pre><code>
-#!/bin/sh
+<pre><code>#!/bin/sh
 #
 # Makes an incremental daily or weekly backup of the homedirs and of the mail dir and mysql dir
 #   or makes a complete backup of them, depending on the parameters passed to this script
@@ -262,8 +257,7 @@ echo "== Done ======"
 
 <p>Your crontab can look like this, if you use a backup script for homedirs etc too:</p>
 
-<pre><code>
-# First day of month at 3:00am == Monthly full backup of homedirs and e-mail
+<pre><code># First day of month at 3:00am == Monthly full backup of homedirs and e-mail
 00 3   1 * *  /storage/system/backup/backup monthly
 45 2   1 * *  /storage/system/backup/backup_db monthly
 #

@@ -4,15 +4,14 @@
 
 <p>If you have a <a href="http://en.wikipedia.org/wiki/Subversion_(software)">Subversion</a> repository on a server you don't have shell access to [so you can't do a simple <code>svnadmin dump</code>], the following enables you to pull all changes and history from that repository to a local one, defined in MYREPO:</p>
 
-<pre>
-$ MYREPO=/home/me/someplace
+<pre><code>$ MYREPO=/home/me/someplace
 
 $ svnadmin create $MYREPO
 $ echo '#!/bin/sh' &gt; $MYREPO/hooks/pre-revprop-change
 $ chmod +x $MYREPO/hooks/pre-revprop-change
 $ svnsync init file://$MYREPO http://SVN.remote.url.goes.here/
 $ svnsync sync file://$MYREPO
-</pre>
+</code></pre>
 
 <p>... then repeat the "svnsync sync" to sync down the changes since last time, perhaps in a cron job.</p>
 <p>[<a href="http://kylecordes.com/2007/06/08/svnsync-svn-backup/">source</a>]</p>
