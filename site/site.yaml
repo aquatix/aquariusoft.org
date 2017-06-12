@@ -29,19 +29,19 @@ linkblocks:
         links:
             gallery:
                 title: Gallery
-                url: http://aquariusoft.org/photos/
+                url: https://shuttereye.org/
             photolog:
                 title: Photolog
-                url: http://photolog.aquariusoft.org/
+                url: https://shuttereye.org/photolog/
     block2:
         title: Weblogs
         links:
             dammit:
                 title: dammIT
-                url: http://dammit.nl/
+                url: https://dammit.nl/
             familiescholten:
                 title: Familie Scholten
-                url: http://familiescholten.net/
+                url: https://familiescholten.net/
 
 replacements:
     # Text to replace in rendered pages, for example to make a uri absolute
