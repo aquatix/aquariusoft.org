@@ -1,4 +1,6 @@
 
+These are my RAW notes, so messy, rambling and probably to noone's use.
+
 [TOC]
 
 
