@@ -156,6 +156,11 @@ sections:
             djangocon:
                 title: DjangoCon 2011 conference notes
                 navtitle: DjangoCon 2011
+    conferences:
+        title: Conferences
+        pages:
+            europython2017:
+                title: EuroPython 2017
     android:
         title: Android
         pages:
