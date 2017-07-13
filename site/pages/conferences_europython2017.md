@@ -2,6 +2,230 @@
 [TOC]
 
 
+# 20170713 Thursday EuroPython Rimini
+
+
+## 10:30-11:15 Type Annotations in Python 3: Whats, whys & wows!
+
+https://ep2017.europython.eu/conference/talks/type-annotations-in-python-3-whats-whys-wows
+
+Andreas Dewes
+
+- Gradual typing, where you add annotations to code where it makes sense (so you don't have to rewrite your complete codebase)
+- Function annotations were the first step in Python 3.0 in 2006 (PEP 3107)
+- In 3.5 Type Hints were introduced (including the theory and such)
+- Python interpreter stores those annotations in __annotations__ and ignores it otherwise
+- External tools like mypy and pycharm do the heavy lifting
+- Deliberate choice to do it like this, so it can evolve; eventually we might want to have internal tools
+- We loose Python 2 compatibility though, but then we can use type comments, which are backported to 2.7
+- Third approach is stub files, ending with .pyi, which mypy will also look at, ignoring the .py file for type checking. This way, we can add only the annotations there. Feels a bit like writing a header file.
+- Check the documentation of the typing module for more info, lots of usecases (new in 3.5)
+- Slideshare: https://slideshare.com/japh44 -> https://www.slideshare.net/japh44/type-annotations-in-python-whats-whys-and-wows
+
+
+
+## 11:20-12:05 Inside Airbnb: Visualizing data that includes geographic locations
+
+https://ep2017.europython.eu/conference/talks/inside-airbnb-visualizing-data-that-includes-geographic-locations
+
+Guillem Duran Ballester
+
+- https://github.com/Guillem-db/Inside-Airbnb-EP17
+- insideairbnb
+- bokeh is a great library to work with Google Maps
+- lat & lon, zoom and map_type
+- shaolin for colour maps
+- shapefiles with shapely
+- holoviews and geoviews (matplotlib, bokeh and shapely as backends)
+- datashader: plotting big data made easy; lots of jupyter notebooks as examples
+- dynamic=True will recalculate the bins that datashader makes, making it nicer to look at when zooming in (with dynspread/datashade)
+- one of the downsides of datashader is that when tweaking, it errors until you get everything right (for example in jupyter)
+- http://geo.holoviews.org/Working_with_Bokeh.html
+- integrating openstreetmaps with bokeh should be possible, speaker needs to look into it (but Google Maps is default)
+- https://github.com/dsolanno/BarcelonaRentsStatus
+
+
+## 12:10-12:55 Introduction to Nonparametric Bayesian Models
+
+https://ep2017.europython.eu/conference/talks/introduction-to-non-parametric-models
+
+Omar Gutiérrez
+
+Some people just can't present. Seemed like an interesting subject, but could not concentrate on his really quiet rambling talk, instead playing with the Jupyter notebooks from the previous talks
+
+
+
+## 14:00-14:30 An introduction to PyTorch & Autograd
+
+https://ep2017.europython.eu/conference/talks/an-introduction-to-pytorch-autograd
+
+Paul O'Grady
+
+- tensor (ndarray) operations on the GPU (instead of being constrained to CPUs)
+- pytorch is the new kid on the block
+- follows Lua torch, with same underlying C libraries
+- it's a define-by-run framework as opposed to define-and-run, leads to dynamic computation graphs, looks more Pythonic
+- the native data format is tensors
+- supports in-place adds and such (.add_() )
+- Torch plays well with numpy and it can bridge back and forth (for example having matrix operations and getting a tensor back)
+- you can reshape tensors using views
+- tensor computation can be moved to and from GPU (CUDA)
+- variables through torch.autograd package
+-
+
+
+
+## 14:35-15:05 Developing elegant workflows in Python code with Apache Airflow
+
+https://ep2017.europython.eu/conference/talks/developing-elegant-workflows-in-python-code-with-apache-airflow
+
+Michał Karzyński
+
+- definition of a workflow:
+  - sequence of tasks
+  - started on a schedule or triggered by an event
+  - frequently used to handle big data processing pipelines
+- Apache Airflow is Open Source, based on Flask, using Celery
+- A flow is a Directed Acyclic Graph (DAG)
+- Operator is a single task, which can be retried automatically, should be idempotent and is a Python task with an execute method
+- xcom is a means of communication between task instances
+  - saved in database as a pickled object
+  - best suited for small objects
+- Introductory Airflow tutorial on speaker's weblog: http://michal.karzynski.pl/blog/2017/03/19/developing-workflows-with-apache-airflow/
+
+
+## 15:45-16:15 Inspect (Or Gadget)
+
+https://ep2017.europython.eu/conference/talks/inspect-or-gadget
+
+Hugues Lerebours , Renaud Bauvin
+
+- library: inspect, https://docs.python.org/3/library/inspect.html
+- provides quite some extra functions apart from the already useful Python buildins
+- demo consists of a piece of code that checks if docstrings are up-to-date, also validating against documented types
+
+
+## 16:20-16:50 Fixture factories for faster end-to-end tests
+
+https://ep2017.europython.eu/conference/talks/fixture-factories-for-faster-end-to-end-tests
+
+Stephan Jaensch
+
+- end-to-end integration, replicating production as much as possible (above 'regular' integration tests)
+- slow, most expensive tests
+- pyramid, swagger, openapi, sqlalchemy
+- lots of db setup on all the components, lots of SQL scripts, hard to write, maintain
+- taking inspiration from Django
+- make sure data is logically correct
+- pytest
+- why not use models? No FK checking used in this setup, so cannot use the PK and FK's
+- helps with test repeatability, as it eliminates dependability between tests (order)
+- use fixture factories for faster development and more correct test data
+- convert tests for test isolation and repeatability
+- take advantage of it by executing tests in parallel
+- https://github.com/sjaensch/faster_end_to_end_tests_talk
+
+
+
+
+# 20170712 Wednesday EuroPython Rimini
+
+## 09:00-10:00 If Ethics is not None
+
+https://ep2017.europython.eu/conference/talks/if-ethics-is-not-none
+
+Katharine Jarmul
+
+(photo)
+
+Lots of good thoughts.
+
+Copied and typed some to:
+https://dammit.nl/computer-ethics-quotes.html
+
+https://books.google.it/books?id=NnM-uISyywAC&lpg=PA27&ots=xgTxeBeiHn&dq=wiener%20It%20may%20very%20well%20be%20a%20good%20thing%20for%20humanity&pg=PA27#v=onepage&q&f=false
+
+
+
+## 10:30-11:15 Mary had a little lambda
+
+https://ep2017.europython.eu/conference/talks/mary-had-a-little-lambda
+
+Anjana Vakil
+
+- lambda calculus, of course invented by Alonzo Church, starting in 1932
+- fun talk about doing lambda calculus, Church Numerals and Encoding, corresponding arithmetic in Python
+- feels like being at the university again, but a lot more fun, great talk by an energetic Anjana
+
+
+## 12:10-12:40 Teeing up Python: Code Golf
+
+https://ep2017.europython.eu/conference/talks/teeing-up-python-code-golf
+
+Lee Sheng
+
+(really would like to have the slides)
+
+- try using a default: to_mail = my_contact.get("address", "UNKNOWN") (instead of checking if a key exists and then getting it from the list)
+
+
+## Lunch
+
+
+
+## 15:45-16:15 Realtime Distributed Computing At Scale (in pure Python!): Storm And Streamparse
+
+https://ep2017.europython.eu/conference/talks/realtime-distributed-computing-at-scale-in-pure-python-storm-and-streamparse
+
+Alexander Lourenco
+
+- Parse.ly
+- Storm is a distributed real-time computation system, which simplifies workers and queues.
+- Streamparse is Pythonic Storm
+- Nimbus and Storm UI
+- Install Storm env from Apache Storm site
+- pip install streamparse
+- sparse quickstart
+- sparse run
+
+
+
+## 16:20-16:50 Infrastructure design patterns with Python, Buildbot, and Linux Containers
+
+https://ep2017.europython.eu/conference/talks/infrastructure-design-patterns-with-python-buildbot-and-linux-containers
+
+David Liu
+
+- Dask (distributed task system)
+- buildbot
+
+Abuse all the tools :)
+
+Better could have gone to:
+
+## 16:20-16:50 How to make money with your Python Open-Source Project
+
+https://ep2017.europython.eu/conference/talks/how-to-make-money-with-your-python-open-source-project
+
+Max Tepkeev
+
+(skipped, but would've been better)
+
+
+
+## 17:00-18:00 Lightning talks
+
+
+
+## Various
+
+Visual debugger: pudb
+
+Came for the language, stayed for the community.
+
+
+
+
 # 20170711 Tuesday EuroPython Rimini
 
 ## 09:00-10:00 How to create inspiring data visualizations?
@@ -57,6 +281,153 @@ https://ep2017.europython.eu/conference/talks/why-you-dont-need-design-patterns-
 
 Sebastian Buczyński
 
+- The weight of a project outside of a framework, missing the building blocks
+- Java: design patterns! (general reusable solution to a commonly occurring problem; formalised best practices; just outlines though, not ready to use)
+- Singletons in python? Modules!
+- Visitor pattern: ASTs (abstract syntax trees, linters use those)
+- Decorator patterns (not the @decorator in python)
+- Is magic worth the effort? It depends, readability wins.
+- Know your tools well, get inspiration from other languages and communities, know the business domain of your project
+
+
+## Lunch
+
+
+## 14:00-14:30 There should be one obvious way to bring python into production
+
+https://ep2017.europython.eu/conference/talks/there-should-be-one-obvious-way-to-bring-python-into-production
+
+Sebastian Neubauer
+
+(pictures)
+
+- Delivery pipeline
+- Versions should be really unique, preferably signed
+- Nice to have: upload to an artifact repository
+- Testing: the tests test the test env, not production (e.g., pytest pulls in $package that turns out to be missing when deploying to production)
+- Reproducible conditions, near-production-like conditions
+- Staging/QA has the risk of being an outdated, manually maintained setup
+- Production: all kinds of restrictions (see photo)
+- Nice to haves (see photo); automated deploy, monitoring, self-healing, rolling update and roll back
+- Dependency hell (photo)
+- Python package management
+  - Still much confusion around setuptools, distutils, eggs and such
+  - Many outdated 'best practices' on StackOverflow etc
+  - pyscaffold, versioneer (templates for packages)
+- Nix inside a container?
+
+
+## 14:35-15:05 Feeding a real-time user interface
+
+https://ep2017.europython.eu/conference/talks/feeding-a-real-time-user-interface
+
+Vita Smid
+
+- Stock trading platform
+- All back-end code Python 3.5/3.6
+- They are using React, websockets
+- Take 1: Naive snapshots, call all get_state methods periodically, encoding their return values in JSON and send them to the clients
+- Diffing snapshots, get_state methods now sends the incremental updates instead, remembering the last state
+- difflib (included in python, great tool)
+- Difficult, because newly connected clients still have to get a snapshot, also might be doing a lot of unnecessary work in your get_state methods
+- Producers should have a has_changed flag
+- difflib only works with sequences of hashable items (no nested dictionaries or something, tuples of dictionaries)
+- For small sequences it's faster to just send a snapshot
+- Take 3: Generating diffs on every state write, no longer black box, but you have to keep track of the changes you did; basically a journal
+- difftrack: github.com/qntln/difftrack
+  - snapshots are automatically supported (.get_snapshot())]
+  - the listener forgets old diffs after requests (.get_new_diffs() then is empty)
+  - you can also track dictionary diffs
+  - you can compact diffs that cancel each other out (so on request, there is even nothing to tell) (coming soon)
+  - you can squash (aggregate) diffs affecting subsequent indices
+- Beyond diffs: consider using a custom binary protocol to send updates to clients
+- Apache Avro to encode payloads
+- Each message type has a schema which also serves as documentation
+
+
+dictdiff
+
+
+
+## 15:45-16:15 Django: From a nightmare to a dream with Best Practices.
+
+https://ep2017.europython.eu/conference/talks/django-from-a-nightmare-to-a-dream-with-best-practices
+
+Stephane Wirtel
+
+(skipped)
+
+
+## 15:45-16:15 Discovering Descriptors
+
+https://ep2017.europython.eu/conference/talks/discovering-descriptors
+
+Mariano Anaya
+
+(photos)
+
+- python 3.6
+- __get__
+
+
+https://www.blog.pythonlibrary.org/2016/06/10/python-201-what-are-descriptors/
+
+
+## 16:20-16:50 Django and Graphql
+
+https://ep2017.europython.eu/conference/talks/django-and-graphql
+
+Patrick Arminio
+
+(photos)
+
+- pip install graphene
+- pip install graphene-django
+- authentication
+- permission per field
+- does not work nicely together with DjangoRestFramework yet
+- limit the nesting you can have, it can get rather deep otherwise (long queries and such), GitHub does something like that
+- Facebook created Relay for React
+- Apollo is another frontend toolkit - https://github.com/apollographql
+
+
+## 17:00-18:00 Lightning talks
+
+Reporting security issues: if someone reports to you, take it seriously. Create a howto in your README too.
+
+If reporting yourself, do it privately, you might take someone off guard, also possibly endanger users.
+
+
+Don't document your experiences for others, experience your vacations and such for yourself (you can still take pictures and souvenirs, but do it for yourself).
+
+
+gitmate.io
+gitmate-bot
+coala
+IGitt (an exclamation of disgust)
+Interface for Git{Hub|Lab}
+https://gitlab.com/gitmate/open-source/IGitt
+
+
+Quickly create/publish packages on pypi: flit
+https://pypi.python.org/pypi/flit
+https://pypi.org/
+
+
+dothub
+sealed mock: mock.sealed = True  # from now on, no new attributes can be declared
+
+
+tests: use aioresponses (when doing requests in asynchronous io)
+
+
+1 - Thank you for moving the elephant to the middle of the room.
+2 - Don't mention it.
+
+
+
+
+
 
 
 # 20170710 Monday EuroPython Rimini
@@ -90,10 +461,10 @@ R. Georgiev
 
 A. Dangoor
 
+(pictures)
+
 - Vuforia for image matching
 - requests-mock
--
-- (some pictures)
 - vws-python, coming to pypi soon
 - travis CI
 - mock rewritten als a Flask app, translating requests-mock to something that can be used
@@ -192,106 +563,3 @@ try finally, always does the finally before returning, even when there's an exce
 ## Various
 
 Async Web Apps with Sanic: Flask-like API
-
-
-
-
-
-
-
-# 20170519 PyGrunn, Groningen
-
-## 10:15-10:45 - Polku: Serverless Stream Processing with Python
-
-German Gomez-Herrero (FindHotel BV)
-
-- Infrastructure as code: AWS Cloudformation all the way
-- Infrastructure plugins
-- https://github.com/humilis/
-- https://github.com/FindHotel/analytics-python
-- https://github.com/FindHotel/polku-poc
-- german@findhotel.net
-
-
-## 11:00-11:30 - Advanced Django Admin
-
-Laurens Bosscher
-
-- ChangeList (views/main.py), useful with Polymorphic models and for reducing maintenance
-- Prefill fields with URL parameters
-- Layout customisation
-- Enable admindocs
-
-
-## 11:45-12:15 - Django L10N
-
-Cees van Wieringen
-
-Localisation is the adaptation of a product or content to a specific language or culture.
-- translation
-- design
-- date/time formats
-- currency and units of measure
-
-Internationalisation is preparing your product for l10n, a set of tools to enable l10n.
-- enabling unicode (python)
-- django translation toolkit
-- library to convert units of measure
-
-Globalisation is a strategy to place a product in a global market.
-- think of politics, business, economics, etc.
-
-G11N > I18N > L10N > T9N
-
-Better not import gettext as underscore, as you then don't know what specific gettext you are using.
-- gettext, ugettext, pgettext, gettext_noop, ugettext_noop, ngettext, ungettext, npgettext
-
-Django models:
-- TransField
-- Currency fields, units of measurement fields (length, size, area, weight etc)
-
-
-## 13:15-13:45 - All you need is less. Rethinking big data
-
-Berco Beute
-
-- Stop hoarding data
-- Make more sense of your data: make it information
-- Instead of copying information all over the place (often poorly entered, or with not enough context), *use* the original
-- Do this by having smart contracts, that for example let you use a certain piece of information for a certain period of time
-  - web11.org
-- Article: That time I tried to buy an actual barrel of crude oil, by Tracy Alloway (2015)
-- "Given enough bandwidth and low enough latency, copies are not needed" - Telecosm, George Gilder
-
-
-Frank Zappa:
-Data is not information.
-Information is not knowledge.
-Knowledge is not wisdom.
-Wisdom is not truth.
-Truth is not beauty.
-Beauty is not love.
-Love is not music.
-Music is THE BEST.
-
-
-## 14:00-14:30 - Looking at molecules using Python
-
-Jonathan Barnoud
-
-- Jupyter notebooks still rule
--
-
-
-## 14:45-15:15 - Let's make a GraphQL API in Python
-
-Òscar Vilaplana
-
-- It's basically a REST API re-invented
-
-
-## 15:45-16:15 - Querying Django models: fabulous & fast filtering
-
-Reinout van Rees
-
-- Lazy evaluation rules
