@@ -180,15 +180,11 @@ sections:
         pages:
             bluetooth_linux:
                 title: bluetooth and Linux
-    portfolio:
-        title: Portfolio
 
     nl:
         title: <img src="/images/nl.gif" alt="Nederlands" /> Nederlands
         pages:
             home:
                 title: Welkom
-            portfolio:
-                title: Portfolio
             contact:
                 title: Contact
