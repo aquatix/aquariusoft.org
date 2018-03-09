@@ -7,7 +7,7 @@ logo: <img style="vertical-align:middle" src="/images/aquariusoft_org_white.png"
 mobiletoggle: False
 copyright: Michiel Scholten
 footer: |
-    &copy; 1999-2017 webmaster (at) aquariusoft.org // <a href="https://github.com/aquatix/paragoo">build with paragoo</a>
+    &copy; 1999-2018 webmaster (at) aquariusoft.org // <a href="https://github.com/aquatix/paragoo">build with paragoo</a>
 about_title: About AquariuSoft
 about: |
     AquariuSoft.org is the project website of Michiel Scholten, collecting projects and howtos from various aspects of technological life.
@@ -19,7 +19,7 @@ errorpage: |
     <p>If you notice something missing, don't hesitate to <a href="page/main/contact/">contact me</a>.</p>
 
 googleanalytics: UA-10643901-2
-piwikurl: //aquariusoft.org/r00t/webstats/
+piwikurl: https://aquariusoft.org/r00t/webstats/
 piwikdomains: "*.aquariusoft.org"
 piwikid: 1
 
@@ -98,7 +98,7 @@ sections:
             # if value is empty, it will not show up in the sub navigation
             # or set visible: false
             aquamorph:
-                title: "⌚ aquamorph livecd"
+                title: "&#x1f512; aquamorph livecd"
             aquamorph_news:
                 title:
             aquamorph_packages:
@@ -106,13 +106,13 @@ sections:
             aquamorph_todo:
                 title:
             livecd_howto:
-                title: ⌚ livecd HOWTO
+                title: "&#x1f512; livecd HOWTO"
             wpasupplicant4vu:
-                title: ⌚ wpasupplicant for VU
-                navtitle: ⌚ wpasupplicant
+                title: "&#x1f512; wpasupplicant for VU"
+                navtitle: "&#x1f512; wpasupplicant"
             xsupplicant4vu:
-                title: ⌚ xsupplicant for VU
-                navtitle: ⌚ xsupplicant
+                title: "&#x1f512; xsupplicant for VU"
+                navtitle: "&#x1f512; xsupplicant"
 
 
     html:
@@ -131,14 +131,14 @@ sections:
                 title: webhaak webhook service
                 navtitle: webhaak
             qik:
-                title: ⌚ Qik framework
+                title: "&#x1f512; Qik framework"
             htmlmodules:
-                title: ⌚ HTML modules
+                title: "&#x1f512; HTML modules"
             iplugs:
-                title: ⌚ iplugs
+                title: "&#x1f512; iplugs"
             overload:
-                title: ⌚ overload information manager
-                navtitle: ⌚ overload
+                title: "&#x1f512; overload information manager"
+                navtitle: "&#x1f512; overload"
     python:
         title: Python modules
         pages:
