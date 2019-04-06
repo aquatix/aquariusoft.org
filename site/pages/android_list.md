@@ -14,7 +14,7 @@ Some applications appear twice under different categories, as they are multiface
 
 ## Development
 
-@@@androidapp=com.alorma.github:Great client for GitHub; browse your own projects and all other content@@@
+@@@androidapp=com.fastaccess.github:Great client for GitHub; browse your own projects and all other content@@@
 
 
 ## Emulation
